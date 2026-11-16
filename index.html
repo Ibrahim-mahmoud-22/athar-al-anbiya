@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101d35">
+<title>أثر الأنبياء</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101d35;color:#fff;font-family:Arial,sans-serif}
+header{padding:25px 20px;background:linear-gradient(140deg,#173d55,#101d35)}
+.brand{color:#f4ce78;font-size:30px;font-weight:bold}
+.sub{color:#c8d7df;margin-top:8px}
+main{padding:20px;max-width:650px;margin:auto}
+h2{color:#f4ce78}
+.welcome{background:linear-gradient(135deg,#24566b,#172b49);padding:25px;border-radius:22px;margin:10px 0 25px}
+.welcome h1{font-size:25px}
+.welcome p{line-height:1.8;color:#e0e9ed}
+.profiles{display:flex;gap:10px;flex-wrap:wrap}
+.profile{flex:1;min-width:85px;background:#243b56;padding:15px 8px;border:1px solid #52647c;border-radius:15px;color:white;font-size:17px;cursor:pointer}
+.profile.active{border:2px solid #f4ce78;color:#f4ce78}
+.card{background:#1c304b;border:1px solid #344963;border-radius:18px;padding:18px;margin:14px 0}
+.card h3{color:#f4ce78;margin:5px 0 10px}
+.card p{color:#d8e1e9;line-height:1.8}
+.btn{background:#e9bd63;color:#17243b;border:0;border-radius:12px;padding:13px 20px;font-size:16px;font-weight:bold;cursor:pointer;width:100%;margin-top:10px}
+.small{color:#b9c8d5;font-size:13px}
+footer{text-align:center;color:#a9bacb;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<div class="brand">✦ أثر الأنبياء</div>
+<div class="sub">رحلة نتعلم فيها من قصص الأنبياء</div>
+</header>
+<main>
+<section class="welcome">
+<div style="font-size:38px">📖 ✨</div>
+<h1>أهلاً بك في رحلتنا الجميلة!</h1>
+<p>هيا نتعرف على قصص الأنبياء، ونتعلم منها الصدق والصبر والرحمة والشجاعة.</p>
+</section>
+
+<h2>🌟 أبطال رحلتنا</h2>
+<div class="profiles">
+<button class="profile active" onclick="choose(this)">👦 إياد</button>
+<button class="profile" onclick="choose(this)">👧 مايان</button>
+<button class="profile" onclick="choose(this)">👧 ليان</button>
+</div>
+
+<h2 style="margin-top:30px">📚 مكتبة قصص الأنبياء</h2>
+<div id="stories"></div>
+<footer>أثر الأنبياء © 2026<br>بالعلم والإيمان نكبر</footer>
+</main>
+
+<script>
+const stories=[
+{n:"آدم عليه السلام",e:"🌿",d:"قصة بداية خلق الإنسان، وتعليم الله لآدم الأسماء، ثم توبته إلى الله.",m:"علّمنا الله أن نتوب إليه إذا أخطأنا، وألا نيأس من رحمته.",q:"ماذا نتعلم من قصة آدم؟",a:["أن نعترف بالخطأ ونتوب إلى الله","أن نكابر ولا نعتذر"],c:0},
+{n:"نوح عليه السلام",e:"🚢",d:"دعا نوح عليه السلام قومه إلى عبادة الله، وصبر عليهم زمنًا طويلًا، وأمره الله بصنع السفينة.",m:"الصبر والثبات على الحق وطاعة الله.",q:"ما الذي نتعلمه من نوح؟",a:["الصبر وعدم اليأس","الاستسلام بسرعة"],c:0},
+{n:"إبراهيم عليه السلام",e:"⭐",d:"دعا إبراهيم عليه السلام قومه إلى عبادة الله وحده، وأراه الله ملكوت السماوات والأرض.",m:"التفكر في خلق الله والثبات على التوحيد.",q:"إلى ماذا دعا إبراهيم قومه؟",a:["إلى عبادة الله وحده","إلى عبادة الأصنام"],c:0},
+{n:"موسى عليه السلام",e:"🌊",d:"أرسل الله موسى إلى فرعون، وأيده بآيات عظيمة، ومنها انفلاق البحر.",m:"الثقة بالله والشجاعة في قول الحق.",q:"ما المعجزة التي أيد الله بها موسى عند البحر؟",a:["انفلاق البحر","بناء السفينة"],c:0},
+{n:"عيسى عليه السلام",e:"🕊️",d:"أرسل الله عيسى إلى بني إسرائيل، وأيده بمعجزات بإذن الله، ومنها إبراء الأكمه والأبرص وإحياء الموتى بإذن الله.",m:"الإيمان بالله والرحمة بالناس.",q:"بإذن من كانت معجزات عيسى؟",a:["بإذن الله","بقدرته الذاتية"],c:0}
+];
+
+const root=document.getElementById("stories");
+stories.forEach((s,i)=>{
+root.innerHTML+=`<div class="card">
+<div style="font-size:30px">${s.e}</div>
+<h3>${s.n}</h3>
+<p>${s.d}</p>
+<button class="btn" onclick="showStory(${i})">اكتشف القصة ←</button>
+</div>`;
+});
+
+function choose(btn){
+document.querySelectorAll(".profile").forEach(x=>x.classList.remove("active"));
+btn.classList.add("active");
+}
+function showStory(i){
+const s=stories[i];
+const answer=prompt(s.q+"\n1- "+s.a[0]+"\n2- "+s.a[1]+"\n\nاكتب 1 أو 2");
+if(answer===null)return;
+if(answer.trim()==="1"){
+alert("أحسنت! ⭐ إجابة صحيحة\n\nالدرس المستفاد:\n"+s.m);
+}else{
+alert("حاول مرة أخرى ❤️\n\nفكر في الدرس المستفاد:\n"+s.m);
+}
+}
+</script>
+</body>
+</html>
