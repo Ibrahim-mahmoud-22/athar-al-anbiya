@@ -3,410 +3,516 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#092c32">
-<meta name="description" content="أثر الأنبياء - مكتبة تربوية تفاعلية للأطفال">
-<title>أثر الأنبياء | حكايات نتعلم منها</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#092b2b">
+<title>أثر الأنبياء | رحلة الإيمان والمعرفة</title>
+
 <style>
-:root {
-  --bg:#071f25;
-  --panel:#0d3037;
-  --panel2:#123b42;
-  --gold:#e8bd69;
-  --gold2:#f4d99d;
+:root{
+  --bg:#071f20;
+  --panel:#103536;
+  --panel2:#164344;
+  --gold:#d9b66b;
+  --gold2:#f2d99d;
   --text:#f8f3e8;
-  --muted:#b8c9c5;
-  --line:#285057;
-  --green:#79c6a4;
-  --red:#e58b83;
-  --shadow:0 18px 45px #0005;
+  --muted:#b7c9c1;
+  --green:#70b99a;
+  --border:rgba(217,182,107,.22);
+  --danger:#e58a80;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
+*{box-sizing:border-box}
+body{
   margin:0;
-  background:radial-gradient(ellipse at 50% -20%,#1c5054 0,transparent 55%),var(--bg);
+  font-family:Tahoma,Arial,sans-serif;
+  background:
+    radial-gradient(ellipse at top,#164344 0%,transparent 55%),
+    var(--bg);
   color:var(--text);
-  font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;
+  min-height:100vh;
   line-height:1.8;
 }
-button { font:inherit; cursor:pointer; }
-button:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
-.wrap { width:min(1120px,100% - 28px); margin:auto; }
-.top {
-  padding:22px 0 12px;
+button,input{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.4;cursor:not-allowed}
+.container{width:min(1050px,92%);margin:auto}
+header{
+  padding:20px 0;
+  border-bottom:1px solid var(--border);
+  background:rgba(7,31,32,.85);
+}
+.nav{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
 }
-.brand { display:flex; align-items:center; gap:12px; }
-.logo {
-  width:48px;height:48px;
-  border:1px solid #b88c49;
-  border-radius:16px;
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:48px;height:48px;border-radius:15px;
   display:grid;place-items:center;
-  color:var(--gold);font-size:25px;
-  background:linear-gradient(145deg,#19454a,#09272d);
-  box-shadow:var(--shadow);
+  background:linear-gradient(145deg,#e6cb8d,#a77d39);
+  color:#183536;font-size:26px;
 }
-.brand h1 { font-size:21px;margin:0;color:var(--gold2); }
-.brand p { margin:0;color:var(--muted);font-size:12px; }
-.pill {
-  border:1px solid var(--line);
-  border-radius:99px;
+.brand h1{font-size:19px;margin:0;color:var(--gold2)}
+.brand small{display:block;color:var(--muted);font-size:11px}
+.nav-tag{color:var(--gold);font-size:12px}
+.hero{
+  text-align:center;
+  padding:48px 15px 30px;
+}
+.hero-symbol{font-size:55px;margin-bottom:8px}
+.hero h2{
+  color:var(--gold2);font-size:clamp(27px,6vw,42px);
+  margin:0 0 10px;
+}
+.hero p{color:var(--muted);max-width:650px;margin:0 auto}
+.gold-line{
+  width:75px;height:3px;background:var(--gold);
+  margin:22px auto;border-radius:5px;
+}
+.section-title{
+  color:var(--gold2);font-size:21px;margin:0 0 15px;
+}
+.panel{
+  background:linear-gradient(145deg,rgba(22,67,68,.9),rgba(13,48,49,.95));
+  border:1px solid var(--border);
+  border-radius:20px;padding:20px;margin:18px 0;
+}
+.profiles{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.profile{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.035);
+  border-radius:17px;padding:17px 8px;
+  color:var(--text);text-align:center;
+  transition:.2s;
+}
+.profile:hover,.profile.active{
+  border-color:var(--gold);
+  background:rgba(217,182,107,.12);
+  transform:translateY(-2px);
+}
+.avatar{display:block;font-size:34px;margin-bottom:5px}
+.profile strong{display:block;color:var(--gold2)}
+.profile small{display:block;color:var(--muted);font-size:11px}
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:10px;margin:15px 0;
+}
+.stat{
+  background:rgba(255,255,255,.045);
+  border:1px solid var(--border);
+  padding:13px 8px;border-radius:15px;text-align:center;
+}
+.stat strong{display:block;font-size:23px;color:var(--gold2)}
+.stat small{color:var(--muted)}
+.progress-track{
+  height:8px;border-radius:20px;background:#092526;
+  overflow:hidden;margin-top:12px;
+}
+.progress-fill{
+  height:100%;width:0;background:var(--gold);
+  transition:width .3s;
+}
+.search{
+  width:100%;padding:13px 15px;
+  background:#092a2b;color:white;
+  border:1px solid var(--border);
+  border-radius:13px;outline:none;
+}
+.search:focus{border-color:var(--gold)}
+.filters{
+  display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;
+}
+.filter{
+  border:1px solid var(--border);
+  background:transparent;color:var(--muted);
+  padding:7px 14px;border-radius:20px;font-size:13px;
+}
+.filter.active{
+  background:var(--gold);color:#173637;border-color:var(--gold);
+}
+.story-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:13px;
+}
+.story-card{
+  background:linear-gradient(145deg,#123d3e,#0d3031);
+  border:1px solid var(--border);
+  border-radius:17px;padding:17px;
+}
+.story-card h3{color:var(--gold2);margin:7px 0}
+.story-card p{color:var(--muted);font-size:13px;margin:5px 0 12px}
+.story-number{font-size:11px;color:var(--gold)}
+.story-status{font-size:11px;color:var(--green)}
+.btn{
+  border:0;border-radius:12px;padding:11px 17px;
+  font-weight:bold;
+}
+.btn-gold{
+  background:linear-gradient(135deg,#f1d99e,#c9a354);
+  color:#173536;
+}
+.btn-soft{
+  color:var(--gold2);background:rgba(217,182,107,.1);
+  border:1px solid var(--border);
+}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+button:focus-visible,input:focus-visible{
+  outline:2px solid var(--gold);outline-offset:3px;
+}
+.reader{
+  display:none;
+  position:fixed;inset:0;z-index:10;
+  background:rgba(0,0,0,.82);
+  overflow:auto;padding:18px 10px;
+}
+.reader.show{display:block}
+.reader-box{
+  width:min(760px,100%);margin:15px auto;
+  background:#0c3031;border:1px solid var(--border);
+  border-radius:22px;padding:20px;
+  min-height:80vh;
+}
+.reader-head{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:10px;
+}
+.reader-head h2{color:var(--gold2);font-size:22px}
+.close{
+  background:transparent;border:1px solid var(--border);
+  color:var(--gold2);border-radius:10px;
   padding:7px 12px;
-  color:var(--muted);
-  font-size:12px;
-  background:#ffffff08;
 }
-.hero {
-  margin:18px 0 22px;
-  padding:clamp(22px,5vw,42px);
-  border:1px solid #7d663d;
-  border-radius:28px;
-  background:linear-gradient(120deg,#16454a,#0b2a30 65%,#173a3b);
-  position:relative;
-  overflow:hidden;
-  box-shadow:var(--shadow);
+.intro{color:var(--muted);font-size:14px}
+.mode-row{display:flex;gap:8px;margin:17px 0}
+.mode{
+  flex:1;padding:10px;border-radius:11px;
+  background:transparent;color:var(--muted);
+  border:1px solid var(--border);
 }
-.hero:after {
-  content:"✦";position:absolute;left:8%;top:5%;
-  font-size:100px;color:#e8bd6914;
+.mode.active{background:var(--gold);color:#173536}
+.scene-box{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.035);
+  padding:20px;border-radius:18px;
 }
-.eyebrow { color:var(--gold);font-size:13px;font-weight:700; }
-.hero h2 {
-  font-size:clamp(27px,5vw,43px);
-  line-height:1.35;margin:7px 0 10px;max-width:700px;
+.scene-count{font-size:12px;color:var(--gold)}
+.scene-box h3{color:var(--gold2);font-size:23px}
+.scene-text{font-size:16px;line-height:2.1}
+.source-note{
+  color:var(--muted);font-size:12px;
+  border-top:1px solid var(--border);
+  padding-top:12px;margin-top:16px;
 }
-.hero p { color:#d2dfd9;max-width:680px;margin:0 0 18px; }
-.goldbtn,.softbtn,.ghostbtn {
-  border:0;border-radius:14px;padding:11px 18px;font-weight:700;
+.lesson{
+  background:rgba(112,185,154,.1);
+  border-right:3px solid var(--green);
+  border-radius:10px;padding:12px;margin-top:18px;
+  font-size:14px;
 }
-.goldbtn {
-  background:linear-gradient(135deg,#f1d69b,#d6a54f);
-  color:#1b2924;
+.reader-actions{
+  display:flex;justify-content:space-between;
+  gap:10px;margin:16px 0;
 }
-.softbtn { background:#ffffff12;color:var(--text);border:1px solid var(--line); }
-.ghostbtn { background:transparent;color:var(--muted);border:1px solid var(--line); }
-.section-head {
-  display:flex;align-items:end;justify-content:space-between;
-  gap:12px;margin:26px 0 12px;
+.lessons-list{color:var(--muted);padding-right:22px}
+.quiz-question{
+  border:1px solid var(--border);
+  border-radius:15px;padding:15px;margin:14px 0;
 }
-.section-head h3 { margin:0;font-size:21px; }
-.section-head p { margin:2px 0 0;color:var(--muted);font-size:13px; }
-.profile-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
-.profile {
-  border:1px solid var(--line);border-radius:18px;
-  padding:14px;background:#ffffff08;color:var(--text);
-  text-align:right;display:flex;align-items:center;gap:12px;
+.quiz-question h3{font-size:16px;color:var(--gold2)}
+.answer{
+  display:block;width:100%;text-align:right;
+  padding:11px 13px;margin:8px 0;
+  border:1px solid var(--border);border-radius:10px;
+  color:var(--text);background:rgba(255,255,255,.04);
 }
-.profile.active {
-  border-color:var(--gold);background:#d8ad5b18;
-  box-shadow:0 0 0 1px #d8ad5b33;
+.answer.selected{border-color:var(--gold);background:rgba(217,182,107,.13)}
+.answer.correct{border-color:var(--green);background:rgba(112,185,154,.15)}
+.answer.wrong{border-color:var(--danger);background:rgba(229,138,128,.12)}
+.feedback{font-size:13px;color:var(--muted);margin-top:8px}
+.result{
+  text-align:center;padding:18px;
+  border:1px solid var(--border);border-radius:15px;
+  margin-top:15px;
 }
-.avatar {
-  width:42px;height:42px;flex:none;border-radius:14px;
-  background:#e8bd691c;display:grid;place-items:center;font-size:22px;
+.result h3{color:var(--gold2)}
+footer{
+  text-align:center;color:var(--muted);
+  padding:30px 10px;font-size:12px;
+  border-top:1px solid var(--border);margin-top:40px;
 }
-.profile strong { display:block; }
-.profile small { color:var(--muted);font-size:11px; }
-.stats { display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px; }
-.stat {
-  padding:12px;border-radius:16px;background:#ffffff08;
-  border:1px solid var(--line);text-align:center;
+.toast{
+  position:fixed;bottom:20px;left:50%;
+  transform:translateX(-50%);
+  background:#f0d89b;color:#163637;
+  padding:12px 20px;border-radius:12px;
+  z-index:30;display:none;
+  width:max-content;max-width:90%;
+  box-shadow:0 5px 25px #0006;
 }
-.stat b { display:block;font-size:22px;color:var(--gold2); }
-.stat span { font-size:11px;color:var(--muted); }
-.searchrow { display:flex;gap:10px;margin:14px 0; }
-.search {
-  width:100%;background:#09272d;border:1px solid var(--line);
-  border-radius:14px;padding:12px 14px;color:var(--text);font:inherit;
-}
-.filters { display:flex;gap:8px;overflow:auto;padding:2px 0 8px; }
-.filter {
-  white-space:nowrap;border:1px solid var(--line);
-  border-radius:99px;background:#ffffff08;
-  color:var(--muted);padding:7px 13px;font-size:12px;
-}
-.filter.active { background:#e8bd6920;color:var(--gold2);border-color:#b88c49; }
-.story-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:12px; }
-.story-card {
-  border:1px solid var(--line);border-radius:20px;padding:17px;
-  background:linear-gradient(145deg,#123a40,#0b292f);
-  display:flex;flex-direction:column;min-height:175px;
-}
-.story-card.available { border-color:#8b7042; }
-.story-card .num { font-size:11px;color:var(--gold); }
-.story-card h4 { font-size:18px;margin:6px 0; }
-.story-card p { font-size:12px;color:var(--muted);margin:0 0 14px;flex:1; }
-.card-foot { display:flex;align-items:center;justify-content:space-between;gap:8px; }
-.status { font-size:11px;color:var(--muted); }
-.open-story {
-  border:1px solid #8c7041;background:#e8bd691b;
-  color:var(--gold2);border-radius:11px;padding:7px 11px;
-  font-size:12px;font-weight:700;
-}
-.open-story:disabled { opacity:.45;cursor:not-allowed; }
-footer { padding:32px 0 44px;text-align:center;color:#90aaa5;font-size:11px; }
-.overlay {
-  position:fixed;inset:0;background:#041519ef;z-index:10;
-  overflow:auto;padding:18px 12px;display:none;
-}
-.overlay.show { display:block; }
-.reader {
-  width:min(850px,100%);margin:0 auto;background:#0b2a30;
-  border:1px solid #456166;border-radius:24px;overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.reader-head {
-  padding:20px;border-bottom:1px solid var(--line);
-  background:linear-gradient(120deg,#16454a,#0b2a30);
-  position:sticky;top:0;z-index:2;
-}
-.reader-top { display:flex;justify-content:space-between;gap:12px;align-items:center; }
-.reader-head h2 { margin:7px 0 0;font-size:25px; }
-.close {
-  background:#ffffff12;border:1px solid var(--line);
-  color:var(--text);width:38px;height:38px;border-radius:12px;font-size:20px;
-}
-.reader-body { padding:20px; }
-.modebar { display:flex;gap:8px;margin:10px 0 18px; }
-.modebtn {
-  flex:1;padding:10px;border-radius:12px;border:1px solid var(--line);
-  background:#ffffff08;color:var(--muted);
-}
-.modebtn.active { border-color:var(--gold);color:var(--gold2);background:#e8bd6918; }
-.scene {
-  border:1px solid var(--line);border-radius:18px;
-  padding:18px;background:#ffffff06;margin-bottom:13px;
-}
-.scene h3 { margin:0 0 12px;color:var(--gold2);font-size:19px; }
-.scene p { white-space:pre-line;margin:0 0 12px; }
-.source {
-  border-right:3px solid var(--gold);padding:9px 12px;
-  background:#e8bd690d;color:#f0dfb9;border-radius:8px;font-size:13px;
-}
-.lesson { margin-top:12px;color:#bfe4d2;font-size:13px; }
-.scene-nav { display:flex;justify-content:space-between;gap:10px;margin-top:14px; }
-.scene-nav button { flex:1; }
-.read-tools { display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px; }
-.read-tools button { font-size:12px; }
-.quiz {
-  border:1px solid #8c7041;border-radius:18px;
-  padding:17px;margin-top:18px;background:#e8bd6909;
-}
-.quiz h3 { margin:0 0 12px;color:var(--gold2); }
-.q { padding:12px 0;border-top:1px solid var(--line); }
-.q:first-of-type { border:0; }
-.q p { margin:0 0 8px;font-weight:700; }
-.option {
-  display:block;width:100%;text-align:right;margin:6px 0;
-  padding:9px 12px;border:1px solid var(--line);
-  border-radius:11px;background:#ffffff08;color:var(--text);
-}
-.option.selected { border-color:var(--gold);background:#e8bd691b; }
-.option.correct { border-color:var(--green); }
-.option.wrong { border-color:var(--red); }
-.feedback { font-size:12px;color:var(--muted);margin-top:7px; }
-.toast {
-  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
-  background:#e8bd69;color:#182721;padding:10px 16px;
-  border-radius:12px;font-weight:700;display:none;z-index:20;
-}
-@media(max-width:760px) {
-  .story-grid { grid-template-columns:repeat(2,1fr); }
-  .profile-grid { grid-template-columns:1fr; }
-  .profile { padding:10px; }
-  .stats { gap:7px; }
-  .stat { padding:9px 5px; }
-  .hero { border-radius:22px; }
-  .top { align-items:flex-start; }
-  .pill { font-size:10px; }
-}
-@media(max-width:420px) {
-  .story-grid { grid-template-columns:1fr 1fr;gap:8px; }
-  .story-card { padding:13px;min-height:185px; }
-  .story-card h4 { font-size:16px; }
-  .card-foot { align-items:flex-start;flex-direction:column; }
-  .open-story { width:100%; }
-  .hero h2 { font-size:27px; }
+.empty{text-align:center;color:var(--muted);padding:25px}
+@media(max-width:600px){
+  .story-grid{grid-template-columns:1fr}
+  .hero{padding-top:30px}
+  .panel{padding:15px}
+  .reader-box{padding:15px}
+  .scene-text{font-size:15px}
 }
 </style>
 </head>
+
 <body>
-<div class="wrap">
-<header class="top">
- <div class="brand">
-  <div class="logo">✦</div>
-  <div><h1>أثر الأنبياء</h1><p>حكايات نتعلم منها • معرفة وقيم وإيمان</p></div>
- </div>
- <div class="pill">نسخة تجريبية للمراجعة</div>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">۞</div>
+      <div>
+        <h1>أثر الأنبياء</h1>
+        <small>رحلة الإيمان والمعرفة</small>
+      </div>
+    </div>
+    <span class="nav-tag">رحلة نتعلم منها</span>
+  </div>
 </header>
-<section class="hero">
- <div class="eyebrow">رحلة في قصص الأنبياء</div>
- <h2>كل حكاية فيها نور… وكل درس يترك أثرًا</h2>
- <p>نتعرف معًا على قصص الأنبياء، ونتعلم منها الصدق والصبر والرحمة والتوكل على الله، خطوة بخطوة وبأسلوب يناسب الأطفال.</p>
- <button class="goldbtn" onclick="document.getElementById('library').scrollIntoView({behavior:'smooth'})">ابدأ الرحلة ←</button>
-</section>
-<section>
- <div class="section-head">
-  <div><h3>اختار ملف البطل</h3><p>لكل طفل تقدمه ونجومه المحفوظة على هذا الجهاز</p></div>
- </div>
- <div class="profile-grid" id="profiles"></div>
- <div class="stats">
-  <div class="stat"><b id="stars">0</b><span>نجمة مكتسبة</span></div>
-  <div class="stat"><b id="done">0</b><span>قصة مكتملة</span></div>
-  <div class="stat"><b id="level">المستكشف</b><span>المستوى الحالي</span></div>
- </div>
-</section>
-<section id="library">
- <div class="section-head">
-  <div><h3>مكتبة الأنبياء</h3><p>القصص المتاحة ستظهر هنا تباعًا بعد مراجعة محتواها</p></div>
- </div>
- <div class="searchrow">
-  <input id="search" class="search" placeholder="ابحث عن نبي..." oninput="renderStories()" aria-label="ابحث عن نبي">
- </div>
- <div class="filters">
-  <button class="filter active" onclick="setFilter('all',this)">الكل</button>
-  <button class="filter" onclick="setFilter('ready',this)">المتاح الآن</button>
-  <button class="filter" onclick="setFilter('later',this)">قيد الإعداد</button>
- </div>
- <div class="story-grid" id="storyGrid"></div>
-</section>
-<footer>أثر الأنبياء © <span id="year"></span><br>المحتوى الديني للمراجعة قبل النشر • لا يتم تصوير الأنبياء</footer>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="hero-symbol">🌙</div>
+    <h2>أثر الأنبياء</h2>
+    <div class="gold-line"></div>
+    <p>
+      رحلة جميلة نتعرف فيها على قصص أنبياء الله،
+      ونتعلم من حياتهم الصبر والإيمان والصدق وحسن الخلق.
+    </p>
+  </section>
+
+  <section class="panel">
+    <h2 class="section-title">🌟 اختار ملف رحلتك</h2>
+    <p style="color:var(--muted);font-size:13px">
+      لكل بطل ملف مستقل، وتقدمه ونجومه محفوظة على هذا الجهاز.
+    </p>
+    <div class="profiles" id="profiles"></div>
+  </section>
+
+  <section class="panel" id="dashboard">
+    <h2 class="section-title">🏆 لوحة إنجازاتك</h2>
+    <div class="stats">
+      <div class="stat">
+        <strong id="stars">0</strong>
+        <small>النجوم ⭐</small>
+      </div>
+      <div class="stat">
+        <strong id="done">0</strong>
+        <small>القصص المكتملة</small>
+      </div>
+      <div class="stat">
+        <strong id="level">المستكشف</strong>
+        <small>مستواك</small>
+      </div>
+    </div>
+    <div style="color:var(--muted);font-size:12px">
+      تقدمك في مكتبة الأنبياء
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressBar"></div>
+    </div>
+    <p id="progressText" style="color:var(--muted);font-size:12px">
+      لم تبدأ الرحلة بعد
+    </p>
+  </section>
+
+  <section class="panel">
+    <h2 class="section-title">📚 مكتبة الأنبياء</h2>
+    <input id="search" class="search"
+      placeholder="ابحث عن اسم نبي..."
+      oninput="renderStories()">
+
+    <div class="filters">
+      <button class="filter active" onclick="setFilter('all',this)">كل الأنبياء</button>
+      <button class="filter" onclick="setFilter('ready',this)">القصص المتاحة</button>
+      <button class="filter" onclick="setFilter('later',this)">قيد الإعداد</button>
+    </div>
+
+    <div class="story-grid" id="storyGrid"></div>
+  </section>
+
+  <section class="panel">
+    <h2 class="section-title">💡 كيف نتعلم؟</h2>
+    <p style="color:var(--muted);font-size:14px">
+      اقرأ القصة بطريقتك، واستمع إلى النص، ثم أجب عن الأسئلة.
+      الهدف ليس جمع النجوم فقط، بل فهم المعاني الجميلة والعمل بها.
+    </p>
+    <p style="color:var(--gold2);font-size:13px">
+      المعرفة نور، والأخلاق أثر يبقى.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  أثر الأنبياء © <span id="year"></span>
+  <br>
+  محتوى تعليمي للأطفال، مع الحرص على توثيق المعلومات من القرآن الكريم.
+</footer>
+
+<div class="reader" id="reader">
+  <div class="reader-box">
+
+    <div class="reader-head">
+      <h2 id="storyTitle">قصة النبي</h2>
+      <button class="close" onclick="closeReader()">إغلاق ✕</button>
+    </div>
+
+    <p class="intro" id="storyIntro"></p>
+
+    <div class="mode-row">
+      <button class="mode active" id="simpleBtn"
+        onclick="setMode('simple')">احكِ لي</button>
+      <button class="mode" id="deepBtn"
+        onclick="setMode('deep')">اكتشف أكثر</button>
+    </div>
+
+    <div id="sceneArea"></div>
+
+    <div class="reader-actions">
+      <button class="btn btn-soft" id="prevBtn"
+        onclick="moveScene(-1)">→ السابق</button>
+      <button class="btn btn-gold" id="speakBtn"
+        onclick="speakScene()">🔊 استمع</button>
+      <button class="btn btn-gold" id="nextBtn"
+        onclick="moveScene(1)">التالي ←</button>
+    </div>
+
+    <div id="quizArea"></div>
+
+    <section class="panel" style="margin-top:20px">
+      <h3 style="color:var(--gold2)">🌱 ماذا نتعلم؟</h3>
+      <ul class="lessons-list" id="lessons"></ul>
+    </section>
+
+  </div>
 </div>
 
-<div class="overlay" id="reader" role="dialog" aria-modal="true" aria-label="قارئ القصة">
- <article class="reader">
-  <div class="reader-head">
-   <div class="reader-top">
-    <div><div class="eyebrow" id="storyEyebrow">رحلة تعليمية</div><h2 id="storyTitle">آدم عليه السلام</h2></div>
-    <button class="close" onclick="closeReader()" aria-label="إغلاق">×</button>
-   </div>
-  </div>
-  <div class="reader-body">
-   <div class="read-tools">
-    <button class="softbtn" onclick="speakCurrent()">🔊 استمع</button>
-    <button class="softbtn" onclick="stopSpeak()">إيقاف الصوت</button>
-   </div>
-   <div class="modebar">
-    <button class="modebtn active" id="simpleBtn" onclick="setMode('simple')">احكِ لي</button>
-    <button class="modebtn" id="deepBtn" onclick="setMode('deep')">اكتشف أكثر</button>
-   </div>
-   <div id="sceneContent"></div>
-   <div class="scene-nav">
-    <button class="softbtn" id="prevBtn" onclick="moveScene(-1)">السابق</button>
-    <button class="goldbtn" id="nextBtn" onclick="moveScene(1)">التالي</button>
-   </div>
-   <div id="quizArea"></div>
-  </div>
- </article>
-</div>
 <div class="toast" id="toast"></div>
 
 <script>
-const children=[
-{id:"eyad",name:"إياد",emoji:"🦁",desc:"ملف البطل الأول"},
-{id:"mayan",name:"مايان",emoji:"🦋",desc:"ملف البطلة الثانية"},
-{id:"layan",name:"ليان",emoji:"🌸",desc:"ملف البطلة الثالثة"}
+/* بيانات الأطفال */
+
+const children = [
+  {id:"eyad",name:"إياد",emoji:"🦁",desc:"رحلة البطل الصغير"},
+  {id:"mayan",name:"مايان",emoji:"🦋",desc:"رحلة البطلة الصغيرة"},
+  {id:"layan",name:"ليان",emoji:"🌸",desc:"رحلة البطلة الصغيرة"}
 ];
 
-const prophets=[
-"آدم","إدريس","نوح","هود","صالح","إبراهيم","لوط","إسماعيل","إسحاق","يعقوب",
-"يوسف","أيوب","شعيب","موسى","هارون","ذو الكفل","داود","سليمان","إلياس","اليسع",
-"يونس","زكريا","يحيى","عيسى","محمد"
+/* قائمة الأنبياء */
+
+const prophets = [
+  "آدم","إدريس","نوح","هود","صالح","إبراهيم","لوط",
+  "إسماعيل","إسحاق","يعقوب","يوسف","أيوب","شعيب",
+  "موسى","هارون","ذو الكفل","داود","سليمان","إلياس",
+  "اليسع","يونس","زكريا","يحيى","عيسى","محمد"
 ];
 
-const stories=[
+/* مكتبة القصص */
+
+const stories = [
 {
-name:"آدم",
-title:"آدم عليه السلام",
-summary:"بداية خلق الإنسان، ونعمة العلم، وخطر الكبر، ومعنى التوبة.",
-scenes:[
-{
-title:"خليفة في الأرض",
-simple:"أخبر الله سبحانه وتعالى الملائكة أنه سيجعل في الأرض خليفة. فسألت الملائكة ربها عن الحكمة من وجود مخلوق قد يفسد في الأرض ويسفك الدماء، فأخبرهم الله أنه يعلم ما لا يعلمون.",
-deep:"قال الله تعالى: ﴿وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً ۖ قَالُوا أَتَجْعَلُ فِيهَا مَن يُفْسِدُ فِيهَا وَيَسْفِكُ الدِّمَاءَ وَنَحْنُ نُسَبِّحُ بِحَمْدِكَ وَنُقَدِّسُ لَكَ ۖ قَالَ إِنِّي أَعْلَمُ مَا لَا تَعْلَمُونَ﴾. سورة البقرة: 30. سؤال الملائكة كان سؤالًا عن الحكمة، وليس اعتراضًا على أمر الله.",
-lesson:"الله سبحانه وتعالى حكيم، وقد لا نعرف الحكمة الكاملة من كل أمر."
-},
-{
-title:"خلق آدم عليه السلام",
-simple:"خلق الله آدم عليه السلام من طين، وسوّاه، ونفخ فيه من روحه كما أخبرنا القرآن الكريم. وكان خلق آدم بداية خلق البشر.",
-deep:"قال تعالى: ﴿إِنَّ مَثَلَ عِيسَىٰ عِندَ اللَّهِ كَمَثَلِ آدَمَ ۖ خَلَقَهُ مِن تُرَابٍ ثُمَّ قَالَ لَهُ كُن فَيَكُونُ﴾ آل عمران: 59. وقال تعالى: ﴿إِنِّي خَالِقٌ بَشَرًا مِّن طِينٍ ۝ فَإِذَا سَوَّيْتُهُ وَنَفَخْتُ فِيهِ مِن رُّوحِي﴾ ص: 71–72. نلتزم بما ورد في القرآن ولا نضيف تفاصيل غير ثابتة عن كيفية الخلق.",
-lesson:"الله قادر على كل شيء، وأصل الإنسان يذكره بالتواضع."
-},
-{
-title:"تعليم آدم الأسماء",
-simple:"علّم الله آدم الأسماء، وكان ذلك فضلًا عظيمًا من الله عليه. ثم أظهر الله للملائكة ما علّمه آدم، فأخبرهم آدم بالأسماء التي علّمه الله إياها.",
-deep:"قال تعالى: ﴿وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا...﴾ إلى قوله ﴿أَنبِئْهُم بِأَسْمَائِهِمْ﴾ البقرة: 31–33. لا تحدد الآيات بالتفصيل المقصود بكل الأسماء، لذلك لا نجزم بتفاصيل لم ينص عليها القرآن.",
-lesson:"العلم نعمة من الله، والتواضع في طلب العلم من أخلاق المؤمن."
-},
-{
-title:"أمر الله بالسجود لآدم",
-simple:"أمر الله الملائكة أن يسجدوا لآدم، فسجدوا امتثالًا لأمر الله، لكن إبليس أبى واستكبر، واعتقد أنه أفضل من آدم.",
-deep:"قال تعالى: ﴿فَسَجَدُوا إِلَّا إِبْلِيسَ أَبَىٰ وَاسْتَكْبَرَ﴾ البقرة: 34. وقال تعالى عن إبليس: ﴿خَلَقْتَنِي مِن نَّارٍ وَخَلَقْتَهُ مِن طِينٍ﴾ ص: 76. والسجود كان امتثالًا لأمر الله وتكريمًا لآدم، وليس عبادة له. وإبليس من الجن كما في الكهف: 50.",
-lesson:"الكبر والعصيان خطر، ولا يجوز احتقار الآخرين."
-},
-{
-title:"آدم وزوجه في الجنة",
-simple:"أسكن الله آدم وزوجه الجنة، وأباح لهما أن يأكلا منها حيث شاءا، ونهاهما عن شجرة معينة، وأمرهما ألا يقتربا منها.",
-deep:"قال تعالى: ﴿اسْكُنْ أَنتَ وَزَوْجُكَ الْجَنَّةَ وَكُلَا مِنْهَا رَغَدًا حَيْثُ شِئْتُمَا وَلَا تَقْرَبَا هَٰذِهِ الشَّجَرَةَ﴾ البقرة: 35. لم يذكر القرآن نوع الشجرة، فلا يصح الجزم بأنها شجرة تفاح أو غيرها.",
-lesson:"نعم الله كثيرة، وعلينا الالتزام بما أمرنا به."
-},
-{
-title:"وسوسة الشيطان",
-simple:"وسوس الشيطان لآدم وزوجه، وخدعهما وحلف لهما أنه يريد لهما الخير. فأكلا من الشجرة، ثم أدركا أنهما خالفا أمر الله.",
-deep:"توضح الأعراف: 20–22 كيف زين الشيطان لهما المعصية وقاسمهما أنه ناصح لهما. قال تعالى: ﴿فَدَلَّاهُمَا بِغُرُورٍ﴾ الأعراف: 22. لا نضيف حوارًا آخر غير الوارد في النص القرآني.",
-lesson:"الشيطان عدو للإنسان، وليس كل من يدّعي النصح صادقًا."
-},
-{
-title:"توبة آدم وزوجه",
-simple:"عندما أدرك آدم وزوجه خطأهما، رجعا إلى الله وطلبا المغفرة والرحمة، فتاب الله عليهما.",
-deep:"قال تعالى: ﴿فَتَلَقَّىٰ آدَمُ مِن رَّبِّهِ كَلِمَاتٍ فَتَابَ عَلَيْهِ﴾ البقرة: 37. وقالا: ﴿رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ﴾ الأعراف: 23.",
-lesson:"إذا أخطأنا نعترف بخطئنا ونتوب إلى الله ولا نصر عليه."
-},
-{
-title:"بداية الحياة على الأرض",
-simple:"أخبر الله آدم وزوجه أنهما سيهبطان إلى الأرض، وأنه سيرسل للبشر هدى، فمن اتبع هدى الله فلا يضل ولا يشقى.",
-deep:"قال تعالى: ﴿فَإِمَّا يَأْتِيَنَّكُم مِّنِّي هُدًى فَمَن تَبِعَ هُدَايَ فَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ﴾ البقرة: 38. وقال تعالى: ﴿فَمَنِ اتَّبَعَ هُدَايَ فَلَا يَضِلُّ وَلَا يَشْقَىٰ﴾ طه: 123.",
-lesson:"اتباع هدى الله طريق الخير والنجاة."
-}
-],
-quiz:[
-{
-q:"ماذا أخبر الله الملائكة أنه سيجعل في الأرض؟",
-opts:["خليفة","بحرًا","جبلًا"],
-a:0,
-why:"ورد ذلك في سورة البقرة، الآية 30."
-},
-{
-q:"مم خلق الله آدم عليه السلام؟",
-opts:["من نار","من تراب وطين","من نور"],
-a:1,
-why:"ذكر القرآن خلق آدم من تراب وطين."
-},
-{
-q:"لماذا رفض إبليس السجود؟",
-opts:["لأنه لم يسمع الأمر","لأنه استكبر","لأنه لم يعرف آدم"],
-a:1,
-why:"ذكر القرآن أن إبليس أبى واستكبر."
-},
-{
-q:"ماذا فعل آدم وزوجه بعد الخطأ؟",
-opts:["أصرا عليه","اتهما غيرهما","تابا إلى الله"],
-a:2,
-why:"دعوا الله بالمغفرة والرحمة، فتاب عليهما."
-}
-]
+  title:"آدم عليه السلام",
+  summary:"بداية خلق الإنسان، ونعمة العلم، وخطر الكبر، ومعنى التوبة.",
+  scenes:[
+    {
+      title:"خليفة في الأرض",
+      simple:"أخبر الله سبحانه وتعالى الملائكة أنه سيجعل في الأرض خليفة. فسألت الملائكة ربها عن الحكمة من وجود مخلوق قد يفسد في الأرض ويسفك الدماء، فأخبرهم الله أنه يعلم ما لا يعلمون.",
+      deep:"قال الله تعالى: ﴿وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً ۖ قَالُوا أَتَجْعَلُ فِيهَا مَن يُفْسِدُ فِيهَا وَيَسْفِكُ الدِّمَاءَ وَنَحْنُ نُسَبِّحُ بِحَمْدِكَ وَنُقَدِّسُ لَكَ ۖ قَالَ إِنِّي أَعْلَمُ مَا لَا تَعْلَمُونَ﴾. سورة البقرة: 30. سؤال الملائكة كان سؤالًا عن الحكمة، وليس اعتراضًا على أمر الله.",
+      lesson:"الله سبحانه وتعالى حكيم، وقد لا نعرف الحكمة الكاملة من كل أمر.",
+      source:"سورة البقرة: الآية 30"
+    },
+    {
+      title:"خلق آدم عليه السلام",
+      simple:"خلق الله آدم عليه السلام من طين، وسوّاه، ونفخ فيه من روحه كما أخبرنا القرآن الكريم. وكان خلق آدم بداية خلق البشر.",
+      deep:"قال تعالى: ﴿إِنَّ مَثَلَ عِيسَىٰ عِندَ اللَّهِ كَمَثَلِ آدَمَ ۖ خَلَقَهُ مِن تُرَابٍ ثُمَّ قَالَ لَهُ كُن فَيَكُونُ﴾ آل عمران: 59. وقال تعالى: ﴿إِنِّي خَالِقٌ بَشَرًا مِّن طِينٍ ۝ فَإِذَا سَوَّيْتُهُ وَنَفَخْتُ فِيهِ مِن رُّوحِي﴾ ص: 71–72. نلتزم بما ورد في القرآن ولا نضيف تفاصيل غير ثابتة عن كيفية الخلق.",
+      lesson:"الله قادر على كل شيء، وأصل الإنسان يذكره بالتواضع.",
+      source:"سورة آل عمران: 59، وسورة ص: 71–72"
+    },
+    {
+      title:"تعليم آدم الأسماء",
+      simple:"علّم الله آدم الأسماء، وكان ذلك فضلًا عظيمًا من الله عليه. ثم أظهر الله للملائكة ما علّمه آدم، فأخبرهم آدم بالأسماء التي علّمه الله إياها.",
+      deep:"قال تعالى: ﴿وَعَلَّمَ آدَمَ الْأَسْمَاءَ كُلَّهَا...﴾ إلى قوله ﴿أَنبِئْهُم بِأَسْمَائِهِمْ﴾ البقرة: 31–33. لا تحدد الآيات بالتفصيل المقصود بكل الأسماء، لذلك لا نجزم بتفاصيل لم ينص عليها القرآن.",
+      lesson:"العلم نعمة من الله، والتواضع في طلب العلم من أخلاق المؤمن.",
+      source:"سورة البقرة: 31–33"
+    },
+    {
+      title:"أمر الله بالسجود لآدم",
+      simple:"أمر الله الملائكة أن يسجدوا لآدم، فسجدوا امتثالًا لأمر الله، لكن إبليس أبى واستكبر، واعتقد أنه أفضل من آدم.",
+      deep:"قال تعالى: ﴿فَسَجَدُوا إِلَّا إِبْلِيسَ أَبَىٰ وَاسْتَكْبَرَ﴾ البقرة: 34. وقال تعالى عن إبليس: ﴿خَلَقْتَنِي مِن نَّارٍ وَخَلَقْتَهُ مِن طِينٍ﴾ ص: 76. والسجود كان امتثالًا لأمر الله وتكريمًا لآدم، وليس عبادة له. وإبليس من الجن كما في الكهف: 50.",
+      lesson:"الكبر والعصيان خطر، ولا يجوز احتقار الآخرين.",
+      source:"سورة البقرة: 34، سورة ص: 76، سورة الكهف: 50"
+    },
+    {
+      title:"آدم وزوجه في الجنة",
+      simple:"أسكن الله آدم وزوجه الجنة، وأباح لهما أن يأكلا منها حيث شاءا، ونهاهما عن شجرة معينة، وأمرهما ألا يقتربا منها.",
+      deep:"قال تعالى: ﴿اسْكُنْ أَنتَ وَزَوْجُكَ الْجَنَّةَ وَكُلَا مِنْهَا رَغَدًا حَيْثُ شِئْتُمَا وَلَا تَقْرَبَا هَٰذِهِ الشَّجَرَةَ﴾ البقرة: 35. لم يذكر القرآن نوع الشجرة، فلا يصح الجزم بأنها شجرة تفاح أو غيرها.",
+      lesson:"نعم الله كثيرة، وعلينا الالتزام بما أمرنا به.",
+      source:"سورة البقرة: 35"
+    },
+    {
+      title:"وسوسة الشيطان",
+      simple:"وسوس الشيطان لآدم وزوجه، وخدعهما وحلف لهما أنه يريد لهما الخير. فأكلا من الشجرة، ثم أدركا أنهما خالفا أمر الله.",
+      deep:"توضح الأعراف: 20–22 كيف زين الشيطان لهما المعصية وقاسمهما أنه ناصح لهما. قال تعالى: ﴿فَدَلَّاهُمَا بِغُرُورٍ﴾ الأعراف: 22. لا نضيف حوارًا آخر غير الوارد في النص القرآني.",
+      lesson:"الشيطان عدو للإنسان، وليس كل من يدّعي النصح صادقًا.",
+      source:"سورة الأعراف: 20–22"
+    },
+    {
+      title:"توبة آدم وزوجه",
+      simple:"عندما أدرك آدم وزوجه خطأهما، رجعا إلى الله وطلبا المغفرة والرحمة، فتاب الله عليهما.",
+      deep:"قال تعالى: ﴿فَتَلَقَّىٰ آدَمُ مِن رَّبِّهِ كَلِمَاتٍ فَتَابَ عَلَيْهِ﴾ البقرة: 37. وقالا: ﴿رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ﴾ الأعراف: 23.",
+      lesson:"إذا أخطأنا نعترف بخطئنا ونتوب إلى الله ولا نصر عليه.",
+      source:"سورة البقرة: 37، وسورة الأعراف: 23"
+    },
+    {
+      title:"بداية الحياة على الأرض",
+      simple:"أخبر الله آدم وزوجه أنهما سيهبطان إلى الأرض، وأنه سيرسل للبشر هدى، فمن اتبع هدى الله فلا يضل ولا يشقى.",
+      deep:"قال تعالى: ﴿فَإِمَّا يَأْتِيَنَّكُم مِّنِّي هُدًى فَمَن تَبِعَ هُدَايَ فَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ﴾ البقرة: 38. وقال تعالى: ﴿فَمَنِ اتَّبَعَ هُدَايَ فَلَا يَضِلُّ وَلَا يَشْقَىٰ﴾ طه: 123.",
+      lesson:"اتباع هدى الله طريق الخير والنجاة.",
+      source:"سورة البقرة: 38–39، وسورة طه: 123"
+    }
+  ],
+  quiz:[
+    {
+      q:"ماذا أخبر الله الملائكة أنه سيجعل في الأرض؟",
+      opts:["خليفة","بحرًا","جبلًا"],
+      a:0,
+      why:"ورد ذلك في سورة البقرة، الآية 30."
+    },
+    {
+      q:"مم خلق الله آدم عليه السلام؟",
+      opts:["من نار","من تراب وطين","من نور"],
+      a:1,
+      why:"ذكر القرآن خلق آدم من تراب وطين."
+    },
+    {
+      q:"لماذا رفض إبليس السجود؟",
+      opts:["لأنه لم يسمع الأمر","لأنه استكبر","لأنه لم يعرف آدم"],
+      a:1,
+      why:"ذكر القرآن أن إبليس أبى واستكبر."
+    },
+    {
+      q:"ماذا فعل آدم وزوجه بعد الخطأ؟",
+      opts:["أصرا عليه","اتهما غيرهما","تابا إلى الله"],
+      a:2,
+      why:"دعوا الله بالمغفرة والرحمة، فتاب عليهما."
+    }
+  ]
 }
 ];
-</script>
 
-<script>
-/* =========================================
-   ATHAR AL ANBIYA - APPLICATION ENGINE
-   ========================================= */
+/* إدارة التطبيق */
 
 let activeChild = null;
 let currentStory = 0;
@@ -414,473 +520,337 @@ let currentScene = 0;
 let readingMode = "simple";
 let selectedAnswers = [];
 let quizFinished = false;
+let currentFilter = "all";
 
 const $ = id => document.getElementById(id);
 
-function getProgress() {
-  if (!activeChild) return { completed: [], stars: 0, results: {} };
-
-  try {
-    return JSON.parse(localStorage.getItem("athar_" + activeChild)) ||
-      { completed: [], stars: 0, results: {} };
-  } catch {
-    return { completed: [], stars: 0, results: {} };
+function getProgress(){
+  if(!activeChild) return {completed:[],stars:0,results:{}};
+  try{
+    return JSON.parse(localStorage.getItem("athar_"+activeChild)) ||
+      {completed:[],stars:0,results:{}};
+  }catch(e){
+    return {completed:[],stars:0,results:{}};
   }
 }
 
-function saveProgress(data) {
-  if (!activeChild) return;
-  localStorage.setItem("athar_" + activeChild, JSON.stringify(data));
+function saveProgress(data){
+  if(!activeChild) return;
+  try{
+    localStorage.setItem("athar_"+activeChild,JSON.stringify(data));
+  }catch(e){
+    notify("تعذر حفظ التقدم على الجهاز.");
+  }
 }
 
-function showPage(pageId) {
-  ["home", "profile", "storyPage", "quizPage"].forEach(id => {
-    const el = $(id);
-    if (el) el.style.display = id === pageId ? "block" : "none";
+function notify(message){
+  const toast=$("toast");
+  toast.textContent=message;
+  toast.style.display="block";
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>toast.style.display="none",2500);
+}
+
+function renderProfiles(){
+  $("profiles").innerHTML=children.map(child=>`
+    <button class="profile ${activeChild===child.id?"active":""}"
+      onclick="selectChild('${child.id}')">
+      <span class="avatar">${child.emoji}</span>
+      <strong>${child.name}</strong>
+      <small>${child.desc}</small>
+    </button>
+  `).join("");
+}
+
+function selectChild(id){
+  activeChild=id;
+  renderProfiles();
+  renderDashboard();
+  renderStories();
+  notify("أهلًا بك في رحلتك الجميلة ❤️");
+}
+
+function renderDashboard(){
+  const data=getProgress();
+  const count=(data.completed||[]).length;
+  $("stars").textContent=data.stars||0;
+  $("done").textContent=count;
+  $("level").textContent=count>=20?"بطل المعرفة":
+    count>=10?"الباحث الصغير":count>=5?"محب القصص":"المستكشف";
+  $("progressText").textContent=count+" من 25 قصة";
+  $("progressBar").style.width=(count/25*100)+"%";
+}
+
+function setFilter(filter,button){
+  currentFilter=filter;
+  document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+  button.classList.add("active");
+  renderStories();
+}
+
+function renderStories(){
+  const data=getProgress();
+  const completed=data.completed||[];
+  const search=$("search").value.trim();
+
+  const list=prophets.map((name,index)=>({
+    name,index,available:!!stories[index],done:completed.includes(index)
+  })).filter(item=>{
+    const matchSearch=item.name.includes(search);
+    const matchFilter=currentFilter==="all"||
+      (currentFilter==="ready"&&item.available)||
+      (currentFilter==="later"&&!item.available);
+    return matchSearch&&matchFilter;
   });
-}
 
-function notify(message) {
-  const toast = $("toast");
-  if (!toast) {
-    alert(message);
+  if(!list.length){
+    $("storyGrid").innerHTML='<div class="empty">لا توجد نتائج مطابقة.</div>';
     return;
   }
 
-  toast.textContent = message;
-  toast.classList.add("show");
-
-  clearTimeout(window.atharToastTimer);
-  window.atharToastTimer = setTimeout(() => {
-    toast.classList.remove("show");
-  }, 2600);
+  $("storyGrid").innerHTML=list.map(item=>`
+    <article class="story-card">
+      <span class="story-number">رحلة رقم ${item.index+1}</span>
+      <h3>${item.name} عليه السلام</h3>
+      <p>${item.available?
+        (item.done?"أتممت هذه القصة من قبل ⭐":"اكتشف القصة وتعلم منها"):
+        "القصة قيد الإعداد والمراجعة"}</p>
+      <span class="story-status">${item.available?"متاحة الآن":"قريبًا بإذن الله"}</span>
+      <div style="margin-top:12px">
+        <button class="btn ${item.available?"btn-gold":"btn-soft"}"
+          ${item.available?
+            `onclick="openStory(${item.index})"`:
+            `onclick="notify('هذه القصة قيد الإعداد.')"`}>
+          ${item.available?"افتح القصة ←":"قريبًا"}
+        </button>
+      </div>
+    </article>
+  `).join("");
 }
 
-/* اختيار الطفل */
-
-function openChild(childId) {
-  const child = children.find(item => item.id === childId);
-  if (!child) return;
-
-  activeChild = childId;
-
-  const name = $("childName");
-  if (name) name.textContent = child.name;
-
-  showPage("profile");
-  renderDashboard();
-  renderStories();
-}
-
-function goHome() {
-  stopVoice();
-  showPage("home");
-}
-
-function backToProfile() {
-  stopVoice();
-  renderDashboard();
-  renderStories();
-  showPage("profile");
-}
-
-function renderDashboard() {
-  const data = getProgress();
-
-  if ($("starCount")) {
-    $("starCount").textContent = data.stars || 0;
-  }
-
-  const completed = data.completed || [];
-  const percent = Math.round((completed.length / prophets.length) * 100);
-
-  if ($("progressText")) {
-    $("progressText").textContent =
-      completed.length + " من " + prophets.length + " قصة";
-  }
-
-  if ($("progressBar")) {
-    $("progressBar").style.width = percent + "%";
-  }
-}
-
-/* عرض قائمة قصص الأنبياء */
-
-function renderStories() {
-  const container = $("storyList");
-  if (!container) return;
-
-  const data = getProgress();
-  const completed = data.completed || [];
-
-  container.innerHTML = prophets.map((name, index) => {
-    const available = index === 0;
-    const done = completed.includes(index);
-
-    return `
-      <button class="story-card ${done ? "completed" : ""}"
-        ${available ? `onclick="openStory(${index})"` : `onclick="notify('هذه القصة قيد الإعداد، وستُضاف بعد مراجعتها.')"`}
-        style="${available ? "" : "opacity:.65"}">
-
-        <span class="story-symbol">${available ? "📖" : "🔒"}</span>
-
-        <span class="story-card-content">
-          <strong>${name} عليه السلام</strong>
-          <small>${done ? "أتممت القصة ⭐" : available ? "ابدأ الرحلة" : "قريبًا بإذن الله"}</small>
-        </span>
-
-        <span class="story-arrow">${done ? "✓" : "←"}</span>
-      </button>
-    `;
-  }).join("");
-}
-
-/* فتح القصة */
-
-function openStory(index) {
-  if (!stories[index]) {
-    notify("هذه القصة لم تُجهز بعد.");
+function openStory(index){
+  if(!stories[index]){
+    notify("هذه القصة قيد الإعداد.");
     return;
   }
 
-  currentStory = index;
-  currentScene = 0;
-  readingMode = "simple";
-  selectedAnswers = [];
-  quizFinished = false;
+  currentStory=index;
+  currentScene=0;
+  readingMode="simple";
+  selectedAnswers=[];
+  quizFinished=false;
 
-  const story = stories[index];
+  $("reader").classList.add("show");
+  $("storyTitle").textContent=stories[index].title;
+  $("storyIntro").textContent=stories[index].summary;
 
-  if ($("storySymbol")) $("storySymbol").textContent = "📖";
-  if ($("storyHeading")) $("storyHeading").textContent = story.title;
-  if ($("storyIntro")) $("storyIntro").textContent = story.summary;
+  $("quizArea").innerHTML="";
+  $("nextBtn").style.display="block";
 
-  showPage("storyPage");
   setMode("simple");
   renderScene();
   renderLessons();
 }
 
-/* اختيار طريقة القراءة */
+function closeReader(){
+  stopSpeak();
+  $("reader").classList.remove("show");
+}
 
-function setMode(mode) {
-  readingMode = mode === "detail" ? "detail" : "simple";
-
-  if ($("simpleMode")) {
-    $("simpleMode").classList.toggle("active", readingMode === "simple");
-  }
-
-  if ($("detailMode")) {
-    $("detailMode").classList.toggle("active", readingMode === "detail");
-  }
-
+function setMode(mode){
+  readingMode=mode;
+  $("simpleBtn").classList.toggle("active",mode==="simple");
+  $("deepBtn").classList.toggle("active",mode==="deep");
   renderScene();
 }
 
-/* عرض المشهد الحالي */
+function renderScene(){
+  const story=stories[currentStory];
+  const scene=story.scenes[currentScene];
 
-function renderScene() {
-  const story = stories[currentStory];
-  if (!story) return;
+  $("sceneArea").innerHTML=`
+    <div class="scene-box">
+      <div class="scene-count">المشهد ${currentScene+1} من ${story.scenes.length}</div>
+      <h3>${scene.title}</h3>
+      <div class="scene-text">${readingMode==="simple"?scene.simple:scene.deep}</div>
+      ${readingMode==="deep"?
+        `<div class="source-note">📚 المصدر: ${scene.source}</div>`:""}
+      <div class="lesson">🌟 نتعلم: ${scene.lesson}</div>
+    </div>
+  `;
 
-  const scene = story.scenes[currentScene];
-  if (!scene) return;
-
-  if ($("sceneCount")) {
-    $("sceneCount").textContent =
-      "المشهد " + (currentScene + 1) + " من " + story.scenes.length;
-  }
-
-  if ($("sceneTitle")) {
-    $("sceneTitle").textContent = scene.title;
-  }
-
-  if ($("sceneArt")) {
-    const symbols = ["🌍", "🧱", "📚", "⭐", "🌿", "⚠️", "🤲", "🕊️"];
-    $("sceneArt").textContent = symbols[currentScene] || "📖";
-  }
-
-  if ($("sceneText")) {
-    $("sceneText").textContent = scene.simple;
-  }
-
-  if ($("sceneDetail")) {
-    $("sceneDetail").textContent = scene.deep;
-    $("sceneDetail").style.display =
-      readingMode === "detail" ? "block" : "none";
-  }
-
-  if ($("prevScene")) {
-    $("prevScene").disabled = currentScene === 0;
-  }
-
-  if ($("nextScene")) {
-    $("nextScene").textContent =
-      currentScene === story.scenes.length - 1
-        ? "ابدأ الاختبار"
-        : "المشهد التالي ←";
-  }
+  $("prevBtn").disabled=currentScene===0;
+  $("nextBtn").textContent=currentScene===story.scenes.length-1?
+    "ابدأ الاختبار ⭐":"المشهد التالي ←";
 }
 
-/* التنقل بين المشاهد */
+function moveScene(direction){
+  const story=stories[currentStory];
+  stopSpeak();
 
-function changeScene(direction) {
-  const story = stories[currentStory];
-  if (!story) return;
-
-  stopVoice();
-
-  if (direction === "next") {
-    if (currentScene < story.scenes.length - 1) {
+  if(direction===1){
+    if(currentScene<story.scenes.length-1){
       currentScene++;
       renderScene();
-    } else {
-      startQuiz();
+    }else{
+      renderQuiz();
     }
-  } else {
-    if (currentScene > 0) {
-      currentScene--;
-      renderScene();
-    }
+  }else if(currentScene>0){
+    currentScene--;
+    renderScene();
   }
 }
 
-/* عرض الدروس المستفادة */
-
-function renderLessons() {
-  const container = $("lessons");
-  const story = stories[currentStory];
-
-  if (!container || !story) return;
-
-  container.innerHTML = `
-    <h3>🌟 ماذا نتعلم من القصة؟</h3>
-    <ul>
-      ${story.scenes.map(scene =>
-        `<li>${scene.lesson}</li>`
-      ).join("")}
-    </ul>
-  `;
-}
-
-/* القراءة الصوتية */
-
-function readScene() {
-  if (!("speechSynthesis" in window)) {
-    notify("المتصفح لا يدعم القراءة الصوتية.");
+function speakScene(){
+  if(!("speechSynthesis" in window)){
+    notify("القراءة الصوتية غير مدعومة في هذا المتصفح.");
     return;
   }
-
-  stopVoice();
-
-  const story = stories[currentStory];
-  const scene = story.scenes[currentScene];
-
-  const textToRead = readingMode === "detail"
-    ? scene.deep
-    : scene.simple;
-
-  const utterance = new SpeechSynthesisUtterance(textToRead);
-  utterance.lang = "ar-SA";
-  utterance.rate = 0.88;
-  utterance.pitch = 1;
-
-  window.speechSynthesis.speak(utterance);
+  stopSpeak();
+  const scene=stories[currentStory].scenes[currentScene];
+  const text=readingMode==="deep"?scene.deep:scene.simple;
+  const utterance=new SpeechSynthesisUtterance(text);
+  utterance.lang="ar-SA";
+  utterance.rate=.85;
+  speechSynthesis.speak(utterance);
 }
 
-function stopVoice() {
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-  }
+function stopSpeak(){
+  if("speechSynthesis" in window) speechSynthesis.cancel();
 }
 
-/* الاختبار */
-
-function startQuiz() {
-  stopVoice();
-
-  selectedAnswers = [];
-  quizFinished = false;
-
-  showPage("quizPage");
-  renderQuiz();
+function renderLessons(){
+  const scenes=stories[currentStory].scenes;
+  $("lessons").innerHTML=scenes.map(scene=>
+    `<li>${scene.lesson}</li>`).join("");
 }
 
-function renderQuiz() {
-  const story = stories[currentStory];
-  const container = $("quizQuestions");
+function renderQuiz(){
+  stopSpeak();
+  selectedAnswers=[];
+  quizFinished=false;
 
-  if (!story || !container) return;
+  $("sceneArea").innerHTML="";
+  $("prevBtn").disabled=true;
+  $("nextBtn").style.display="none";
 
-  container.innerHTML = story.quiz.map((question, qIndex) => `
-    <div class="quiz-question">
-      <h3>${qIndex + 1}. ${question.q}</h3>
+  const quiz=stories[currentStory].quiz;
 
-      <div class="quiz-options">
-        ${question.opts.map((option, optionIndex) => `
-          <button
-            class="quiz-option"
-            id="answer-${qIndex}-${optionIndex}"
-            onclick="chooseAnswer(${qIndex},${optionIndex})">
-            ${option}
-          </button>
-        `).join("")}
-      </div>
+  $("quizArea").innerHTML=`
+    <div class="panel">
+      <h2 class="section-title">🧠 اختبر معلوماتك</h2>
+      <p style="color:var(--muted)">أجب عن الأسئلة لتحصل على النجوم.</p>
+      ${quiz.map((q,i)=>`
+        <div class="quiz-question">
+          <h3>${i+1}. ${q.q}</h3>
+          ${q.opts.map((option,j)=>`
+            <button class="answer" id="answer-${i}-${j}"
+              onclick="chooseAnswer(${i},${j})">${option}</button>
+          `).join("")}
+          <div class="feedback" id="feedback-${i}"></div>
+        </div>
+      `).join("")}
+      <button class="btn btn-gold" style="width:100%"
+        id="finishBtn" onclick="finishQuiz()">اعرف نتيجتي ⭐</button>
+      <div id="quizResult"></div>
     </div>
-  `).join("");
+  `;
 
-  if ($("quizResult")) {
-    $("quizResult").textContent = "";
-  }
-
-  if ($("submitQuiz")) {
-    $("submitQuiz").disabled = false;
-    $("submitQuiz").textContent = "اعرف نتيجتي ⭐";
-  }
+  $("quizArea").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-function chooseAnswer(questionIndex, optionIndex) {
-  if (quizFinished) return;
+function chooseAnswer(qIndex,optionIndex){
+  if(quizFinished)return;
+  selectedAnswers[qIndex]=optionIndex;
 
-  selectedAnswers[questionIndex] = optionIndex;
-
-  const story = stories[currentStory];
-  const question = story.quiz[questionIndex];
-
-  question.opts.forEach((option, index) => {
-    const button = $("answer-" + questionIndex + "-" + index);
-    if (button) {
-      button.classList.toggle("selected", index === optionIndex);
-    }
+  stories[currentStory].quiz[qIndex].opts.forEach((option,index)=>{
+    $("answer-"+qIndex+"-"+index).classList.toggle(
+      "selected",index===optionIndex
+    );
   });
 }
 
-function finishQuiz() {
-  if (quizFinished) return;
+function finishQuiz(){
+  if(quizFinished)return;
 
-  const story = stories[currentStory];
+  const quiz=stories[currentStory].quiz;
 
-  if (selectedAnswers.length < story.quiz.length ||
-      selectedAnswers.some(answer => answer === undefined)) {
+  if(selectedAnswers.length!==quiz.length||
+     selectedAnswers.some(answer=>answer===undefined)){
     notify("جاوب على كل الأسئلة الأول ❤️");
     return;
   }
 
-  quizFinished = true;
+  quizFinished=true;
+  let correct=0;
 
-  let correct = 0;
+  quiz.forEach((q,i)=>{
+    if(selectedAnswers[i]===q.a)correct++;
 
-  story.quiz.forEach((question, qIndex) => {
-    if (selectedAnswers[qIndex] === question.a) {
-      correct++;
-    }
-
-    question.opts.forEach((option, optionIndex) => {
-      const button = $("answer-" + qIndex + "-" + optionIndex);
-      if (!button) return;
-
-      button.disabled = true;
-
-      if (optionIndex === question.a) {
-        button.classList.add("correct");
-      } else if (selectedAnswers[qIndex] === optionIndex) {
-        button.classList.add("wrong");
-      }
+    q.opts.forEach((option,j)=>{
+      const button=$("answer-"+i+"-"+j);
+      button.disabled=true;
+      if(j===q.a)button.classList.add("correct");
+      else if(j===selectedAnswers[i])button.classList.add("wrong");
     });
+
+    $("feedback-"+i).textContent=q.why;
   });
 
-  const perfect = correct === story.quiz.length;
-  const earnedStars = perfect ? 2 : correct >= 2 ? 1 : 0;
+  const earned=correct===quiz.length?2:correct>=2?1:0;
+  const data=getProgress();
 
-  const data = getProgress();
-  data.completed = data.completed || [];
-  data.results = data.results || {};
+  data.completed=data.completed||[];
+  data.results=data.results||{};
 
-  const wasCompleted = data.completed.includes(currentStory);
-  const previousStars = data.results[currentStory] || 0;
+  const old=data.results[currentStory]||0;
 
-  if (!wasCompleted) {
+  if(!data.completed.includes(currentStory)){
     data.completed.push(currentStory);
   }
 
-  if (earnedStars > previousStars) {
-    data.stars = (data.stars || 0) + earnedStars - previousStars;
-    data.results[currentStory] = earnedStars;
+  if(earned>old){
+    data.stars=(data.stars||0)+earned-old;
+    data.results[currentStory]=earned;
   }
 
   saveProgress(data);
 
-  if ($("quizResult")) {
-    $("quizResult").innerHTML = `
-      <div class="result-message">
-        <h2>${perfect ? "ممتاز يا بطل! 🎉" : "أحسنت المحاولة! ❤️"}</h2>
-        <p>إجاباتك الصحيحة: ${correct} من ${story.quiz.length}</p>
-        <p>${"⭐".repeat(earnedStars) || "واصل المحاولة"}</p>
-        ${story.quiz.map((question, i) => `
-          <p class="answer-explanation">
-            ${i + 1}. ${question.why}
-          </p>
-        `).join("")}
-      </div>
-    `;
-  }
+  $("quizResult").innerHTML=`
+    <div class="result">
+      <h3>${correct===quiz.length?"ممتاز يا بطل! 🎉":"أحسنت المحاولة! ❤️"}</h3>
+      <p>إجابات صحيحة: ${correct} من ${quiz.length}</p>
+      <div style="font-size:28px">${"⭐".repeat(earned)||"💪"}</div>
+      <p>${earned?"حصلت على "+earned+" نجمة":"واصل المحاولة والتعلم"}</p>
+      <button class="btn btn-gold" onclick="finishReading()">العودة إلى المكتبة</button>
+    </div>
+  `;
 
-  if ($("submitQuiz")) {
-    $("submitQuiz").disabled = true;
-    $("submitQuiz").textContent = "انتهى الاختبار";
-  }
-
+  $("finishBtn").disabled=true;
   renderDashboard();
   renderStories();
-
-  notify("تم حفظ تقدمك يا بطل! ⭐");
+  notify("تم حفظ تقدمك بنجاح ⭐");
 }
 
-function backToStory() {
-  showPage("storyPage");
-  renderScene();
+function finishReading(){
+  closeReader();
+  renderDashboard();
+  renderStories();
 }
 
-/* تشغيل التطبيق */
-
-function initializeApp() {
-  showPage("home");
-
-  const search = $("searchInput");
-
-  if (search) {
-    search.addEventListener("input", function () {
-      const value = this.value.trim();
-      document.querySelectorAll(".story-card").forEach(card => {
-        card.style.display =
-          card.textContent.includes(value) ? "" : "none";
-      });
-    });
-  }
-
-  renderHomeProfiles();
+function initialize(){
+  $("year").textContent=new Date().getFullYear();
+  renderProfiles();
+  renderDashboard();
+  renderStories();
 }
 
-function renderHomeProfiles() {
-  const container = $("homeProfiles");
-  if (!container) return;
-
-  container.innerHTML = children.map(child => `
-    <button class="profile" onclick="openChild('${child.id}')">
-      <span>${child.emoji}</span>
-      <strong>${child.name}</strong>
-      <small>ادخل إلى رحلتك</small>
-    </button>
-  `).join("");
-}
-
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    stopVoice();
-  }
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape")closeReader();
 });
 
-initializeApp();
+initialize();
 </script>
+
 </body>
 </html>
