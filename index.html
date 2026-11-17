@@ -4,87 +4,138 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101d35">
+<meta name="theme-color" content="#102b35">
 <title>أثر الأنبياء</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#101d35;color:#fff;font-family:Arial,sans-serif}
-header{padding:25px 20px;background:linear-gradient(140deg,#173d55,#101d35)}
-.brand{color:#f4ce78;font-size:30px;font-weight:bold}
-.sub{color:#c8d7df;margin-top:8px}
-main{padding:20px;max-width:650px;margin:auto}
-h2{color:#f4ce78}
-.welcome{background:linear-gradient(135deg,#24566b,#172b49);padding:25px;border-radius:22px;margin:10px 0 25px}
-.welcome h1{font-size:25px}
-.welcome p{line-height:1.8;color:#e0e9ed}
-.profiles{display:flex;gap:10px;flex-wrap:wrap}
-.profile{flex:1;min-width:85px;background:#243b56;padding:15px 8px;border:1px solid #52647c;border-radius:15px;color:white;font-size:17px;cursor:pointer}
-.profile.active{border:2px solid #f4ce78;color:#f4ce78}
-.card{background:#1c304b;border:1px solid #344963;border-radius:18px;padding:18px;margin:14px 0}
-.card h3{color:#f4ce78;margin:5px 0 10px}
-.card p{color:#d8e1e9;line-height:1.8}
-.btn{background:#e9bd63;color:#17243b;border:0;border-radius:12px;padding:13px 20px;font-size:16px;font-weight:bold;cursor:pointer;width:100%;margin-top:10px}
-.small{color:#b9c8d5;font-size:13px}
-footer{text-align:center;color:#a9bacb;padding:25px}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f5f1e7;color:#20343a}
+header{background:linear-gradient(135deg,#102b35,#1d5960);color:#fff;text-align:center;padding:30px 15px 35px;border-radius:0 0 30px 30px}
+.logo{font-size:38px}
+h1{margin:8px 0;font-size:29px}
+header p{color:#e5d7ad;margin:8px}
+main{max-width:750px;margin:auto;padding:20px 15px}
+h2{color:#174e52}
+.intro{text-align:center;line-height:1.9}
+.children{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.child{background:white;border:2px solid #e4ddca;border-radius:18px;padding:18px 5px;text-align:center;font-size:18px;cursor:pointer}
+.child span{display:block;font-size:30px;margin-bottom:8px}
+.child:active,.child:hover{border-color:#bd9a4b;background:#fffaf0}
+.card{background:white;border:1px solid #e8e0ce;border-radius:18px;padding:18px;margin:13px 0;box-shadow:0 4px 15px #233b3910}
+button{font-family:inherit;cursor:pointer}
+.primary{background:#176064;color:white;border:0;border-radius:12px;padding:12px 18px;font-size:16px}
+.secondary{background:#f0e7d3;color:#29494b;border:0;border-radius:12px;padding:10px 15px;font-size:15px}
+.story{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.story h3{margin:0 0 7px}
+.story p{margin:0;color:#647477;font-size:14px}
+.stars{color:#bd8e26;font-weight:bold}
+.hidden{display:none}
+.progress{height:10px;background:#e8e5da;border-radius:20px;overflow:hidden;margin:12px 0}
+.progress div{height:100%;background:#bd9a4b;width:0}
+.question{line-height:1.9}
+.answer{display:block;width:100%;text-align:right;margin:9px 0;padding:13px;border:1px solid #ddd5c4;background:#faf8f2;border-radius:12px;font-size:16px}
+.answer:active{background:#e8dfc9}
+footer{text-align:center;color:#718080;padding:25px;font-size:13px}
 </style>
 </head>
 <body>
 <header>
-<div class="brand">✦ أثر الأنبياء</div>
-<div class="sub">رحلة نتعلم فيها من قصص الأنبياء</div>
+<div class="logo">☪️</div>
+<h1>أثر الأنبياء</h1>
+<p>حكايات من نور… وقيم تبقى في القلوب</p>
 </header>
 <main>
-<section class="welcome">
-<div style="font-size:38px">📖 ✨</div>
-<h1>أهلاً بك في رحلتنا الجميلة!</h1>
-<p>هيا نتعرف على قصص الأنبياء، ونتعلم منها الصدق والصبر والرحمة والشجاعة.</p>
+<section id="home">
+<div class="intro">
+<h2>أهلًا بأبطالنا الصغار 🌟</h2>
+<p>اختار اسمك وابدأ رحلتك الجميلة مع قصص الأنبياء.</p>
+</div>
+<div class="children">
+<button class="child" onclick="openChild('eyad')"><span>🦁</span>إياد</button>
+<button class="child" onclick="openChild('mayan')"><span>🌸</span>مايان</button>
+<button class="child" onclick="openChild('layan')"><span>🦋</span>ليان</button>
+</div>
+<div class="card intro">
+<strong>📖 نتعلم من قصص الأنبياء</strong>
+<p>الصدق، والصبر، والرحمة، والتوكل على الله.</p>
+</div>
 </section>
 
-<h2>🌟 أبطال رحلتنا</h2>
-<div class="profiles">
-<button class="profile active" onclick="choose(this)">👦 إياد</button>
-<button class="profile" onclick="choose(this)">👧 مايان</button>
-<button class="profile" onclick="choose(this)">👧 ليان</button>
+<section id="profile" class="hidden">
+<button class="secondary" onclick="goHome()">← تغيير الطفل</button>
+<div class="card">
+<h2 id="childName"></h2>
+<p>رحلتك في التعلم مستمرة، أحسنت يا بطل!</p>
+<div class="stars">⭐ <span id="starCount">0</span> نجمة</div>
+<div class="progress"><div id="progressBar"></div></div>
+<small id="progressText">0 من 5 قصص مكتملة</small>
 </div>
+<h2>📚 مكتبة القصص</h2>
+<div id="storyList"></div>
+</section>
 
-<h2 style="margin-top:30px">📚 مكتبة قصص الأنبياء</h2>
-<div id="stories"></div>
-<footer>أثر الأنبياء © 2026<br>بالعلم والإيمان نكبر</footer>
+<section id="reading" class="hidden">
+<button class="secondary" onclick="backToProfile()">← العودة للقصص</button>
+<div class="card">
+<h2 id="storyTitle"></h2>
+<p id="storyText" class="question"></p>
+</div>
+<div class="card">
+<h3 id="questionTitle">🧠 اختبر معلوماتك</h3>
+<div id="answers"></div>
+<p id="feedback"></p>
+</div>
+</section>
 </main>
+<footer>أثر الأنبياء © رحلة معرفة وإيمان</footer>
 
 <script>
 const stories=[
-{n:"آدم عليه السلام",e:"🌿",d:"قصة بداية خلق الإنسان، وتعليم الله لآدم الأسماء، ثم توبته إلى الله.",m:"علّمنا الله أن نتوب إليه إذا أخطأنا، وألا نيأس من رحمته.",q:"ماذا نتعلم من قصة آدم؟",a:["أن نعترف بالخطأ ونتوب إلى الله","أن نكابر ولا نعتذر"],c:0},
-{n:"نوح عليه السلام",e:"🚢",d:"دعا نوح عليه السلام قومه إلى عبادة الله، وصبر عليهم زمنًا طويلًا، وأمره الله بصنع السفينة.",m:"الصبر والثبات على الحق وطاعة الله.",q:"ما الذي نتعلمه من نوح؟",a:["الصبر وعدم اليأس","الاستسلام بسرعة"],c:0},
-{n:"إبراهيم عليه السلام",e:"⭐",d:"دعا إبراهيم عليه السلام قومه إلى عبادة الله وحده، وأراه الله ملكوت السماوات والأرض.",m:"التفكر في خلق الله والثبات على التوحيد.",q:"إلى ماذا دعا إبراهيم قومه؟",a:["إلى عبادة الله وحده","إلى عبادة الأصنام"],c:0},
-{n:"موسى عليه السلام",e:"🌊",d:"أرسل الله موسى إلى فرعون، وأيده بآيات عظيمة، ومنها انفلاق البحر.",m:"الثقة بالله والشجاعة في قول الحق.",q:"ما المعجزة التي أيد الله بها موسى عند البحر؟",a:["انفلاق البحر","بناء السفينة"],c:0},
-{n:"عيسى عليه السلام",e:"🕊️",d:"أرسل الله عيسى إلى بني إسرائيل، وأيده بمعجزات بإذن الله، ومنها إبراء الأكمه والأبرص وإحياء الموتى بإذن الله.",m:"الإيمان بالله والرحمة بالناس.",q:"بإذن من كانت معجزات عيسى؟",a:["بإذن الله","بقدرته الذاتية"],c:0}
+{title:"آدم عليه السلام",emoji:"🌿",text:"خلق الله آدم عليه السلام من طين، وعلّمه الأسماء، وأمر الملائكة بالسجود له تكريمًا، فسجدوا إلا إبليس أبى واستكبر. عاش آدم في الجنة مع زوجته، ثم تاب إلى الله فتاب عليه. نتعلم من قصته أن الله يقبل التوبة من عباده.",q:"من الذي خلق آدم عليه السلام؟",a:["الله سبحانه وتعالى","الملائكة","البشر"],correct:0},
+{title:"نوح عليه السلام",emoji:"🚢",text:"دعا نوح عليه السلام قومه إلى عبادة الله وحده زمنًا طويلًا، وصبر على أذاهم. وأمره الله بصنع السفينة، فحمل فيها المؤمنين ومن كل زوجين اثنين، ونجّاهم الله من الطوفان. نتعلم من قصته الصبر والثبات.",q:"ماذا صنع نوح عليه السلام بأمر الله؟",a:["قصرًا","سفينة","حديقة"],correct:1},
+{title:"إبراهيم عليه السلام",emoji:"🔥",text:"كان إبراهيم عليه السلام يدعو قومه إلى عبادة الله وحده، ورفض عبادة الأصنام. ألقاه قومه في النار، فجعلها الله بردًا وسلامًا عليه. نتعلم من قصته الشجاعة والثقة بالله.",q:"ماذا حدث للنار عندما أُلقي فيها إبراهيم؟",a:["أصبحت بردًا وسلامًا","أحرقت المدينة","انطفأت بسبب المطر"],correct:0},
+{title:"موسى عليه السلام",emoji:"🌊",text:"أرسل الله موسى عليه السلام إلى فرعون ليدعوه إلى عبادة الله. وأيده بالمعجزات، وعندما وصل موسى ومن معه إلى البحر، أمره الله أن يضرب البحر بعصاه فانفلق، ونجا المؤمنون.",q:"بماذا ضرب موسى البحر؟",a:["بعصاه","بيده","بحجر"],correct:0},
+{title:"عيسى عليه السلام",emoji:"🕊️",text:"عيسى عليه السلام نبي من أنبياء الله، أرسله الله إلى بني إسرائيل، وأيده بمعجزات بإذن الله. دعا الناس إلى عبادة الله وحده والتحلي بالرحمة والخير.",q:"إلى من أرسل الله عيسى عليه السلام؟",a:["بني إسرائيل","قوم عاد","أهل مدين"],correct:0}
 ];
-
-const root=document.getElementById("stories");
-stories.forEach((s,i)=>{
-root.innerHTML+=`<div class="card">
-<div style="font-size:30px">${s.e}</div>
-<h3>${s.n}</h3>
-<p>${s.d}</p>
-<button class="btn" onclick="showStory(${i})">اكتشف القصة ←</button>
-</div>`;
-});
-
-function choose(btn){
-document.querySelectorAll(".profile").forEach(x=>x.classList.remove("active"));
-btn.classList.add("active");
+let currentChild="";
+let currentStory=0;
+const names={eyad:"إياد",mayan:"مايان",layan:"ليان"};
+function getData(){try{return JSON.parse(localStorage.getItem("athar_"+currentChild))||{stars:0,done:[]}}catch(e){return {stars:0,done:[]}}}
+function saveData(data){localStorage.setItem("athar_"+currentChild,JSON.stringify(data))}
+function show(id){["home","profile","reading"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id))}
+function openChild(id){currentChild=id;document.getElementById("childName").textContent="مرحبًا يا "+names[id]+" 🌟";renderProfile();show("profile")}
+function goHome(){show("home")}
+function renderProfile(){
+let d=getData();
+document.getElementById("starCount").textContent=d.stars;
+document.getElementById("progressText").textContent=d.done.length+" من 5 قصص مكتملة";
+document.getElementById("progressBar").style.width=(d.done.length/5*100)+"%";
+document.getElementById("storyList").innerHTML=stories.map((s,i)=>`
+<div class="card story">
+<div><h3>${s.emoji} ${s.title}</h3><p>${d.done.includes(i)?"✅ أنهيت القصة":"قصة جديدة في انتظارك"}</p></div>
+<button class="primary" onclick="openStory(${i})">${d.done.includes(i)?"اقرأ مجددًا":"ابدأ"}</button>
+</div>`).join("");
 }
-function showStory(i){
-const s=stories[i];
-const answer=prompt(s.q+"\n1- "+s.a[0]+"\n2- "+s.a[1]+"\n\nاكتب 1 أو 2");
-if(answer===null)return;
-if(answer.trim()==="1"){
-alert("أحسنت! ⭐ إجابة صحيحة\n\nالدرس المستفاد:\n"+s.m);
+function openStory(i){
+currentStory=i;
+let s=stories[i];
+document.getElementById("storyTitle").textContent=s.emoji+" "+s.title;
+document.getElementById("storyText").textContent=s.text;
+document.getElementById("questionTitle").textContent="🧠 "+s.q;
+document.getElementById("feedback").textContent="";
+document.getElementById("answers").innerHTML=s.a.map((a,j)=>`<button class="answer" onclick="checkAnswer(${j})">${a}</button>`).join("");
+show("reading");
+}
+function checkAnswer(choice){
+let s=stories[currentStory],d=getData();
+if(choice===s.correct){
+document.getElementById("feedback").textContent="أحسنت! إجابة صحيحة ⭐";
+if(!d.done.includes(currentStory)){d.done.push(currentStory);d.stars+=2;saveData(d)}
+document.getElementById("answers").innerHTML='<button class="primary" onclick="backToProfile()">العودة إلى القصص</button>';
 }else{
-alert("حاول مرة أخرى ❤️\n\nفكر في الدرس المستفاد:\n"+s.m);
+document.getElementById("feedback").textContent="حاول مرة أخرى يا بطل ❤️";
 }
 }
+function backToProfile(){renderProfile();show("profile")}
 </script>
 </body>
 </html>
