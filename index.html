@@ -3,38 +3,57 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#102b35">
 <title>أثر الأنبياء</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f5f1e7;color:#20343a}
-header{background:linear-gradient(135deg,#102b35,#1d5960);color:#fff;text-align:center;padding:30px 15px 35px;border-radius:0 0 30px 30px}
-.logo{font-size:38px}
-h1{margin:8px 0;font-size:29px}
-header p{color:#e5d7ad;margin:8px}
-main{max-width:750px;margin:auto;padding:20px 15px}
+header{background:linear-gradient(140deg,#102b35,#1d5960);color:white;text-align:center;padding:27px 15px 30px;border-radius:0 0 28px 28px}
+.logo{font-size:34px}
+h1{margin:8px 0;font-size:27px}
+header p{color:#e9dcb9;margin:7px 0}
+main{max-width:760px;margin:auto;padding:18px 14px 35px}
 h2{color:#174e52}
+button{font-family:inherit;cursor:pointer}
+.primary{background:#176064;color:white;border:0;border-radius:13px;padding:12px 18px;font-size:16px}
+.secondary{background:#eee6d4;color:#29494b;border:0;border-radius:12px;padding:10px 15px;font-size:15px}
+.card{background:white;border:1px solid #e8e0ce;border-radius:19px;padding:17px;margin:13px 0;box-shadow:0 4px 15px #233b3910}
 .intro{text-align:center;line-height:1.9}
-.children{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
-.child{background:white;border:2px solid #e4ddca;border-radius:18px;padding:18px 5px;text-align:center;font-size:18px;cursor:pointer}
+.children{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0}
+.child{background:white;border:2px solid #e4ddca;border-radius:17px;padding:16px 4px;font-size:17px}
 .child span{display:block;font-size:30px;margin-bottom:8px}
 .child:active,.child:hover{border-color:#bd9a4b;background:#fffaf0}
-.card{background:white;border:1px solid #e8e0ce;border-radius:18px;padding:18px;margin:13px 0;box-shadow:0 4px 15px #233b3910}
-button{font-family:inherit;cursor:pointer}
-.primary{background:#176064;color:white;border:0;border-radius:12px;padding:12px 18px;font-size:16px}
-.secondary{background:#f0e7d3;color:#29494b;border:0;border-radius:12px;padding:10px 15px;font-size:15px}
-.story{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.story h3{margin:0 0 7px}
-.story p{margin:0;color:#647477;font-size:14px}
-.stars{color:#bd8e26;font-weight:bold}
-.hidden{display:none}
+.hidden{display:none!important}
+.story{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.story h3{margin:0 0 7px;font-size:17px}
+.story p{margin:0;color:#718080;font-size:13px}
+.stars{color:#b88b2e;font-weight:bold}
 .progress{height:10px;background:#e8e5da;border-radius:20px;overflow:hidden;margin:12px 0}
-.progress div{height:100%;background:#bd9a4b;width:0}
-.question{line-height:1.9}
-.answer{display:block;width:100%;text-align:right;margin:9px 0;padding:13px;border:1px solid #ddd5c4;background:#faf8f2;border-radius:12px;font-size:16px}
-.answer:active{background:#e8dfc9}
-footer{text-align:center;color:#718080;padding:25px;font-size:13px}
+.progress div{height:100%;background:#bd9a4b;width:0;transition:width .3s}
+.hero{background:linear-gradient(140deg,#17474b,#276c69);color:white;border-radius:19px;padding:24px 15px;text-align:center;margin:14px 0}
+.hero .symbol{font-size:52px}
+.hero h2{color:white;margin:8px}
+.hero p{color:#e6e1cf;line-height:1.8}
+.mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
+.mode{background:#fff;border:2px solid #e6dfcf;border-radius:15px;padding:15px 9px;text-align:center;color:#21484b;font-size:15px}
+.mode.active{border-color:#bd9a4b;background:#fff9e9}
+.mode strong{display:block;font-size:25px;margin-bottom:7px}
+.scene-count{color:#9a7b3c;font-size:13px;font-weight:bold}
+.scene-title{font-size:21px;color:#174e52;margin:10px 0}
+.scene-art{background:linear-gradient(140deg,#e6dfc8,#f8f0dc);border-radius:17px;min-height:125px;display:flex;align-items:center;justify-content:center;font-size:60px;margin:14px 0}
+.scene-text{font-size:17px;line-height:2.1;white-space:pre-line}
+.detail{background:#f7f4eb;border-right:4px solid #bd9a4b;padding:12px;border-radius:9px;line-height:1.9;margin-top:13px}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.nav button{flex:1}
+.answer{display:block;width:100%;text-align:right;margin:9px 0;padding:13px;border:1px solid #ddd5c4;background:#faf8f2;border-radius:12px;font-size:16px;color:#20343a}
+.answer.selected{border:2px solid #bd9a4b;background:#fff8e8}
+.answer:disabled{opacity:1}
+.feedback{padding:12px;border-radius:12px;line-height:1.8}
+.good{background:#e9f4e9;color:#27633b}
+.bad{background:#fff0e9;color:#994d35}
+footer{text-align:center;color:#718080;padding:20px;font-size:13px}
+.small{font-size:13px;color:#718080;line-height:1.8}
 </style>
 </head>
 <body>
@@ -43,11 +62,12 @@ footer{text-align:center;color:#718080;padding:25px;font-size:13px}
 <h1>أثر الأنبياء</h1>
 <p>حكايات من نور… وقيم تبقى في القلوب</p>
 </header>
+
 <main>
 <section id="home">
 <div class="intro">
 <h2>أهلًا بأبطالنا الصغار 🌟</h2>
-<p>اختار اسمك وابدأ رحلتك الجميلة مع قصص الأنبياء.</p>
+<p>اختار اسمك وابدأ رحلتك مع قصص الأنبياء.</p>
 </div>
 <div class="children">
 <button class="child" onclick="openChild('eyad')"><span>🦁</span>إياد</button>
@@ -55,8 +75,8 @@ footer{text-align:center;color:#718080;padding:25px;font-size:13px}
 <button class="child" onclick="openChild('layan')"><span>🦋</span>ليان</button>
 </div>
 <div class="card intro">
-<strong>📖 نتعلم من قصص الأنبياء</strong>
-<p>الصدق، والصبر، والرحمة، والتوكل على الله.</p>
+<strong>📖 رحلة نتعلم فيها الخير</strong>
+<p>نتعلم الصدق والصبر والرحمة والتوكل على الله.</p>
 </div>
 </section>
 
@@ -64,7 +84,7 @@ footer{text-align:center;color:#718080;padding:25px;font-size:13px}
 <button class="secondary" onclick="goHome()">← تغيير الطفل</button>
 <div class="card">
 <h2 id="childName"></h2>
-<p>رحلتك في التعلم مستمرة، أحسنت يا بطل!</p>
+<p>كل قصة جديدة تقربك خطوة من المعرفة 🌟</p>
 <div class="stars">⭐ <span id="starCount">0</span> نجمة</div>
 <div class="progress"><div id="progressBar"></div></div>
 <small id="progressText">0 من 5 قصص مكتملة</small>
@@ -73,16 +93,54 @@ footer{text-align:center;color:#718080;padding:25px;font-size:13px}
 <div id="storyList"></div>
 </section>
 
-<section id="reading" class="hidden">
-<button class="secondary" onclick="backToProfile()">← العودة للقصص</button>
-<div class="card">
-<h2 id="storyTitle"></h2>
-<p id="storyText" class="question"></p>
+<section id="storyPage" class="hidden">
+<button class="secondary" onclick="backToProfile()">← العودة للمكتبة</button>
+<div class="hero">
+<div class="symbol" id="storySymbol">🌿</div>
+<h2 id="storyHeading"></h2>
+<p id="storyIntro"></p>
+</div>
+<h3>اختار طريقة الحكاية</h3>
+<div class="mode-grid">
+<button class="mode active" id="simpleMode" onclick="setMode('simple')">
+<strong>🌙</strong>اسمع الحكاية
+<small class="small">حكاية مبسطة وسهلة</small>
+</button>
+<button class="mode" id="detailMode" onclick="setMode('detail')">
+<strong>🔎</strong>اكتشف الحكاية
+<small class="small">تفاصيل ومعرفة أكثر</small>
+</button>
 </div>
 <div class="card">
-<h3 id="questionTitle">🧠 اختبر معلوماتك</h3>
-<div id="answers"></div>
-<p id="feedback"></p>
+<div class="scene-count" id="sceneCount"></div>
+<h3 class="scene-title" id="sceneTitle"></h3>
+<div class="scene-art" id="sceneArt">🌿</div>
+<div class="scene-text" id="sceneText"></div>
+<div class="detail hidden" id="sceneDetail"></div>
+<div class="nav">
+<button class="secondary" id="prevScene" onclick="changeScene(-1)">السابق</button>
+<button class="primary" id="nextScene" onclick="changeScene(1)">التالي ←</button>
+</div>
+<div style="text-align:center;margin-top:13px">
+<button class="secondary" onclick="readScene()">🔊 اقرأ لي</button>
+</div>
+<p class="small" id="voiceNote"></p>
+</div>
+<div class="card">
+<h3>💡 ماذا نتعلم من القصة؟</h3>
+<ul id="lessons" style="line-height:2"></ul>
+<button class="primary" style="width:100%" onclick="startQuiz()">ابدأ الاختبار 🧠</button>
+</div>
+</section>
+
+<section id="quizPage" class="hidden">
+<button class="secondary" onclick="backToStory()">← العودة للقصة</button>
+<div class="card">
+<h2>🧠 تحدي الأبطال</h2>
+<p class="small">جاوب عن الأسئلة وتذكر ما تعلمته من القصة.</p>
+<div id="quizQuestions"></div>
+<button class="primary" id="submitQuiz" style="width:100%" onclick="finishQuiz()">اعرف نتيجتي ⭐</button>
+<div id="quizResult"></div>
 </div>
 </section>
 </main>
@@ -90,51 +148,221 @@ footer{text-align:center;color:#718080;padding:25px;font-size:13px}
 
 <script>
 const stories=[
-{title:"آدم عليه السلام",emoji:"🌿",text:"خلق الله آدم عليه السلام من طين، وعلّمه الأسماء، وأمر الملائكة بالسجود له تكريمًا، فسجدوا إلا إبليس أبى واستكبر. عاش آدم في الجنة مع زوجته، ثم تاب إلى الله فتاب عليه. نتعلم من قصته أن الله يقبل التوبة من عباده.",q:"من الذي خلق آدم عليه السلام؟",a:["الله سبحانه وتعالى","الملائكة","البشر"],correct:0},
-{title:"نوح عليه السلام",emoji:"🚢",text:"دعا نوح عليه السلام قومه إلى عبادة الله وحده زمنًا طويلًا، وصبر على أذاهم. وأمره الله بصنع السفينة، فحمل فيها المؤمنين ومن كل زوجين اثنين، ونجّاهم الله من الطوفان. نتعلم من قصته الصبر والثبات.",q:"ماذا صنع نوح عليه السلام بأمر الله؟",a:["قصرًا","سفينة","حديقة"],correct:1},
-{title:"إبراهيم عليه السلام",emoji:"🔥",text:"كان إبراهيم عليه السلام يدعو قومه إلى عبادة الله وحده، ورفض عبادة الأصنام. ألقاه قومه في النار، فجعلها الله بردًا وسلامًا عليه. نتعلم من قصته الشجاعة والثقة بالله.",q:"ماذا حدث للنار عندما أُلقي فيها إبراهيم؟",a:["أصبحت بردًا وسلامًا","أحرقت المدينة","انطفأت بسبب المطر"],correct:0},
-{title:"موسى عليه السلام",emoji:"🌊",text:"أرسل الله موسى عليه السلام إلى فرعون ليدعوه إلى عبادة الله. وأيده بالمعجزات، وعندما وصل موسى ومن معه إلى البحر، أمره الله أن يضرب البحر بعصاه فانفلق، ونجا المؤمنون.",q:"بماذا ضرب موسى البحر؟",a:["بعصاه","بيده","بحجر"],correct:0},
-{title:"عيسى عليه السلام",emoji:"🕊️",text:"عيسى عليه السلام نبي من أنبياء الله، أرسله الله إلى بني إسرائيل، وأيده بمعجزات بإذن الله. دعا الناس إلى عبادة الله وحده والتحلي بالرحمة والخير.",q:"إلى من أرسل الله عيسى عليه السلام؟",a:["بني إسرائيل","قوم عاد","أهل مدين"],correct:0}
+{
+title:"آدم عليه السلام",symbol:"🌿",
+intro:"بداية خلق الإنسان… وقصة نتعلم منها العلم والتوبة.",
+scenes:[
+{title:"بداية الخلق",art:"🌱",simple:"أخبر الله الملائكة أنه سيجعل في الأرض خليفة. وخلق الله آدم عليه السلام من طين، وبدأت قصة الإنسان.",detail:"قال الله تعالى إنه جاعل في الأرض خليفة. وخلق آدم عليه السلام من طين، وهو أبو البشر. (البقرة: 30، ص: 71)",},
+{title:"نعمة العلم",art:"📚",simple:"علّم الله آدم أسماء الأشياء، وأعطاه نعمة عظيمة هي العلم والمعرفة.",detail:"علّم الله آدم الأسماء كلها، ثم عرضهم على الملائكة، فظهر فضل العلم الذي وهبه الله لآدم. (البقرة: 31–33)"},
+{title:"تكريم آدم",art:"✨",simple:"أمر الله الملائكة أن يسجدوا لآدم تكريمًا له، فسجدوا جميعًا إلا إبليس، فقد رفض واستكبر.",detail:"السجود كان بأمر الله تكريمًا لآدم، وليس عبادة له. ورفض إبليس الأمر تكبرًا. (البقرة: 34)"},
+{title:"في الجنة",art:"🌳",simple:"أسكن الله آدم وزوجته الجنة، وأباح لهما نعيمها، ونهاهما عن الاقتراب من شجرة معينة.",detail:"لم يذكر القرآن اسم الشجرة، لذلك لا نجزم بنوعها. وقد نهاهما الله عن الأكل منها. (البقرة: 35)"},
+{title:"الخطأ والتوبة",art:"🤲",simple:"وسوس الشيطان لآدم وزوجته، فأكلا من الشجرة. ثم تابا إلى الله وطلبا مغفرته.",detail:"اعترف آدم وزوجته بذنبهما وقالا: ربنا ظلمنا أنفسنا وإن لم تغفر لنا وترحمنا لنكونن من الخاسرين. (الأعراف: 20–23)"},
+{title:"رحمة الله وبداية الحياة",art:"🌅",simple:"تاب الله على آدم، ثم بدأت حياة البشر على الأرض. وأخبرنا الله أن من يتبع هداه فلا خوف عليهم ولا هم يحزنون.",detail:"قبل الله توبة آدم، وأنزل الله البشر إلى الأرض، وأرسل لهم الهدى. (البقرة: 37–39، طه: 122–123)"}
+],
+lessons:["العلم نعمة عظيمة من الله.","الكبر صفة مذمومة.","الشيطان عدو للإنسان.","علينا الاعتراف بالخطأ والتوبة.","رحمة الله واسعة."],
+questions:[
+{q:"ممَّ خلق الله آدم عليه السلام؟",a:["من نور","من طين","من ماء"],c:1},
+{q:"من الذي رفض السجود لآدم؟",a:["إبليس","نوح","موسى"],c:0},
+{q:"ماذا فعل آدم عندما أخطأ؟",a:["استكبر","تاب إلى الله","أنكر خطأه"],c:1},
+{q:"ماذا نتعلم من قصة آدم؟",a:["الكبر","عدم الاعتذار","التوبة والرجوع إلى الله"],c:2}
+]
+},
+{
+title:"نوح عليه السلام",symbol:"🚢",
+intro:"قصة نبي صبر ودعا قومه إلى عبادة الله.",
+scenes:[
+{title:"دعوة نوح",art:"🌤️",simple:"أرسل الله نوحًا عليه السلام إلى قومه، فدعاهم إلى عبادة الله وحده وترك عبادة الأصنام.",detail:"دعا نوح قومه ليلًا ونهارًا، وسرًا وجهارًا، وصبر على دعوتهم زمنًا طويلًا. (نوح: 1–9)"},
+{title:"الصبر والثبات",art:"🌿",simple:"لم يستسلم نوح رغم أن كثيرًا من قومه رفضوا دعوته. وظل يدعوهم إلى الخير.",detail:"استمر نوح في دعوة قومه وصبر على أذاهم، وكان يدعوهم إلى الاستغفار والتوبة. (نوح: 10–12)"},
+{title:"السفينة",art:"🛶",simple:"أوحى الله إلى نوح أن يصنع سفينة، فبدأ العمل بأمر الله رغم سخرية بعض قومه.",detail:"أمر الله نوحًا بصنع الفلك، وكان يصنعها بوحي الله وتعليمه. (هود: 37–38)"},
+{title:"النجاة",art:"🌈",simple:"جاء الطوفان، وحمل نوح في السفينة من آمن معه ومن كل زوجين اثنين، فنجا المؤمنون بأمر الله.",detail:"جرت السفينة في موج كالجبال، ونجّى الله نوحًا والذين آمنوا معه. (هود: 40–44)"},
+{title:"عبرة القصة",art:"⭐",simple:"نتعلم من نوح عليه السلام الصبر، والثقة بالله، والاستمرار في فعل الخير.",detail:"قصة نوح تعلمنا أن الصبر على الحق مهم، وأن النجاة بيد الله."}
+],
+lessons:["الصبر على فعل الخير.","الثقة بالله.","عدم السخرية من الآخرين.","الاستمرار في الدعوة إلى الخير."],
+questions:[
+{q:"إلى ماذا دعا نوح قومه؟",a:["عبادة الأصنام","عبادة الله وحده","ترك العمل"],c:1},
+{q:"ماذا صنع نوح بأمر الله؟",a:["سفينة","قصرًا","حديقة"],c:0},
+{q:"ماذا حمل نوح في السفينة؟",a:["المؤمنين ومن كل زوجين اثنين","الطيور فقط","الأشجار"],c:0},
+{q:"ما أهم درس من قصته؟",a:["الاستسلام","الكبر","الصبر والثقة بالله"],c:2}
+]
+},
+{
+title:"إبراهيم عليه السلام",symbol:"🔥",
+intro:"قصة نبي شجاع دعا قومه إلى عبادة الله وحده.",
+scenes:[
+{title:"البحث عن الحق",art:"🌙",simple:"كان إبراهيم عليه السلام يدعو قومه إلى عبادة الله وحده، ويرشدهم إلى ترك عبادة الأصنام.",detail:"حاجّ إبراهيم قومه في عبادة الكواكب والأصنام، وبيّن لهم أن الله هو الخالق المستحق للعبادة. (الأنعام: 74–79)"},
+{title:"الشجاعة",art:"🕊️",simple:"رفض إبراهيم عبادة الأصنام، ودعا قومه إلى التفكير في أنها لا تنفع ولا تضر.",detail:"بيّن إبراهيم لقومه بطلان عبادة الأصنام، ودعاهم إلى عبادة الله وحده. (الأنبياء: 51–67)"},
+{title:"النار",art:"🔥",simple:"ألقى قوم إبراهيم به في النار، لكن الله أمر النار أن تكون بردًا وسلامًا عليه، فنجّاه الله.",detail:"قال الله تعالى: يا نار كوني بردًا وسلامًا على إبراهيم. (الأنبياء: 68–70)"},
+{title:"عبرة القصة",art:"⭐",simple:"نتعلم من إبراهيم الشجاعة في الحق، والثقة بالله، والإخلاص في العبادة.",detail:"كان إبراهيم حنيفًا مسلمًا، ولم يكن من المشركين. (آل عمران: 67)"}
+],
+lessons:["الشجاعة في قول الحق.","عبادة الله وحده.","التفكير وعدم تقليد الخطأ.","الثقة بالله."],
+questions:[
+{q:"إلى ماذا دعا إبراهيم قومه؟",a:["عبادة الأصنام","عبادة الله وحده","عبادة النجوم"],c:1},
+{q:"ماذا فعل قوم إبراهيم به؟",a:["ألقوه في النار","بنوا له بيتًا","أعطوه سفينة"],c:0},
+{q:"ماذا أمر الله النار أن تكون؟",a:["ماءً","بردًا وسلامًا","ظلامًا"],c:1},
+{q:"ماذا نتعلم من قصته؟",a:["الكبر","الخوف من قول الحق","الشجاعة والثقة بالله"],c:2}
+]
+},
+{
+title:"موسى عليه السلام",symbol:"🌊",
+intro:"قصة نبي أيده الله بالمعجزات ونجّى به بني إسرائيل.",
+scenes:[
+{title:"رسالة موسى",art:"🌴",simple:"أرسل الله موسى عليه السلام إلى فرعون، ليدعوه إلى عبادة الله ويطلب منه أن يترك بني إسرائيل.",detail:"أرسل الله موسى وأخاه هارون إلى فرعون، وأمرهما أن يقولا له قولًا لينًا. (طه: 43–44)"},
+{title:"آيات الله",art:"✨",simple:"أيد الله موسى بآيات ومعجزات، منها العصا التي تتحول إلى حية بإذن الله.",detail:"أظهر الله على يد موسى آيات عظيمة، منها العصا واليد البيضاء. (طه: 17–23)"},
+{title:"انفلاق البحر",art:"🌊",simple:"عندما وصل موسى ومن معه إلى البحر، أمره الله أن يضرب البحر بعصاه، فانفلق ونجا المؤمنون.",detail:"أوحى الله إلى موسى أن يضرب البحر بعصاه، فكان كل فرق كالطود العظيم. (الشعراء: 60–68)"},
+{title:"عبرة القصة",art:"⭐",simple:"نتعلم من موسى الثقة بالله، والشجاعة، والصبر وقت الشدائد.",detail:"الله ينصر من يشاء، وهو على كل شيء قدير."}
+],
+lessons:["الثقة بالله وقت الشدة.","الشجاعة في مواجهة الظلم.","الصبر.","الله قادر على كل شيء."],
+questions:[
+{q:"إلى من أرسل الله موسى؟",a:["فرعون","قوم عاد","أهل مدين"],c:0},
+{q:"بماذا ضرب موسى البحر؟",a:["بعصاه","بيده","بحجر"],c:0},
+{q:"ماذا حدث للبحر؟",a:["اختفى","انفلق","تجمد"],c:1},
+{q:"ماذا نتعلم من القصة؟",a:["اليأس","الكبر","الثقة بالله"],c:2}
+]
+},
+{
+title:"عيسى عليه السلام",symbol:"🕊️",
+intro:"قصة نبي كريم أرسله الله بالهدى والرحمة.",
+scenes:[
+{title:"ميلاد عيسى",art:"🌟",simple:"خلق الله عيسى عليه السلام بقدرته، وجعله آية للناس، وكانت أمه مريم عليها السلام امرأة صالحة.",detail:"بشّر الله مريم بعيسى عليه السلام، وكان خلقه آية من آيات الله. (آل عمران: 45–47)"},
+{title:"رسالة عيسى",art:"📖",simple:"أرسل الله عيسى إلى بني إسرائيل، ودعاهم إلى عبادة الله وحده.",detail:"قال عيسى: إن الله ربي وربكم فاعبدوه هذا صراط مستقيم. (آل عمران: 51)"},
+{title:"المعجزات",art:"✨",simple:"أيد الله عيسى بمعجزات، منها شفاء الأكمه والأبرص وإحياء الموتى بإذن الله.",detail:"كانت معجزات عيسى كلها بإذن الله، كما ورد في سورة آل عمران والمائدة."},
+{title:"عبرة القصة",art:"⭐",simple:"نتعلم من عيسى عليه السلام الرحمة، وطاعة الله، والدعوة إلى الخير.",detail:"عيسى عبد الله ورسوله، ومن أولي العزم من الرسل."}
+],
+lessons:["الرحمة بالناس.","عبادة الله وحده.","الإيمان بقدرة الله.","الدعوة إلى الخير."],
+questions:[
+{q:"إلى من أرسل الله عيسى؟",a:["بني إسرائيل","قوم عاد","أهل مدين"],c:0},
+{q:"من أم عيسى عليه السلام؟",a:["آسية","مريم","هاجر"],c:1},
+{q:"بإذن من كانت معجزات عيسى؟",a:["بإذن الله","بإذن الناس","بإذن الملائكة"],c:0},
+{q:"ماذا نتعلم من قصته؟",a:["القسوة","الكبر","الرحمة وطاعة الله"],c:2}
+]
+}
 ];
+
 let currentChild="";
 let currentStory=0;
+let currentScene=0;
+let mode="simple";
+let selectedAnswers={};
 const names={eyad:"إياد",mayan:"مايان",layan:"ليان"};
-function getData(){try{return JSON.parse(localStorage.getItem("athar_"+currentChild))||{stars:0,done:[]}}catch(e){return {stars:0,done:[]}}}
-function saveData(data){localStorage.setItem("athar_"+currentChild,JSON.stringify(data))}
-function show(id){["home","profile","reading"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id))}
-function openChild(id){currentChild=id;document.getElementById("childName").textContent="مرحبًا يا "+names[id]+" 🌟";renderProfile();show("profile")}
+function getData(){
+try{return JSON.parse(localStorage.getItem("athar_"+currentChild))||{stars:0,done:[]}}
+catch(e){return {stars:0,done:[]}}
+}
+function saveData(d){localStorage.setItem("athar_"+currentChild,JSON.stringify(d))}
+function show(id){
+["home","profile","storyPage","quizPage"].forEach(x=>document.getElementById(x).classList.toggle("hidden",x!==id));
+}
+function openChild(id){
+currentChild=id;
+document.getElementById("childName").textContent="مرحبًا يا "+names[id]+" 🌟";
+renderProfile();show("profile");
+}
 function goHome(){show("home")}
 function renderProfile(){
 let d=getData();
-document.getElementById("starCount").textContent=d.stars;
+document.getElementById("starCount").textContent=d.stars||0;
 document.getElementById("progressText").textContent=d.done.length+" من 5 قصص مكتملة";
 document.getElementById("progressBar").style.width=(d.done.length/5*100)+"%";
 document.getElementById("storyList").innerHTML=stories.map((s,i)=>`
 <div class="card story">
-<div><h3>${s.emoji} ${s.title}</h3><p>${d.done.includes(i)?"✅ أنهيت القصة":"قصة جديدة في انتظارك"}</p></div>
+<div><h3>${s.symbol} ${s.title}</h3><p>${d.done.includes(i)?"✅ قصة مكتملة":"قصة جديدة في انتظارك"}</p></div>
 <button class="primary" onclick="openStory(${i})">${d.done.includes(i)?"اقرأ مجددًا":"ابدأ"}</button>
 </div>`).join("");
 }
 function openStory(i){
-currentStory=i;
+currentStory=i;currentScene=0;mode="simple";
 let s=stories[i];
-document.getElementById("storyTitle").textContent=s.emoji+" "+s.title;
-document.getElementById("storyText").textContent=s.text;
-document.getElementById("questionTitle").textContent="🧠 "+s.q;
-document.getElementById("feedback").textContent="";
-document.getElementById("answers").innerHTML=s.a.map((a,j)=>`<button class="answer" onclick="checkAnswer(${j})">${a}</button>`).join("");
-show("reading");
+document.getElementById("storyHeading").textContent=s.title;
+document.getElementById("storySymbol").textContent=s.symbol;
+document.getElementById("storyIntro").textContent=s.intro;
+document.getElementById("lessons").innerHTML=s.lessons.map(x=>"<li>"+x+"</li>").join("");
+setMode("simple");renderScene();show("storyPage");
 }
-function checkAnswer(choice){
-let s=stories[currentStory],d=getData();
-if(choice===s.correct){
-document.getElementById("feedback").textContent="أحسنت! إجابة صحيحة ⭐";
-if(!d.done.includes(currentStory)){d.done.push(currentStory);d.stars+=2;saveData(d)}
-document.getElementById("answers").innerHTML='<button class="primary" onclick="backToProfile()">العودة إلى القصص</button>';
-}else{
-document.getElementById("feedback").textContent="حاول مرة أخرى يا بطل ❤️";
+function setMode(m){
+mode=m;
+document.getElementById("simpleMode").classList.toggle("active",m==="simple");
+document.getElementById("detailMode").classList.toggle("active",m==="detail");
+renderScene();
 }
+function renderScene(){
+let s=stories[currentStory],sc=s.scenes[currentScene];
+document.getElementById("sceneCount").textContent="المشهد "+(currentScene+1)+" من "+s.scenes.length;
+document.getElementById("sceneTitle").textContent=sc.title;
+document.getElementById("sceneArt").textContent=sc.art;
+document.getElementById("sceneText").textContent=sc.simple;
+let detail=document.getElementById("sceneDetail");
+detail.textContent=sc.detail;
+detail.classList.toggle("hidden",mode!=="detail");
+document.getElementById("prevScene").disabled=currentScene===0;
+document.getElementById("prevScene").style.opacity=currentScene===0?".45":"1";
+document.getElementById("nextScene").textContent=currentScene===s.scenes.length-1?"انتهت المشاهد ✓":"التالي ←";
 }
+function changeScene(n){
+let total=stories[currentStory].scenes.length;
+currentScene=Math.max(0,Math.min(total-1,currentScene+n));
+renderScene();
+}
+function readScene(){
+let text=stories[currentStory].scenes[currentScene].simple;
+if(mode==="detail")text+=" "+stories[currentStory].scenes[currentScene].detail;
+if(!("speechSynthesis" in window)){
+document.getElementById("voiceNote").textContent="ميزة الصوت غير متاحة في هذا المتصفح، يمكنك قراءة النص.";
+return;
+}
+window.speechSynthesis.cancel();
+let utterance=new SpeechSynthesisUtterance(text);
+utterance.lang="ar-SA";
+utterance.rate=.85;
+window.speechSynthesis.speak(utterance);
+document.getElementById("voiceNote").textContent="يتم تشغيل الحكاية بالصوت 🔊";
+}
+function startQuiz(){
+if("speechSynthesis" in window)window.speechSynthesis.cancel();
+selectedAnswers={};
+let q=stories[currentStory].questions;
+document.getElementById("quizResult").innerHTML="";
+document.getElementById("quizQuestions").innerHTML=q.map((item,i)=>`
+<div style="margin:17px 0">
+<strong>${i+1}. ${item.q}</strong>
+${item.a.map((a,j)=>`<button class="answer" id="ans_${i}_${j}" onclick="chooseAnswer(${i},${j})">${a}</button>`).join("")}
+</div>`).join("");
+document.getElementById("submitQuiz").classList.remove("hidden");
+show("quizPage");
+}
+function chooseAnswer(i,j){
+selectedAnswers[i]=j;
+let q=stories[currentStory].questions[i];
+q.a.forEach((a,k)=>{
+let b=document.getElementById("ans_"+i+"_"+k);
+b.classList.toggle("selected",k===j);
+});
+}
+function finishQuiz(){
+let q=stories[currentStory].questions;
+if(Object.keys(selectedAnswers).length!==q.length){
+document.getElementById("quizResult").innerHTML='<p class="feedback bad">جاوب عن كل الأسئلة الأول يا بطل ❤️</p>';
+return;
+}
+let score=q.filter((item,i)=>selectedAnswers[i]===item.c).length;
+let d=getData();
+let alreadyDone=d.done.includes(currentStory);
+if(score===q.length&&!alreadyDone){
+d.done.push(currentStory);
+d.stars=(d.stars||0)+2;
+saveData(d);
+}
+let message=score===q.length?
+(score===q.length&&alreadyDone?"ممتاز! أنت أنهيت القصة من قبل، ونجومك محفوظة.":"أحسنت! إجابات كلها صحيحة، حصلت على نجمتين ⭐⭐"):
+"نتيجتك "+score+" من "+q.length+". راجع إجاباتك وحاول مرة أخرى.";
+document.getElementById("quizResult").innerHTML=`
+<div class="feedback ${score===q.length?"good":"bad"}">
+<strong>${message}</strong>
+<p>إجابتك الصحيحة: ${score} من ${q.length}</p>
+${score===q.length?'<button class="primary" onclick="backToProfile()">العودة إلى ملفي</button>':'<button class="secondary" onclick="startQuiz()">حاول مرة أخرى</button>'}
+</div>`;
+document.getElementById("submitQuiz").classList.add("hidden");
+}
+function backToStory(){show("storyPage")}
 function backToProfile(){renderProfile();show("profile")}
 </script>
 </body>
