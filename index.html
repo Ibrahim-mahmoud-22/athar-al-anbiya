@@ -1,441 +1,468 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#56368c">
-<title>أثر الأنبياء | موسوعة إسلامية للأطفال</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
-:root{
- --purple:#6845a0;--deep:#39245f;--pink:#ff8db4;--blue:#6fc9ed;
- --yellow:#ffd66e;--green:#79d5a5;--bg:#fff9ef;--ink:#382b4d;
- --card:#fff;--shadow:0 7px 22px #48306b18;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:Cairo,Arial,sans-serif;color:var(--ink);background:
- radial-gradient(circle at 10% 5%,#ffe0ed 0,transparent 24%),
- radial-gradient(circle at 90% 10%,#d9f4ff 0,transparent 27%),var(--bg)}
-button,input{font:inherit}
-button{cursor:pointer;border:0}
-header{background:linear-gradient(120deg,#39245f,#7952ad);color:white;padding:16px 5%;position:relative;overflow:hidden}
-header:after{content:"✦  ✧  ✦  ✧  ✦";position:absolute;left:5%;top:12px;color:#ffe49c;font-size:25px;opacity:.8}
-.brand{font-size:clamp(25px,5vw,38px);font-weight:900}
-.subtitle{font-size:13px;color:#f7eaff}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px}
-select,.search{border:0;border-radius:14px;padding:10px 13px;background:white;color:var(--ink);max-width:100%}
-main{max-width:1150px;margin:auto;padding:18px}
-.hero{background:linear-gradient(120deg,#fff0c8,#ffe1ed 55%,#dff5ff);border-radius:25px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;box-shadow:var(--shadow)}
-.hero h1{margin:0 0 5px;font-size:25px;color:#56368c}
-.hero p{margin:0;font-size:14px}
-.hero-art{font-size:58px}
-.profile{background:white;border-radius:20px;padding:12px 16px;display:flex;align-items:center;gap:12px;margin:15px 0;box-shadow:var(--shadow)}
-.avatar{width:53px;height:53px;border-radius:17px;background:#ffdfed;display:grid;place-items:center;font-size:30px}
-.profile-info{flex:1}
-.profile-info strong{display:block}
-.small{font-size:12px;color:#887b98}
-.stars{color:#e9a900;font-weight:900}
-.progress{height:8px;background:#eee5f5;border-radius:20px;overflow:hidden;margin-top:6px}
-.progress span{display:block;height:100%;background:linear-gradient(90deg,#ff9cbd,#ffc95f);width:0}
-.section-title{font-size:20px;font-weight:900;margin:24px 0 12px}
-.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px}
-.menu-card{background:white;border-radius:19px;padding:15px 10px;text-align:center;box-shadow:var(--shadow);border:2px solid transparent;transition:.2s;min-height:116px;color:var(--ink)}
-.menu-card:hover{transform:translateY(-3px);border-color:#e4c9ff}
-.menu-icon{font-size:32px;display:block;margin-bottom:5px}
-.menu-card strong{font-size:13px}
-.panel{background:white;border-radius:22px;padding:18px;margin-top:17px;box-shadow:var(--shadow)}
-.panel h2{margin:0 0 12px;color:var(--purple)}
-.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
-.tile{background:#faf5ff;border-radius:15px;padding:13px;text-align:right;color:var(--ink)}
-.tile button{background:transparent;color:var(--purple);font-weight:800}
-.action{background:var(--purple);color:white;padding:10px 17px;border-radius:13px;font-weight:800;margin:4px}
-.action.secondary{background:#f2e9ff;color:var(--purple)}
-.action.yellow{background:#ffe39a;color:#654515}
-.back{background:#eee5f8;color:#56368c;border-radius:12px;padding:8px 14px;font-weight:800}
-.content-page{background:white;border-radius:22px;padding:18px;box-shadow:var(--shadow);margin-top:16px}
-.content-page h2{color:var(--purple);margin-top:0}
-.story-page{background:#fff9e9;border:1px solid #f4e4b9;padding:17px;border-radius:18px;margin:12px 0;line-height:2}
-.story-page h3{color:#865c26;margin:0 0 8px}
-.notice{background:#fff4d9;border-right:4px solid #e6b74c;padding:12px;border-radius:12px;font-size:13px}
-footer{text-align:center;padding:28px 10px;color:#9589a4;font-size:12px}
-.bottom-nav{position:sticky;bottom:0;background:#fffefaed;backdrop-filter:blur(10px);border-top:1px solid #eee;display:flex;justify-content:space-around;padding:9px;z-index:5}
-.bottom-nav button{background:none;color:#765c94;font-size:12px;font-weight:800}
-.hidden{display:none!important}
-.list-row{padding:12px;border-bottom:1px solid #f0eaf5;display:flex;justify-content:space-between;gap:8px;align-items:center}
-.badge{background:#e8f7ed;color:#27794b;border-radius:20px;padding:3px 9px;font-size:11px}
-input[type=text]{width:100%;padding:12px;border:1px solid #e5d8ef;border-radius:13px;margin:8px 0}
-.quiz-option{display:block;width:100%;text-align:right;padding:12px;border-radius:13px;background:#f5effb;margin:8px 0;color:var(--ink)}
-.quiz-option:hover{background:#e8d9fb}
-@media(max-width:560px){main{padding:12px}.hero{grid-template-columns:1fr}.hero-art{display:none}.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.profile{align-items:flex-start}}
-</style>
-</head>
-<body>
-<header>
- <div class="brand">🌙 أثر الأنبياء</div>
- <div class="subtitle">موسوعة إسلامية تعليمية للأطفال • نتعلم ونكتشف ونرتقي</div>
- <div class="topbar">
-  <label>👧 اختر الطفل:
-   <select id="childSelect" onchange="changeChild()">
-    <option value="eyad">إياد</option><option value="mayan">مايان</option><option value="layan">ليان</option>
-   </select>
-  </label>
-  <button class="action yellow" onclick="showSection('daily')">⭐ التحدي اليومي</button>
- </div>
-</header>
+    <!--
+    أثر الأنبياء – موسوعة إسلامية تعليمية للأطفال
+    ملف المصدر الواحد: احفظ نسخة من هذا المحتوى باسم index.html لرفعه على GitHub Pages.
+    البيانات المحلية لكل طفل: athar_eyad / athar_mayan / athar_layan.
+    المكتبة الإسلامية مؤجلة حسب اعتماد صاحب المشروع، وتم توحيد قصص القرآن في قسم واحد.
+    تنبيه تنفيذ: فهرس القرآن موجود، أما نص المصحف الكامل والتلاوات الصوتية المرخصة وبعض ملفات القصص التفصيلية فيلزم إدراج نسخها الموثوقة قبل اعتبار كل المحتوى مكتملًا للنشر.
+    لا يتم تجسيد الأنبياء في الرسومات.
+    -->
+    <!DOCTYPE html>
+    <html lang="ar" dir="rtl">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7158bd">
+    <title>أثر الأنبياء | موسوعة إسلامية للأطفال</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
+    :root{--purple:#7158bd;--pink:#f28bb5;--blue:#68b9e9;--yellow:#ffd66b;--green:#78cda8;--ink:#39345e;--paper:#fffdf8}
+    *{box-sizing:border-box}body{margin:0;font-family:'Cairo',sans-serif;color:var(--ink);background:#f5efff;min-height:100vh}button{font-family:inherit;cursor:pointer}.app{width:min(1200px,100%);margin:auto;padding:14px}
+    .hero{position:relative;overflow:hidden;border-radius:28px;padding:22px;color:white;background:linear-gradient(130deg,#51439d,#8d72d5 55%,#e99ac0);box-shadow:0 8px 24px #51439d30}
+    .hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:#ffffff15}.hero:before{width:220px;height:220px;top:-100px;right:-50px}.hero:after{width:160px;height:160px;bottom:-100px;left:10%}
+    .brand{position:relative;z-index:1;text-align:center}.brand h1{font-size:clamp(28px,6vw,48px);margin:0;font-weight:900}.brand p{margin:4px 0 14px;font-size:14px}
+    .kids{position:relative;z-index:1;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.kid{border:2px solid #ffffff80;background:#ffffff20;color:white;padding:8px 18px;border-radius:18px;font-weight:800;font-size:15px}.kid.active{background:white;color:#59479f}
+    .profile{margin-top:14px;background:#fff;border-radius:22px;padding:14px;display:flex;align-items:center;gap:12px;box-shadow:0 4px 15px #51439d12}.avatar{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;font-size:32px;background:#fff0c9}.profile-info{flex:1}.profile-info strong{font-size:18px}.profile-info small{display:block;color:#827c9c}.stats{display:flex;gap:8px;flex-wrap:wrap}.stat{background:#fff4d9;border-radius:13px;padding:7px 10px;font-size:12px;font-weight:800}
+    .section-title{display:flex;align-items:center;gap:9px;margin:22px 4px 12px;font-size:21px;font-weight:900}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+    .menu-card{border:0;border-radius:20px;padding:15px 7px;min-height:112px;color:#443c67;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-shadow:0 4px 12px #40316b12;transition:.15s}.menu-card:active{transform:scale(.97)}.menu-card .emoji{font-size:31px}.menu-card strong{font-size:13px}.menu-card small{font-size:10px;opacity:.75}
+    .c1{background:#ffe2ed}.c2{background:#dff2ff}.c3{background:#fff0c9}.c4{background:#ddf5e9}.c5{background:#e9e1ff}.c6{background:#ffe8d7}.c7{background:#d9f3f2}.c8{background:#f9e2ff}.c9{background:#edf0d2}
+    .panel{background:white;border-radius:22px;padding:16px;margin-top:14px;box-shadow:0 4px 15px #40316b10}.panel h3{margin:0 0 9px}.challenge{background:linear-gradient(120deg,#fff0bd,#ffe2e8);border-radius:20px;padding:16px;margin-top:15px}.challenge button,.primary{border:0;background:var(--purple);color:white;padding:10px 18px;border-radius:14px;font-weight:800}
+    .bottom-nav{position:sticky;bottom:8px;z-index:10;display:flex;justify-content:space-around;gap:4px;background:#ffffffed;backdrop-filter:blur(12px);padding:9px 4px;border-radius:20px;box-shadow:0 5px 22px #40316b20;margin-top:18px}.bottom-nav button{border:0;background:transparent;color:#716b8b;font-size:11px;font-weight:800;padding:5px}.bottom-nav button span{display:block;font-size:20px}
+    .view{display:none}.view.active{display:block}.back{border:0;background:#eee8ff;color:#59479f;border-radius:12px;padding:8px 14px;font-weight:800}.content-card{background:white;padding:17px;border-radius:20px;margin:12px 0;line-height:2}.content-card h2{margin:8px 0;color:#59479f}.content-card h3{color:#735cba}.content-card p{margin:8px 0}.content-card ul{padding-right:22px}.page-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.secondary{border:0;background:#e8e2fa;color:#58469b;border-radius:12px;padding:9px 14px;font-weight:800}
+    input,select{width:100%;padding:12px;border:1px solid #ded7ef;border-radius:13px;font-family:inherit;font-size:15px;background:white}.searchbox{margin:12px 0}.notice{background:#fff6d9;border-radius:14px;padding:12px;font-size:13px;line-height:1.8}.list-btn{width:100%;text-align:right;border:0;background:#fff;border-radius:14px;padding:13px;margin:6px 0;color:var(--ink);font:700 14px Cairo;box-shadow:0 2px 9px #40316b0c}.list-btn small{display:block;color:#88819f;font-weight:400}.progress{height:9px;background:#eee8fa;border-radius:20px;overflow:hidden}.progress i{display:block;height:100%;background:#78cda8}.badge{display:inline-block;background:#fff0c9;border-radius:10px;padding:3px 9px;font-size:12px}
+    footer{text-align:center;color:#88819f;font-size:12px;padding:18px}
+    @media(min-width:700px){.menu-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.app{padding:22px}}@media(max-width:360px){.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    </style>
+    </head>
+    <body>
+    <div class="app">
+    <header class="hero">
+     <div class="brand"><h1>🌙 أثر الأنبياء</h1><p>موسوعة إسلامية تعليمية للأطفال</p></div>
+     <div class="kids" id="kids">
+      <button class="kid active" data-kid="eyad">إياد</button><button class="kid" data-kid="mayan">مايان</button><button class="kid" data-kid="layan">ليان</button>
+     </div>
+    </header>
+    <section class="profile">
+     <div class="avatar" id="avatar">🧒</div><div class="profile-info"><strong id="childName">إياد</strong><small id="childLevel">المستوى الأول · مستكشف صغير</small></div>
+     <div class="stats"><div class="stat">⭐ <b id="stars">0</b> نجمة</div><div class="stat">📚 <b id="completed">0</b> درس</div></div>
+    </section>
+    <main id="home">
+     <h2 class="section-title">✨ ماذا سنتعلم اليوم؟</h2>
+     <div class="menu-grid" id="mainMenu"></div>
+     <div class="challenge"><h3>🎯 تحدي اليوم</h3><p id="dailyQuestion">من هو أول الأنبياء؟</p><div id="dailyAnswers"></div><p id="dailyFeedback" aria-live="polite"></p></div>
+     <div class="panel"><h3>📖 آخر درس</h3><p id="lastLesson">لم تبدأ التعلم بعد. اختر قسمًا لنبدأ رحلتنا!</p><button class="secondary" onclick="openLastLesson()">استكمل التعلم</button></div>
+     <div class="panel"><h3>🏆 إنجازاتك</h3><p>كلما قرأت وتعلمت وأجبت عن الأسئلة، ستجمع النجوم وتفتح إنجازات جديدة.</p><div class="progress"><i id="progressBar" style="width:0%"></i></div><small id="progressText">0% من الدروس التي أنجزتها</small></div>
+    </main>
+    <section id="view" class="view"></section>
+    <nav class="bottom-nav">
+     <button onclick="goHome()"><span>🏠</span>الرئيسية</button><button onclick="openSection('search')"><span>🔎</span>بحث</button><button onclick="openSection('favorites')"><span>❤️</span>المفضلة</button><button onclick="openSection('achievements')"><span>🏆</span>إنجازاتي</button>
+    </nav>
+    <footer>أثر الأنبياء · نتعلم ونقتدي ونكبر بالعلم والأخلاق</footer>
+    </div>
+    <script>
+    const sections=[
+    ['prophets','📚','موسوعة الأنبياء','تعرف على قصص الأنبياء'],['seerah','🌟','السيرة النبوية','حياة رسولنا محمد ﷺ'],['names','💎','أسماء الله الحسنى','نتعرف إلى أسماء الله'],['journeys','🧭','رحلات الأنبياء','مواقف ودروس'],['familytree','🌳','شجرة الأنبياء','روابط النسب الثابتة'],['quran','📖','القرآن الكريم','الأجزاء ومعاني الكلمات'],['occasions','🌙','المناسبات','الأيام والشهور الإسلامية'],['values','💛','الأخلاق والقيم','نتعلم حسن الخلق'],['adhkar','🤲','الأذكار والأدعية','أذكار من القرآن والسنة'],['pillars','🕌','أركان الإسلام','نتعلم عباداتنا'],['facts','🧠','معلومات مفيدة','معلومات إسلامية'],['favorites','❤️','المفضلة','ما حفظته من الدروس'],['search','🔎','البحث','ابحث في الموسوعة'],['achievements','🏆','إنجازات الطفل','نجومك وتقدمك'],['quiz','💬','اسأل عن الأنبياء','اسأل وتعلّم بإجابة موثقة'],['quranstories','📖','قصص من القرآن','حكايات وعبر قرآنية'],['about','ℹ️','عن التطبيق','رسالتنا ومصادرنا']
+    ];
+    const prophets=[
+    ['آدم عليه السلام','أول البشر وأول الأنبياء. خلقه الله من طين، وعلّمه الأسماء، وأسكنه الجنة ثم تاب عليه بعد أن تلقّى كلمات من ربه.','البقرة: 30–39، الأعراف: 11–27، طه: 115–123'],
+    ['إدريس عليه السلام','ذكره الله بالصديقية والنبوة، ورفعه مكانًا عليًا. لا تذكر المصادر القرآنية تفاصيل كثيرة عن قصته.','مريم: 56–57، الأنبياء: 85–86'],
+    ['نوح عليه السلام','دعا قومه إلى عبادة الله وحده زمنًا طويلًا، وصبر على أذاهم، وأمره الله بصنع السفينة، فنجّى الله المؤمنين وأغرق المكذبين.','هود: 25–49، نوح: 1–28، المؤمنون: 23–30'],
+    ['هود عليه السلام','أرسله الله إلى عاد، فدعاهم إلى التوحيد وذكّرهم بنعم الله، لكن أكثرهم أعرضوا، فنجّى الله هودًا والمؤمنين وأهلك المكذبين.','هود: 50–60، الأحقاف: 21–26'],
+    ['صالح عليه السلام','أرسله الله إلى ثمود، وأيّده بالناقة آية لقومه، وحذّرهم من إيذائها، فعقرها المكذبون فأخذتهم الرجفة.','هود: 61–68، الشمس: 11–15'],
+    ['إبراهيم عليه السلام','خليل الرحمن، دعا أباه وقومه إلى التوحيد، وحطّم الأصنام، وأُلقي في النار فنجّاه الله، ورفع قواعد الكعبة مع ابنه إسماعيل.','البقرة: 124–132، الأنبياء: 51–70، الصافات: 99–113'],
+    ['لوط عليه السلام','أرسله الله إلى قومه لينهاهم عن الفاحشة، فدعاهم إلى التقوى، فنجّاه الله وأهله إلا امرأته، وأهلك القوم الظالمين.','هود: 77–83، الحجر: 61–77'],
+    ['إسماعيل عليه السلام','ابن إبراهيم، وصفه الله بأنه صادق الوعد وكان رسولًا نبيًا، وشارك أباه في رفع قواعد الكعبة.','البقرة: 125–129، مريم: 54–55، الصافات: 101–107'],
+    ['إسحاق عليه السلام','بشّر الله إبراهيم وزوجته به، وجعله نبيًا من الصالحين، ومن ذريته يعقوب.','هود: 71–73، الصافات: 112–113'],
+    ['يعقوب عليه السلام','ابن إسحاق، وهو إسرائيل، وكان نبيًا صابرًا، وأبًا ليوسف وإخوته، وأوصى أبناءه بعبادة الله وحده.','البقرة: 132–133، يوسف: 4–18، يوسف: 83–87'],
+    ['يوسف عليه السلام','رأى رؤيا في صغره، ومرّ بابتلاءات كثيرة، ثم أكرمه الله بالتمكين في الأرض وجمع شمله بأهله.','سورة يوسف كاملة'],
+    ['أيوب عليه السلام','أثنى الله عليه بالصبر، وابتلاه في جسده وأهله، فدعا ربه فكشف عنه الضر ورحمه.','الأنبياء: 83–84، ص: 41–44'],
+    ['شعيب عليه السلام','دعا أهل مدين إلى عبادة الله وإيفاء الكيل والميزان وترك الفساد، فنجّى الله المؤمنين وأخذ الظالمين.','هود: 84–95، الأعراف: 85–93'],
+    ['موسى عليه السلام','كلّمه الله، وأرسله إلى فرعون، وأيّده بآيات، ونجّى الله معه بني إسرائيل من فرعون.','طه، القصص، الأعراف: 103–137'],
+    ['هارون عليه السلام','أخو موسى ووزيره في الدعوة، أرسله الله معه إلى فرعون، وكان نبيًا.','طه: 29–36، طه: 90–94، مريم: 53'],
+    ['ذو الكفل عليه السلام','ذكره الله في عداد الصابرين والأخيار. لم يرد في القرآن تفصيل قصته أو نسبه.','الأنبياء: 85–86، ص: 48'],
+    ['داود عليه السلام','آتاه الله الملك والحكمة، وأنزل عليه الزبور، وسخّر معه الجبال والطير يسبحن.','البقرة: 251، ص: 17–26، سبأ: 10–11'],
+    ['سليمان عليه السلام','ابن داود، آتاه الله ملكًا عظيمًا وعلّمه منطق الطير، وسخّر له الجن والريح بإذن الله.','النمل: 15–44، سبأ: 12–14، ص: 30–40'],
+    ['إلياس عليه السلام','دعا قومه إلى عبادة الله وترك عبادة بعل، وذكره الله في عباده المؤمنين.','الصافات: 123–132'],
+    ['اليسع عليه السلام','ذكره الله في جملة الأخيار والأنبياء، ولم يفصل القرآن أحداث قصته.','الأنعام: 86، ص: 48'],
+    ['يونس عليه السلام','خرج مغاضبًا، فالتقمه الحوت، فنادى ربه في الظلمات فاستجاب الله له ونجّاه.','يونس: 98، الأنبياء: 87–88، الصافات: 139–148'],
+    ['زكريا عليه السلام','دعا ربه أن يرزقه ذرية طيبة رغم كبر سنه، فبشّره الله بيحيى.','آل عمران: 37–41، مريم: 2–15'],
+    ['يحيى عليه السلام','بشّره الله به وهو غلام، وآتاه الحكم صبيًا، ووصفه بالبر والتقوى.','آل عمران: 39، مريم: 7–15'],
+    ['عيسى عليه السلام','وُلد من مريم عليها السلام بآية من الله، وتكلّم في المهد، وأيّده الله بالمعجزات بإذنه.','آل عمران: 45–55، مريم: 16–36، المائدة: 110'],
+    ['محمد ﷺ','خاتم الأنبياء والمرسلين، أرسله الله رحمة للعالمين، وأنزل عليه القرآن، ودعا إلى التوحيد ومكارم الأخلاق.','الأحزاب: 40، الأنبياء: 107، سورة محمد، وسائر القرآن']
+    ];
+    const stories={
+    'آدم عليه السلام':[
+    ['بداية الخلق','أخبر الله الملائكة أنه جاعل في الأرض خليفة. وخلق آدم من طين، وعلّمه الأسماء كلها. فسجد الملائكة امتثالًا لأمر الله، إلا إبليس أبى واستكبر.'],
+    ['في الجنة','أسكن الله آدم وزوجه الجنة، وأباح لهما نعيمها، ونهاهما عن شجرة معينة. وسوس الشيطان لهما، فأكلا منها، فبدت لهما سوآتهما.'],
+    ['التوبة والعودة إلى الله','أدرك آدم وزوجه خطأهما، وتوجها إلى الله بالتوبة. فتاب الله عليهما وهداهما، وبدأت حياة الإنسان في الأرض. نتعلم أن باب التوبة مفتوح لمن رجع إلى الله بصدق.']
+    ],
+    'نوح عليه السلام':[
+    ['دعوة طويلة وصبر عظيم','أرسل الله نوحًا إلى قومه، فدعاهم ليلًا ونهارًا وسرًا وجهرًا، وذكّرهم أن يعبدوا الله وحده ويستغفروه. لكن كثيرًا منهم أصروا على التكذيب.'],
+    ['صنع السفينة','أوحى الله إلى نوح أن يصنع السفينة، فكان يصنعها بأمر الله، وكلما مر عليه ملأ من قومه سخروا منه. ظل ثابتًا مطيعًا لأمر ربه.'],
+    ['الطوفان والنجاة','جاء أمر الله وفار التنور، فحمل نوح في السفينة من أمره الله بحملهم، وجرت السفينة في موج كالجبال. نجّى الله نوحًا ومن معه من المؤمنين، وأهلك المكذبين.']
+    ],
+    'إبراهيم عليه السلام':[
+    ['قلب يبحث عن الحق','نشأ إبراهيم بين قوم يعبدون الأصنام، فلم يقبل أن يعبد ما لا يسمع ولا يبصر. دعا أباه وقومه بالحكمة إلى عبادة الله وحده.'],
+    ['حوار مع قومه','بيّن إبراهيم لقومه ضعف الأصنام التي يعبدونها، ودعاهم للتفكر. ولما حطم أصنامهم ليقيم عليهم الحجة، غضبوا وقرروا أن يعاقبوه.'],
+    ['النار التي صارت بردًا وسلامًا','ألقاه قومه في النار، فأمر الله النار أن تكون بردًا وسلامًا على إبراهيم، فنجّاه الله.'],
+    ['بناء البيت','رفع إبراهيم وإسماعيل قواعد البيت الحرام، وهما يدعوان الله أن يتقبل منهما، وأن يجعل من ذريتهما أمة مسلمة.']
+    ],
+    'يوسف عليه السلام':[
+    ['الرؤيا الجميلة','رأى يوسف في صغره أحد عشر كوكبًا والشمس والقمر له ساجدين، فقص رؤياه على أبيه يعقوب، فنصحه ألا يقصها على إخوته.'],
+    ['ابتلاء الإخوة','حسد بعض إخوته يوسف، فألقوه في البئر، ثم عادوا إلى أبيهم بقصة غير صحيحة. وجاءت قافلة فأخرجته من البئر، وبيع في مصر.'],
+    ['من المحنة إلى التمكين','مر يوسف بابتلاءات، فاختار العفة والصبر، ودخل السجن ظلمًا. ثم أظهر الله براءته ومكّنه في الأرض، وجعله على خزائن الأرض.'],
+    ['اجتماع الأسرة','جاء إخوة يوسف إلى مصر، ثم عرّفهم بنفسه، وعفا عنهم، واجتمع بأبيه وأهله. وتحققت رؤياه بإذن الله.']
+    ]
+    };
+    const names99=[
+    ['الرحمن','واسع الرحمة لجميع خلقه'],['الرحيم','كثير الرحمة بالمؤمنين'],['الملك','المالك المتصرف في كل شيء'],['القدوس','المنزه عن كل نقص'],['السلام','السالم من كل عيب ونقص'],['المؤمن','الذي يؤمّن عباده ويصدق وعده'],['المهيمن','الرقيب الحافظ'],['العزيز','الغالب الذي لا يُغلب'],['الجبار','العالي القاهر وجابر الكسير'],['المتكبر','المتعالي عن صفات الخلق'],['الخالق','الذي خلق كل شيء'],['البارئ','الذي أوجد الخلق'],['المصور','الذي أعطى كل مخلوق صورته'],['الغفار','كثير المغفرة'],['القهار','الغالب لكل شيء'],['الوهاب','كثير العطاء'],['الرزاق','الذي يرزق جميع خلقه'],['الفتاح','الذي يفتح أبواب الرحمة والخير'],['العليم','الذي أحاط علمه بكل شيء'],['القابض','الذي يقبض بحكمته'],['الباسط','الذي يبسط فضله ورزقه'],['الخافض','الذي يخفض من يشاء بحكمته'],['الرافع','الذي يرفع من يشاء بحكمته'],['المعز','الذي يمنح العزة'],['المذل','الذي يذل من يشاء بعدله'],['السميع','الذي يسمع كل شيء'],['البصير','الذي يرى كل شيء'],['الحكم','الذي يحكم بالحق'],['العدل','المنزه عن الظلم'],['اللطيف','الرفيق بعباده الخبير بأحوالهم'],['الخبير','العالم بدقائق الأمور'],['الحليم','الذي لا يعجل بالعقوبة'],['العظيم','صاحب العظمة والكمال'],['الغفور','واسع المغفرة'],['الشكور','الذي يثيب على العمل القليل كثيرًا'],['العلي','المتعالي فوق خلقه'],['الكبير','العظيم الذي كل شيء دونه'],['الحفيظ','الحافظ لكل شيء'],['المقيت','الموصل أقوات الخلق'],['الحسيب','الكافي لعباده والمحاسب لهم'],['الجليل','العظيم ذو الجلال'],['الكريم','كثير الخير والعطاء'],['الرقيب','المطلع على كل شيء'],['المجيب','يجيب دعاء من دعاه'],['الواسع','الذي وسع كل شيء رحمة وعلمًا'],['الحكيم','الذي يضع الأمور مواضعها'],['الودود','المحب لعباده الصالحين'],['المجيد','العظيم الواسع الكرم'],['الباعث','يبعث الخلق بعد الموت'],['الشهيد','الشاهد على كل شيء'],['الحق','الثابت الذي لا شك فيه'],['الوكيل','الكفيل بأمور عباده'],['القوي','كامل القوة'],['المتين','شديد القوة'],['الولي','ناصر المؤمنين ومتولي أمورهم'],['الحميد','المستحق للحمد'],['المحصي','الذي أحصى كل شيء عددًا'],['المبدئ','الذي يبدأ الخلق'],['المعيد','الذي يعيد الخلق بعد الموت'],['المحيي','الذي يهب الحياة'],['المميت','الذي يقدّر الموت'],['الحي','كامل الحياة'],['القيوم','القائم بنفسه المقيم لغيره'],['الواجد','الذي لا يعوزه شيء'],['الماجد','العظيم الكريم'],['الواحد','المنفرد الذي لا شريك له'],['الصمد','السيد الكامل الذي تقصده الخلائق'],['القادر','الذي لا يعجزه شيء'],['المقتدر','تام القدرة'],['المقدم','الذي يقدم من يشاء بحكمته'],['المؤخر','الذي يؤخر من يشاء بحكمته'],['الأول','ليس قبله شيء'],['الآخر','ليس بعده شيء'],['الظاهر','العالي فوق كل شيء'],['الباطن','المحيط بكل شيء'],['الوالي','المالك المدبر'],['المتعالي','المنزه عن صفات النقص'],['البر','كثير الإحسان'],['التواب','يقبل توبة عباده'],['المنتقم','يعاقب من يستحق بعدله'],['العفو','الذي يمحو الذنوب'],['الرؤوف','شديد الرحمة'],['مالك الملك','مالك كل ملك'],['ذو الجلال والإكرام','صاحب العظمة والكرم'],['المقسط','العادل'],['الجامع','الذي يجمع الخلق ليوم الحساب'],['الغني','المستغني عن كل أحد'],['المغني','الذي يغني من يشاء من عباده'],['المانع','الذي يمنع بحكمته'],['الضار','الذي يقدّر الضر لحكمة'],['النافع','الذي يقدّر النفع والفضل'],['النور','هادي أهل السماوات والأرض'],['الهادي','الذي يهدي إلى الحق'],['البديع','الذي أبدع الخلق بلا مثال سابق'],['الباقي','الدائم الذي لا يفنى'],['الوارث','الباقي بعد فناء الخلق'],['الرشيد','الذي يرشد عباده ويدبر بحكمة'],['الصبور','الذي لا يعجل بالعقوبة']
+    ];
+    const quranStories=[
+    ['أصحاب الكهف','قصة فتية آمنوا بربهم وثبتوا على التوحيد، فآواهم الله إلى الكهف وأنامهم سنين طويلة.','الكهف: 9–26'],
+    ['موسى والخضر','رحلة تعلّم فيها موسى عليه السلام الصبر على أمور لم يعرف حكمتها في البداية.','الكهف: 60–82'],
+    ['ذو القرنين','ملك صالح مكّنه الله في الأرض، فاستعمل قوته في العدل ونصرة المستضعفين.','الكهف: 83–98'],
+    ['مريم عليها السلام','اصطفاها الله وطهّرها، ورزقها عيسى عليه السلام آية للناس.','آل عمران: 35–47، مريم: 16–36'],
+    ['أصحاب الفيل','حفظ الله بيته الحرام من جيش الفيل.','سورة الفيل']
+    ];
+    let currentKid='eyad',lastKey='',currentPage=null;
+    function storeKey(){return 'athar_'+currentKid}
+    function getData(){try{return JSON.parse(localStorage.getItem(storeKey()))||{stars:0,completed:[],favorites:[],last:''}}catch(e){return {stars:0,completed:[],favorites:[],last:''}}}
+    function saveData(d){localStorage.setItem(storeKey(),JSON.stringify(d));updateProfile()}
+    function updateProfile(){let d=getData(),n={eyad:'إياد',mayan:'مايان',layan:'ليان'}[currentKid];document.getElementById('childName').textContent=n;document.getElementById('stars').textContent=d.stars;document.getElementById('completed').textContent=d.completed.length;document.getElementById('lastLesson').textContent=d.last||'لم تبدأ التعلم بعد. اختر قسمًا لنبدأ رحلتنا!';document.getElementById('progressBar').style.width=Math.min(100,d.completed.length*5)+'%';document.getElementById('progressText').textContent=Math.min(100,d.completed.length*5)+'% من الدروس التي أنجزتها';document.getElementById('childLevel').textContent=d.stars>=50?'المستوى الثالث · بطل المعرفة':d.stars>=20?'المستوى الثاني · قارئ نشيط':'المستوى الأول · مستكشف صغير';document.getElementById('avatar').textContent=currentKid==='mayan'?'👧':currentKid==='layan'?'👶':'🧒'}
+    document.querySelectorAll('.kid').forEach(b=>b.addEventListener('click',()=>{currentKid=b.dataset.kid;document.querySelectorAll('.kid').forEach(x=>x.classList.toggle('active',x===b));updateProfile();goHome()}));
+    function initMenu(){document.getElementById('mainMenu').innerHTML=sections.map((s,i)=>`<button class="menu-card c${i%9+1}" onclick="openSection('${s[0]}')"><span class="emoji">${s[1]}</span><strong>${s[2]}</strong><small>${s[3]}</small></button>`).join('')}
+    function goHome(){document.getElementById('home').style.display='block';document.getElementById('view').className='view';document.getElementById('view').innerHTML='';window.scrollTo(0,0)}
+    function openSection(id){document.getElementById('home').style.display='none';let v=document.getElementById('view');v.className='view active';v.innerHTML=`<button class="back" onclick="goHome()">← الرئيسية</button><div id="sectionBody"></div>`;renderSection(id);window.scrollTo(0,0)}
+    function card(title,body){return `<article class="content-card"><h2>${title}</h2>${body}</article>`}
+    function list(items,fn){return items.map((x,i)=>`<button class="list-btn" onclick="${fn}(${i})">${x[0]}<small>${x[1]||''}</small></button>`).join('')}
+    function renderSection(id){let b=document.getElementById('sectionBody'),html='';
+    if(id==='prophets'){html=card('موسوعة الأنبياء','<p>نتعرف إلى الأنبياء الذين ذكرهم القرآن الكريم، ونقرأ ما ثبت من أخبارهم. اختر اسم نبي لفتح ملفه.</p><div class="notice">تنبيه: نلتزم بما ثبت في القرآن والسنة، ولا نضيف تفاصيل قصصية غير ثابتة. بعض الأنبياء لم يرد عنهم تفصيل قصصي في القرآن.</div>')+list(prophets.map(p=>[p[0],p[1].slice(0,85)+'…']),'openProphet')}
+    else if(id==='names'){html=card('أسماء الله الحسنى','<p>نتعلم أسماء الله ومعانيها، وندعو الله بها. تعيين قائمة الأسماء التسعة والتسعين بأسمائها المفردة فيه خلاف بين أهل العلم؛ وهذه قائمة مشهورة متداولة وليست نصًا متفقًا على ترتيبه.</p>')+names99.map((n,i)=>`<div class="content-card"><span class="badge">${i+1}</span> <b>${n[0]}</b><p>${n[1]}</p></div>`).join('')}
+    else if(id==='quranstories'){html=card('قصص وعبر من القرآن','<p>قصص وردت في القرآن الكريم، مع مواضعها لتستطيع الأسرة مراجعتها.</p>')+list(quranStories.map(x=>[x[0],x[1]+' — '+x[2]]),'openQuranStory')}
+    else if(id==='journeys'){html=card('رحلات الأنبياء','<p>نتتبع المواقف الثابتة في حياة الأنبياء دون إضافة أماكن أو تفاصيل لا دليل عليها.</p>')+list(prophets.map(p=>[p[0],'افتح الملف لمعرفة المواقف المذكورة في القرآن']),'openProphet')}
+    else if(id==='familytree'){html=card('شجرة الأنبياء','<p>نعرض روابط النسب التي ثبتت، ولا نضع صلات غير مؤكدة.</p><ul><li>إبراهيم عليه السلام: أبوه في النسب النبوي لإسماعيل وإسحاق.</li><li>إسحاق عليه السلام: والد يعقوب عليه السلام.</li><li>يعقوب عليه السلام: والد يوسف عليه السلام وإخوته.</li><li>داود عليه السلام: والد سليمان عليه السلام.</li><li>زكريا عليه السلام: والد يحيى عليه السلام.</li><li>محمد ﷺ: خاتم النبيين، ولا نخلط بين النسب الثابت والروايات غير الموثقة.</li></ul><div class="notice">هذه روابط مختارة ثابتة وليست شجرة نسب كاملة لكل الأنبياء.</div>')}
+    else if(id==='seerah'){html=card('السيرة النبوية','<p>السيرة النبوية رحلة نتعلم منها الرحمة والصبر والشجاعة والصدق. هذا القسم سيُبنى على مراحل موثقة، مع التفريق بين الصحيح وما اختلفت فيه الروايات.</p><h3>مراحل السيرة</h3><ol><li>النسب والمولد والنشأة في مكة.</li><li>نزول الوحي وبداية الدعوة.</li><li>الدعوة السرية والجهرية وما لاقاه المسلمون.</li><li>الهجرة إلى الحبشة ثم الهجرة إلى المدينة.</li><li>بناء المجتمع في المدينة.</li><li>الغزوات والصلح والفتح.</li><li>حجة الوداع والوفاة.</li></ol><div class="notice">سيُضاف التفصيل الزمني وأحداث الغزوات مع توثيق كل حدث قبل اعتماد النسخة النهائية.</div>')}
+    else if(id==='pillars'){html=card('أركان الإسلام','<ol><li><b>الشهادتان:</b> شهادة أن لا إله إلا الله وأن محمدًا رسول الله.</li><li><b>الصلاة:</b> خمس صلوات في اليوم والليلة.</li><li><b>الزكاة:</b> حق واجب في مال بشروطه.</li><li><b>صوم رمضان:</b> الامتناع عن المفطرات من الفجر إلى المغرب بنية العبادة.</li><li><b>حج البيت:</b> لمن استطاع إليه سبيلًا.</ol><h3>الصلوات الخمس وعدد ركعات الفرض</h3><ul><li>الفجر: ركعتان.</li><li>الظهر: أربع ركعات.</li><li>العصر: أربع ركعات.</li><li>المغرب: ثلاث ركعات.</li><li>العشاء: أربع ركعات.</li></ul><p>المجموع: 17 ركعة فرضًا في اليوم والليلة.</p><h3>الوضوء باختصار</h3><ol><li>النية بالقلب والتسمية.</li><li>غسل الكفين.</li><li>المضمضة والاستنشاق.</li><li>غسل الوجه.</li><li>غسل اليدين إلى المرفقين.</li><li>مسح الرأس والأذنين.</li><li>غسل القدمين إلى الكعبين.</li></ol><div class="notice">تفاصيل صفة الوضوء والصلاة وبعض أحكامهما فيها تفصيل فقهي؛ يُراجع فيها ولي الأمر أو معلم موثوق.</div>')}
+    else if(id==='adhkar'){html=card('الأذكار والأدعية','<h3>ذكر عند الاستيقاظ</h3><p>«الحمد لله الذي أحيانا بعدما أماتنا وإليه النشور» — صحيح البخاري.</p><h3>دعاء قبل الطعام</h3><p>«بسم الله» — صحيح البخاري ومسلم في التسمية عند الطعام.</p><h3>دعاء بعد الطعام</h3><p>«الحمد لله الذي أطعمني هذا ورزقنيه من غير حول مني ولا قوة» — رواه أبو داود والترمذي وحسنه أهل العلم.</p><h3>دعاء دخول الخلاء</h3><p>«اللهم إني أعوذ بك من الخبث والخبائث» — صحيح البخاري ومسلم.</p><h3>دعاء الخروج من المنزل</h3><p>«بسم الله، توكلت على الله، ولا حول ولا قوة إلا بالله» — رواه أبو داود والترمذي.</p><div class="notice">يضاف لاحقًا باب أذكار الصباح والمساء كاملًا مع تخريج كل ذكر وبيان درجته.</div>')}
+    else if(id==='values'){html=card('الأخلاق والقيم','<h3>الصدق</h3><p>قال رسول الله ﷺ: «عليكم بالصدق، فإن الصدق يهدي إلى البر» — صحيح مسلم.</p><h3>الرحمة</h3><p>قال رسول الله ﷺ: «من لا يَرحم لا يُرحم» — صحيح البخاري وصحيح مسلم.</p><h3>الكلمة الطيبة</h3><p>قال رسول الله ﷺ: «والكلمة الطيبة صدقة» — صحيح البخاري وصحيح مسلم.</p><h3>بر الوالدين</h3><p>الإحسان إلى الوالدين من أعظم أبواب البر، وقد قرن الله الإحسان إليهما بعبادته في مواضع من القرآن، منها الإسراء: 23.</p>')}
+    else if(id==='occasions'){html=card('المناسبات والشهور الهجرية','<p>السنة الهجرية اثنا عشر شهرًا:</p><ol><li>المحرّم</li><li>صفر</li><li>ربيع الأول</li><li>ربيع الآخر</li><li>جمادى الأولى</li><li>جمادى الآخرة</li><li>رجب</li><li>شعبان</li><li>رمضان</li><li>شوال</li><li>ذو القعدة</li><li>ذو الحجة</li></ol><p>من المناسبات: رمضان، عيد الفطر، يوم عرفة، عيد الأضحى، عاشوراء. تتحدد التواريخ الهجرية بالرؤية أو بالتقويم المعتمد في البلد.</p>')}
+    else if(id==='quran'){html=card('القرآن الكريم ومعاني الكلمات','<p>القرآن الكريم ثلاثون جزءًا. اختر الجزء الذي تريد دراسته، ثم أضف نصه أو اربطه بمصدر مصحف موثوق عند تجهيز النسخة الموسعة.</p><div class="notice">لا نعرض نصًا قرآنيًا غير مكتمل على أنه المصحف كاملًا. هذه النسخة لا تتضمن نص المصحف كاملًا؛ وسيضاف النص مضبوطًا مع مراجعة دقيقة ومصدر موثوق.</div><p>أمثلة لمعاني كلمات قرآنية:</p><ul><li><b>الصمد:</b> السيد الكامل الذي تقصده الخلائق في حاجاتها.</li><li><b>الفلق:</b> الصبح.</li><li><b>العاديات:</b> الخيل التي تعدو بسرعة.</li></ul>')}
+    else if(id==='facts'){html=card('معلومات مفيدة','<ul><li>عدد أركان الإسلام خمسة.</li><li>عدد الصلوات المفروضة خمس صلوات.</li><li>عدد أجزاء القرآن الكريم ثلاثون جزءًا.</li><li>خاتم الأنبياء والمرسلين هو محمد ﷺ.</li><li>قبلة المسلمين هي الكعبة المشرفة.</li></ul>')}
 
-<main>
-<div id="home">
- <section class="hero">
-  <div><h1>أهلًا بك في عالم الأنبياء! ✨</h1>
-   <p>هيا نتعلم قصص الأنبياء، ونتعرف على ديننا، ونجمع النجوم بالعلم والعمل الطيب.</p>
-  </div><div class="hero-art">🕌🌳⭐</div>
- </section>
+    else if(id==='about'){html=card('عن أثر الأنبياء','<p>أثر الأنبياء موسوعة تعليمية للأطفال، هدفها تقريب معاني الإيمان والقرآن والسيرة والأخلاق إلى الطفل بلغة واضحة ومحبة.</p><h3>منهجنا</h3><ul><li>الاعتماد على القرآن الكريم والأحاديث الثابتة.</li><li>عدم اختراع أحداث أو معجزات أو أنساب.</li><li>شرح مبسط يناسب الطفل مع ذكر المراجع.</li><li>مراعاة اختلاف الروايات عند الحاجة.</li></ul>')}
+    else if(id==='favorites'){let d=getData();html=card('المفضلة','<p>الدروس التي تحفظها ستظهر هنا.</p>')+(d.favorites.length?d.favorites.map(x=>`<button class="list-btn" onclick="openSaved('${encodeURIComponent(x)}')">${x}</button>`).join(''):'<div class="content-card">لم تحفظ أي درس بعد.</div>')}
+    else if(id==='search'){html=card('البحث في الموسوعة','<p>اكتب اسم نبي أو موضوعًا للعثور على المحتوى المتاح.</p><div class="searchbox"><input id="searchInput" placeholder="اكتب كلمة البحث..." oninput="doSearch(this.value)"></div><div id="searchResults"></div>')}
+    else if(id==='achievements'){let d=getData();html=card('إنجازات '+({eyad:'إياد',mayan:'مايان',layan:'ليان'}[currentKid]),`<h3>⭐ ${d.stars} نجمة</h3><p>الدروس المكتملة: ${d.completed.length}</p><p>المستوى: ${d.stars>=50?'بطل المعرفة':d.stars>=20?'قارئ نشيط':'مستكشف صغير'}</p><div class="progress"><i style="width:${Math.min(100,d.completed.length*5)}%"></i></div><h3>الشهادات</h3><p>${d.completed.length>=5?'🎖️ شهادة القارئ المجتهد unlocked':'أكمل خمسة دروس لتحصل على شهادة القارئ المجتهد.'}</p><h3>التقرير</h3><p>هذا التقرير محفوظ على هذا الجهاز لهذا الطفل فقط.</p>`)}
+    else if(id==='quiz'){html=card('مسابقة الأنبياء','<p>اختر الإجابة الصحيحة، واجمع النجوم!</p><div id="quizArea"></div>');setTimeout(showQuiz,0)}
+    else{html=card('القسم','سيتم عرض المحتوى هنا.')}
+    b.innerHTML=html}
+    function openProphet(i){let p=prophets[i],pages=stories[p[0]]||[['ما ثبت في القرآن','ذكر الله هذا النبي في كتابه، وأخبرنا بأصل دعوته ومكانته. لا تتوفر في النصوص المعتمدة لدينا حاليًا تفاصيل كافية لسرد أحداث أكثر دون تجاوز ما ثبت.']];currentPage={title:p[0],pages,index:0,ref:p[2]};showProphetPage()}
+    function showProphetPage(){let x=currentPage,p=x.pages[x.index],body=`<button class="back" onclick="openSection('prophets')">← قائمة الأنبياء</button>`+card(x.title,`<span class="badge">الملف التعريفي</span><h3>نبذة</h3><p>${prophets.find(z=>z[0]===x.title)?.[1]||''}</p><h3>الآيات والمراجع</h3><p>${x.ref||''}</p><hr><span class="badge">صفحة ${x.index+1} من ${x.pages.length}</span><h2>${p[0]}</h2><p>${p[1]}</p><div class="page-actions"><button class="secondary" onclick="prevPage()" ${x.index===0?'disabled':''}>السابق</button><button class="primary" onclick="nextPage()">${x.index===x.pages.length-1?'إنهاء الدرس':'الصفحة التالية'}</button><button class="secondary" onclick="favoriteCurrent()">♡ حفظ</button></div>`);document.getElementById('sectionBody').innerHTML=body}
+    function nextPage(){if(currentPage.index<currentPage.pages.length-1){currentPage.index++;showProphetPage()}else{completeLesson(currentPage.title);openSection('prophets')}}
+    function prevPage(){if(currentPage.index>0){currentPage.index--;showProphetPage()}}
+    function completeLesson(title){let d=getData();if(!d.completed.includes(title)){d.completed.push(title);d.stars+=5}d.last=title;saveData(d)}
+    function favoriteCurrent(){let d=getData();if(!d.favorites.includes(currentPage.title))d.favorites.push(currentPage.title);saveData(d);alert('تم حفظ الدرس في المفضلة')}
+    function openQuranStory(i){let x=quranStories[i];document.getElementById('sectionBody').innerHTML=`<button class="back" onclick="openSection('quranstories')">← القصص</button>`+card(x[0],`<p>${x[1]}</p><h3>موضع القصة في القرآن</h3><p>${x[2]}</p><div class="notice">اقرأ الآيات في المصحف، فهذه نبذة تعريفية وليست بديلًا عن النص القرآني.</div>`)}
+    function openSaved(x){let title=decodeURIComponent(x),i=prophets.findIndex(p=>p[0]===title);if(i>=0)openProphet(i);else alert(title)}
+    function doSearch(q){let r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return}let found=prophets.map((p,i)=>({name:p[0],desc:p[1],i})).filter(x=>(x.name+x.desc).includes(q));r.innerHTML=found.length?found.map(x=>`<button class="list-btn" onclick="openProphet(${x.i})">${x.name}<small>${x.desc}</small></button>`).join(''):'<p>لا توجد نتيجة في المحتوى المتاح.</p>'}
+    function showQuiz(){let area=document.getElementById('quizArea');if(!area)return;area.innerHTML=`<h3>من هو النبي الذي ابتلعه الحوت ثم دعا ربه فنجّاه الله؟</h3><button class="list-btn" onclick="answerQuiz(false)">موسى عليه السلام</button><button class="list-btn" onclick="answerQuiz(true)">يونس عليه السلام</button><button class="list-btn" onclick="answerQuiz(false)">يوسف عليه السلام</button><p id="quizFeedback"></p>`}
+    function answerQuiz(ok){let f=document.getElementById('quizFeedback');if(!f)return;if(ok){f.textContent='أحسنت! إجابة صحيحة ⭐';let d=getData();d.stars+=2;d.last='مسابقة الأنبياء';saveData(d);document.querySelectorAll('#quizArea button').forEach(b=>b.disabled=true)}else f.textContent='حاول مرة أخرى، تذكّر قصة يونس عليه السلام.'}
+    function daily(){let answers=[['آدم عليه السلام',true],['نوح عليه السلام',false],['إبراهيم عليه السلام',false]];document.getElementById('dailyAnswers').innerHTML=answers.map(a=>`<button class="secondary" style="margin:4px" onclick="dailyAnswer(${a[1]})">${a[0]}</button>`).join('')}
+    function dailyAnswer(ok){let f=document.getElementById('dailyFeedback');if(ok){f.textContent='رائع! إجابة صحيحة، حصلت على نجمة ⭐';let d=getData();d.stars++;d.last='التحدي اليومي';saveData(d);document.querySelectorAll('#dailyAnswers button').forEach(b=>b.disabled=true)}else f.textContent='حاول مرة أخرى! أول البشر هو آدم عليه السلام.'}
+    function openLastLesson(){let d=getData();if(!d.last){openSection('prophets');return}let i=prophets.findIndex(p=>p[0]===d.last);if(i>=0)openProphet(i);else openSection('quiz')}
 
- <section class="profile">
-  <div class="avatar" id="avatar">🧒</div>
-  <div class="profile-info">
-   <strong id="childName">إياد</strong>
-   <div class="small">المستوى: <span id="level">المتعلم الصغير</span></div>
-   <div class="stars">⭐ <span id="starCount">0</span> نجمة</div>
-   <div class="progress"><span id="progressBar"></span></div>
-  </div>
-  <button class="action secondary" onclick="showSection('achievements')">إنجازاتي</button>
- </section>
 
- <div class="section-title">🌈 اكتشف أقسام أثر الأنبياء</div>
- <div class="menu-grid" id="menuGrid"></div>
+    /* === الإضافات النهائية المعتمدة لمشروع أثر الأنبياء === */
+    sections[14][2]="اسأل عن الأنبياء";
+    sections.push(["competitions","🎯","المسابقات والتحديات","اختبارات وألعاب تعليمية"]);
+    sections.push(["reports","📊","تقارير ولي الأمر","متابعة تقدم كل طفل"]);
+    names99.splice(0,names99.length,...[["الرحمن", "واسع الرحمة لجميع خلقه"], ["الرحيم", "كثير الرحمة بالمؤمنين"], ["الملك", "المالك المتصرف في كل شيء"], ["القدوس", "المنزه عن كل نقص"], ["السلام", "السالم من كل عيب ونقص"], ["المؤمن", "الذي يؤمّن عباده ويصدق وعده"], ["المهيمن", "الرقيب الحافظ"], ["العزيز", "الغالب الذي لا يُغلب"], ["الجبار", "العالي القاهر وجابر الكسير"], ["المتكبر", "المتعالي عن صفات الخلق"], ["الخالق", "الذي خلق كل شيء"], ["البارئ", "الذي أوجد الخلق"], ["المصور", "الذي أعطى كل مخلوق صورته"], ["الغفار", "كثير المغفرة"], ["القهار", "الغالب لكل شيء"], ["الوهاب", "كثير العطاء"], ["الرزاق", "الذي يرزق جميع خلقه"], ["الفتاح", "الذي يفتح أبواب الرحمة والخير"], ["العليم", "الذي أحاط علمه بكل شيء"], ["القابض", "الذي يقبض بحكمته"], ["الباسط", "الذي يبسط فضله ورزقه"], ["الخافض", "الذي يخفض من يشاء بحكمته"], ["الرافع", "الذي يرفع من يشاء بحكمته"], ["المعز", "الذي يمنح العزة"], ["المذل", "الذي يذل من يشاء بعدله"], ["السميع", "الذي يسمع كل شيء"], ["البصير", "الذي يرى كل شيء"], ["الحكم", "الذي يحكم بالحق"], ["اللطيف", "الرفيق بعباده الخبير بأحوالهم"], ["الخبير", "العالم بدقائق الأمور"], ["الحليم", "الذي لا يعجل بالعقوبة"], ["العظيم", "صاحب العظمة والكمال"], ["الغفور", "واسع المغفرة"], ["الشكور", "الذي يثيب على العمل القليل كثيرًا"], ["العلي", "المتعالي فوق خلقه"], ["الكبير", "العظيم الذي كل شيء دونه"], ["الحفيظ", "الحافظ لكل شيء"], ["المقيت", "الموصل أقوات الخلق"], ["الحسيب", "الكافي لعباده والمحاسب لهم"], ["الجليل", "العظيم ذو الجلال"], ["الكريم", "كثير الخير والعطاء"], ["الرقيب", "المطلع على كل شيء"], ["المجيب", "يجيب دعاء من دعاه"], ["الواسع", "الذي وسع كل شيء رحمة وعلمًا"], ["الحكيم", "الذي يضع الأمور مواضعها"], ["الودود", "المحب لعباده الصالحين"], ["المجيد", "العظيم الواسع الكرم"], ["الباعث", "يبعث الخلق بعد الموت"], ["الشهيد", "الشاهد على كل شيء"], ["الحق", "الثابت الذي لا شك فيه"], ["الوكيل", "الكفيل بأمور عباده"], ["القوي", "كامل القوة"], ["المتين", "شديد القوة"], ["الولي", "ناصر المؤمنين ومتولي أمورهم"], ["الحميد", "المستحق للحمد"], ["المحصي", "الذي أحصى كل شيء عددًا"], ["المبدئ", "الذي يبدأ الخلق"], ["المعيد", "الذي يعيد الخلق بعد الموت"], ["المحيي", "الذي يهب الحياة"], ["المميت", "الذي يقدّر الموت"], ["الحي", "كامل الحياة"], ["القيوم", "القائم بنفسه المقيم لغيره"], ["الواجد", "الذي لا يعوزه شيء"], ["الماجد", "العظيم الكريم"], ["الواحد", "المنفرد الذي لا شريك له"], ["الصمد", "السيد الكامل الذي تقصده الخلائق"], ["القادر", "الذي لا يعجزه شيء"], ["المقتدر", "تام القدرة"], ["المقدم", "الذي يقدم من يشاء بحكمته"], ["المؤخر", "الذي يؤخر من يشاء بحكمته"], ["الأول", "ليس قبله شيء"], ["الآخر", "ليس بعده شيء"], ["الظاهر", "العالي فوق كل شيء"], ["الباطن", "المحيط بكل شيء"], ["الوالي", "المالك المدبر"], ["المتعالي", "المنزه عن صفات النقص"], ["البر", "كثير الإحسان"], ["التواب", "يقبل توبة عباده"], ["العفو", "الذي يمحو الذنوب"], ["الرؤوف", "شديد الرحمة"], ["مالك الملك", "مالك كل ملك"], ["ذو الجلال والإكرام", "صاحب العظمة والكرم"], ["المقسط", "العادل"], ["الجامع", "الذي يجمع الخلق ليوم الحساب"], ["الغني", "المستغني عن كل أحد"], ["المغني", "الذي يغني من يشاء من عباده"], ["المانع", "الذي يمنع بحكمته"], ["النور", "هادي أهل السماوات والأرض"], ["الهادي", "الذي يهدي إلى الحق"], ["البديع", "الذي أبدع الخلق بلا مثال سابق"], ["الباقي", "الدائم الذي لا يفنى"], ["الوارث", "الباقي بعد فناء الخلق"], ["الجميل", "إن الله جميل يحب الجمال — صحيح مسلم."], ["الرفيق", "إن الله رفيق يحب الرفق — صحيح مسلم."], ["الحيي", "إن الله حيي كريم — حديث صحيح."], ["الستير", "إن الله حيي ستير — حديث صحيح."], ["الوتر", "إن الله وتر يحب الوتر — صحيح البخاري ومسلم."], ["الطيب", "إن الله طيب لا يقبل إلا طيبًا — صحيح مسلم."], ["القريب", "فإني قريب أجيب دعوة الداع إذا دعان — البقرة: 186."]]);
 
- <div class="panel">
-  <h2>📖 آخر درس</h2>
-  <div id="lastLesson">لم تبدأ التعلم بعد. اختر قسمًا لنبدأ رحلتنا!</div>
-  <button class="action" onclick="continueLesson()">استكمل التعلم</button>
- </div>
- <div class="panel">
-  <h2>🎯 هدفنا اليوم</h2>
-  <p id="dailyHome">تعلم معلومة جديدة عن نبي من أنبياء الله.</p>
-  <button class="action yellow" onclick="showSection('daily')">ابدأ التحدي</button>
- </div>
-</div>
+    const seerahFull=[["نسب النبي ﷺ ومولده ونشأته", "نتعرف إلى نسبه الشريف ومولده في مكة ونشأته يتيمًا، مع تجنب الجزم بالتفاصيل التي اختلفت فيها الروايات.", "مصادر السيرة المعتبرة وما ثبت في السنة."], ["حياته قبل البعثة", "عرفه قومه بالصدق والأمانة، وعمل في الرعي والتجارة، وتزوج خديجة رضي الله عنها.", "كتب السيرة الموثوقة."], ["نزول الوحي وبداية الرسالة", "نزل الوحي عليه في غار حراء، وكانت بداية الوحي بالرؤيا الصالحة ثم مجيء جبريل عليه السلام.", "صحيح البخاري، كتاب بدء الوحي."], ["الدعوة في مكة", "بدأت الدعوة سرية ثم جهر بها النبي ﷺ، ودعا إلى توحيد الله وصبر على أذى المشركين.", "المدثر: 1–7؛ كتب السيرة."], ["عام الحزن والإسراء والمعراج", "نتعرف إلى ما ثبت من وفاة خديجة وأبي طالب، ورحلة الإسراء والمعراج التي ثبت أصلها بالقرآن والسنة.", "الإسراء: 1؛ أحاديث الصحيحين."], ["الهجرة إلى المدينة", "هاجر النبي ﷺ من مكة إلى المدينة مع أبي بكر رضي الله عنه، وأقام مجتمعًا جديدًا على الإيمان.", "التوبة: 40؛ صحيح البخاري."], ["بناء المجتمع الإسلامي", "بناء المسجد، والمؤاخاة، وتنظيم الحقوق والعلاقات بين المسلمين وأهل المدينة.", "السيرة الصحيحة والوثائق الثابتة."], ["الغزوات والأحداث العسكرية", "دروس في بدر وأحد والخندق وغيرها، مع ترتيب الوقائع وتوثيق تفاصيل كل غزوة.", "القرآن الكريم وأحاديث الصحيحين وكتب السيرة المحققة."], ["صلح الحديبية وفتح مكة", "صلح الحديبية وما ترتب عليه، ثم فتح مكة وعفو النبي ﷺ عن كثير ممن آذوه.", "سورة الفتح؛ كتب الحديث والسيرة."], ["غزوة تبوك والسنوات الأخيرة", "غزوة تبوك، ثم حجة الوداع، وبيان الوصايا الجامعة في خطبة الوداع.", "صحيح البخاري ومسلم."], ["بيت النبي ﷺ وأسرته", "أمهات المؤمنين وأبناؤه وبناته، مع الاقتصار على الأسماء والمعلومات الثابتة.", "القرآن والسنة الصحيحة."], ["أخلاق النبي ﷺ وشمائله", "رحمته وتواضعه وصدقه ووفاؤه وحلمه وشجاعته وحسن تعامله مع الناس.", "القلم: 4؛ صحيح البخاري ومسلم."], ["معجزات النبي ﷺ ودلائل نبوته", "القرآن الكريم أعظم معجزاته، ومعجزات أخرى ثبتت بأحاديث صحيحة.", "القرآن الكريم والصحيحان."]];
+    const quranSurahsFull=["الفاتحة", "البقرة", "آل عمران", "النساء", "المائدة", "الأنعام", "الأعراف", "الأنفال", "التوبة", "يونس", "هود", "يوسف", "الرعد", "إبراهيم", "الحجر", "النحل", "الإسراء", "الكهف", "مريم", "طه", "الأنبياء", "الحج", "المؤمنون", "النور", "الفرقان", "الشعراء", "النمل", "القصص", "العنكبوت", "الروم", "لقمان", "السجدة", "الأحزاب", "سبأ", "فاطر", "يس", "الصافات", "ص", "الزمر", "غافر", "فصلت", "الشورى", "الزخرف", "الدخان", "الجاثية", "الأحقاف", "محمد", "الفتح", "الحجرات", "ق", "الذاريات", "الطور", "النجم", "القمر", "الرحمن", "الواقعة", "الحديد", "المجادلة", "الحشر", "الممتحنة", "الصف", "الجمعة", "المنافقون", "التغابن", "الطلاق", "التحريم", "الملك", "القلم", "الحاقة", "المعارج", "نوح", "الجن", "المزمل", "المدثر", "القيامة", "الإنسان", "المرسلات", "النبأ", "النازعات", "عبس", "التكوير", "الانفطار", "المطففين", "الانشقاق", "البروج", "الطارق", "الأعلى", "الغاشية", "الفجر", "البلد", "الشمس", "الليل", "الضحى", "الشرح", "التين", "العلق", "القدر", "البينة", "الزلزلة", "العاديات", "القارعة", "التكاثر", "العصر", "الهمزة", "الفيل", "قريش", "الماعون", "الكوثر", "الكافرون", "النصر", "المسد", "الإخلاص", "الفلق", "الناس"];
+    function itemCard(title,desc,source,kind){return `<div class='content-card'><span class='badge'>${kind||'معلومة'}</span><h3>${title}</h3><p>${desc}</p><small class='muted'>${source||''}</small></div>`;}
 
-<div id="view" class="hidden"></div>
-</main>
 
-<nav class="bottom-nav">
- <button onclick="goHome()">🏠 الرئيسية</button>
- <button onclick="showSection('prophets')">📚 الأنبياء</button>
- <button onclick="showSection('search')">🔎 البحث</button>
- <button onclick="showSection('favorites')">💜 المفضلة</button>
-</nav>
-<footer>أثر الأنبياء © موسوعة تعليمية للأطفال</footer>
+    quranStories.push(
+     ['أصحاب الأخدود','ذكر القرآن قومًا عذّبوا المؤمنين بسبب إيمانهم بالله، وبيّن عاقبة الظلم.','البروج: 4–10'],
+     ['صاحب الجنتين','رجلان، أحدهما صاحب جنتين اغتر بنعمته وأنكر زوالها، فذكّره صاحبه بالله.','الكهف: 32–44'],
+     ['قارون','آتاه الله كنوزًا عظيمة فبغى على قومه ونسب الفضل إلى نفسه، فخسف الله به وبداره الأرض.','القصص: 76–82'],
+     ['طالوت وجالوت','اختار الله طالوت ملكًا لبني إسرائيل، ثم نصر المؤمنين على جالوت.','البقرة: 246–251'],
+     ['مؤمن آل فرعون','رجل مؤمن من آل فرعون دافع عن موسى وحذّر قومه من عاقبة التكذيب.','غافر: 28–45'],
+     ['أصحاب السبت','ابتلى الله أهل قرية بحكم صيد السمك يوم السبت، فاعتدى فريق منهم على أمر الله.','الأعراف: 163–166'],
+     ['أصحاب الجنة','أصحاب بستان أقسموا أن يمنعوا المساكين من ثمره، فابتلاهم الله بذهاب جنتهم.','القلم: 17–33'],
+     ['ابنا آدم','ذكر القرآن قصة ابني آدم، وكيف أدى الحسد والاعتداء إلى أول جريمة قتل.','المائدة: 27–31'],
+    );
+    const quranStoryScenes={
+     'موسى والخضر':[['رحلة التعلم','سار موسى عليه السلام مع فتاه حتى بلغا مجمع البحرين، ثم لقي عبدًا آتاه الله رحمة وعلمًا.','الكهف: 60–65'],['مواقف تحتاج صبرًا','وقعت مواقف لم يستطع موسى الصبر عليها دون معرفة الحكمة، ثم بيّن الخضر تأويلها بإذن الله.','الكهف: 66–82']],
+     'أصحاب الكهف':[
+     ['الفتية المؤمنون','آمن فتية بربهم وثبتوا على التوحيد، واعتزلوا قومهم حين خافوا على دينهم.','الكهف: 9–16'],
+     ['رحمة الله','آواهم الله إلى الكهف وأنامهم سنين طويلة، ثم بعثهم آية للناس.','الكهف: 17–21'],
+     ['العبرة','أظهر الله أمرهم ليعلم الناس أن وعد الله حق وأن الساعة لا ريب فيها.','الكهف: 21–26']],
+     'أصحاب الفيل':[
+     ['قصد البيت','جاء أصحاب الفيل يريدون الاعتداء على البيت الحرام.','الفيل: 1–2'],
+     ['حفظ الله لبيته','أرسل الله عليهم طيرًا أبابيل ترميهم بحجارة من سجيل، فجعلهم كعصف مأكول.','الفيل: 3–5']],
+     'أصحاب الأخدود':[
+     ['الثبات على الإيمان','عذّب الظالمون المؤمنين بسبب إيمانهم بالله العزيز الحميد.','البروج: 4–8'],
+     ['عاقبة الظلم','توعد الله الذين فتنوا المؤمنين بالعذاب، ووعد المؤمنين جنات تجري من تحتها الأنهار.','البروج: 9–11']],
+     'صاحب الجنتين':[
+     ['نعمة عظيمة','ضرب الله مثل رجلين، جعل لأحدهما جنتين من أعناب وأحاطهما بنخل وجعل بينهما زرعًا.','الكهف: 32–34'],
+     ['الغرور','اغتر صاحب الجنتين بماله، وذكّره صاحبه بالله وبأن النعمة من الله.','الكهف: 35–42'],
+     ['الندم','أحيط بثمره فأصبح يقلب كفيه ندمًا على ما أنفق فيها.','الكهف: 43–44']],
+     'قارون':[
+     ['المال والغرور','نصح قوم قارون ألا يبطر بالمال، وأن يبتغي فيما آتاه الله الدار الآخرة.','القصص: 76–77'],
+     ['العاقبة','خرج قارون في زينته، ثم خسف الله به وبداره الأرض.','القصص: 78–82']],
+     'طالوت وجالوت':[
+     ['اختيار طالوت','طلب بنو إسرائيل ملكًا يقاتلون معه، فاختار الله طالوت وأيده بالعلم والجسم.','البقرة: 246–247'],
+     ['الاختبار والنصر','اختبر طالوت جنوده، وثبت المؤمنون ودعوا الله، فهزموا جالوت بإذن الله.','البقرة: 249–251']],
+     'مؤمن آل فرعون':[
+     ['كلمة الحق','دافع المؤمن عن موسى وقال: أتقتلون رجلًا أن يقول ربي الله؟','غافر: 28–35'],
+     ['التذكير والنجاة','ذكّر قومه بمصير الأمم السابقة ودعاهم إلى النجاة، فنجّاه الله من مكرهم.','غافر: 36–45']],
+     'أصحاب السبت':[
+     ['الابتلاء','كانت الحيتان تأتي أهل القرية يوم سبتهم ظاهرة، ويوم لا يسبتون لا تأتيهم.','الأعراف: 163'],
+     ['الموقف والعاقبة','اختلف أهل القرية في التعامل مع المعتدين، فنجّى الله الذين ينهون عن السوء وأخذ الظالمين.','الأعراف: 164–166']],
+     'أصحاب الجنة':[
+     ['العزم على المنع','عزم أصحاب الجنة أن يصرموا ثمرها مبكرًا حتى لا يدخل عليهم مسكين.','القلم: 17–26'],
+     ['الاعتراف','رأوا جنتهم قد أصبحت كالصريم، فتذكروا خطأهم واعترفوا أنهم كانوا طاغين.','القلم: 27–33']],
+     'ابنا آدم':[
+     ['القربان','قرّب ابنا آدم قربانًا فتقبل الله من أحدهما ولم يتقبل من الآخر.','المائدة: 27'],
+     ['الاعتداء والندم','قتل أحدهما أخاه، فبعث الله غرابًا يبحث في الأرض ليريه كيف يواري سوءة أخيه.','المائدة: 28–31']],
+     'ذو القرنين':[
+     ['التمكين والعدل','سار ذو القرنين في الأرض، وكان يعامل الناس بالعدل ويختار الإحسان أو العقوبة بالحق.','الكهف: 83–91'],
+     ['بناء الردم','طلب قوم أن يجعل بينهم وبين يأجوج ومأجوج سدًا، فبنى ردمًا قويًا من زبر الحديد والقطر.','الكهف: 92–98']],
+     'مريم عليها السلام':[
+     ['الاصطفاء والكفالة','تقبل الله مريم وأنبتها نباتًا حسنًا، وكفلها زكريا عليه السلام.','آل عمران: 35–37'],
+     ['البشارة والولادة','بشّرت الملائكة مريم بعيسى، وكانت ولادته آية من آيات الله.','آل عمران: 45–47؛ مريم: 16–26'],
+     ['كلامه في المهد','أنطق الله عيسى في المهد، فعرّف بنفسه عبدًا لله ونبيًا.','مريم: 27–36']]
+    };
 
-<script>
-const sections=[
- ['prophets','موسوعة الأنبياء','📚'],
- ['seerah','السيرة النبوية','🌟'],
- ['names','أسماء الله الحسنى','💎'],
- ['journeys','رحلات الأنبياء','🧭'],
- ['familytree','شجرة الأنبياء','🌳'],
- ['quran','القرآن الكريم ومعانيه','📖'],
- ['occasions','المناسبات الإسلامية','🌙'],
- ['values','الأخلاق والقيم','💚'],
- ['duas','الأذكار والأدعية','🤲'],
- ['pillars','أركان الإسلام','🕌'],
- ['facts','معلومات مفيدة','💡'],
- ['favorites','المفضلة','💜'],
- ['search','البحث','🔎'],
- ['achievements','إنجازات الطفل','🏆'],
- ['ask','اسأل عن الأنبياء','❓'],
- ['library','المكتبة الإسلامية','📚'],
- ['qstories','قصص وعبر من القرآن','✨'],
- ['about','عن التطبيق','ℹ️'],
- ['quiz','المسابقات والتحديات','🎯'],
- ['certificates','الشهادات','🎖️'],
- ['reports','تقارير التعلم','📊'],
- ['daily','التحدي اليومي','⭐']
-];
+    const originalRenderSection = renderSection;
+    function getData(){
+     const key=storeKey();let d={stars:0,completed:[],favorites:[],last:"",history:[],badges:[],certificates:[],quizScore:0,dailyDone:{}};
+     try{const old=JSON.parse(localStorage.getItem(key)||"null");if(old&&typeof old==="object")d={...d,...old};}catch(e){}
+     ["completed","favorites","history","badges","certificates"].forEach(k=>{if(!Array.isArray(d[k]))d[k]=[]});
+     if(!d.dailyDone||typeof d.dailyDone!=="object")d.dailyDone={};
+     if(typeof d.stars!=="number")d.stars=0;if(typeof d.quizScore!=="number")d.quizScore=0;
+     return d;
+    }
+    function saveData(d){try{localStorage.setItem(storeKey(),JSON.stringify(d));}catch(e){alert("تعذر الحفظ. مساحة التخزين على الجهاز قد تكون ممتلئة.");}updateProfile();}
+    function levelFor(stars){if(stars>=500)return "نجم أثر الأنبياء";if(stars>=300)return "بطل المعرفة";if(stars>=180)return "عالم صغير";if(stars>=90)return "الباحث الذكي";if(stars>=30)return "محب المعرفة";return "مستكشف صغير";}
+    function updateProfile(){
+     const d=getData(),n={eyad:"إياد",mayan:"مايان",layan:"ليان"}[currentKid];
+     document.getElementById("childName").textContent=n;
+     document.getElementById("stars").textContent=d.stars;
+     document.getElementById("completed").textContent=d.completed.length;
+     document.getElementById("childLevel").textContent="المستوى · "+levelFor(d.stars);
+     const pct=Math.min(100,Math.round(d.completed.length/50*100));
+     document.getElementById("progressBar").style.width=pct+"%";
+     document.getElementById("progressText").textContent=pct+"% من هدف 50 درسًا";
+     document.getElementById("lastLesson").textContent=d.last||"لم تبدأ التعلم بعد.";
+     document.querySelectorAll(".kid").forEach(b=>b.classList.toggle("active",b.dataset.kid===currentKid));
+    }
+    function openSection(id){
+     window.currentSectionId=id;
+     document.getElementById("home").style.display="none";
+     const v=document.getElementById("view");v.className="view active";
+     v.innerHTML=`<button class="back" onclick="goHome()">← الرئيسية</button><div id="sectionBody"></div>`;
+     renderSection(id);window.scrollTo({top:0,behavior:"smooth"});
+    }
+    renderSection = function(id){
+     const b=document.getElementById("sectionBody");
+     if(id==="favorites"){
+      const d=getData();
+      b.innerHTML=card("مكتبتي المفضلة",'<p>كل طفل له مكتبته المستقلة. احفظ القصص والدروس والأذكار للرجوع إليها.</p><input class="field" id="favSearch" placeholder="ابحث في المفضلة..." oninput="filterSaved(this.value)"><div id="favItems"></div>');
+      renderSavedFavorites();return;
+     }
 
-const prophets=[
- ['آدم عليه السلام','أبو البشر، خلقه الله من طين وأسكنه الجنة.','ورد خبره في سور منها البقرة والأعراف والحجر وص.'],
- ['إدريس عليه السلام','ذكره الله في القرآن ووصفه بالصديقية والنبوة.','مريم والأنبياء.'],
- ['نوح عليه السلام','دعا قومه إلى عبادة الله زمنًا طويلًا، وصنع السفينة بأمر الله.','هود ونوح والمؤمنون والشعراء وغيرها.'],
- ['هود عليه السلام','أرسله الله إلى قوم عاد يدعوهم إلى التوحيد.','هود والأعراف والشعراء.'],
- ['صالح عليه السلام','أرسله الله إلى ثمود، وكانت الناقة آية لقومه.','هود والأعراف والشمس.'],
- ['إبراهيم عليه السلام','إمام الحنفاء، دعا إلى التوحيد وابتلاه الله فصبر.','البقرة وإبراهيم ومريم والأنبياء والصافات وغيرها.'],
- ['لوط عليه السلام','دعا قومه إلى ترك الفاحشة والاستجابة لأمر الله.','الأعراف وهود والحجر والشعراء.'],
- ['إسماعيل عليه السلام','ابن إبراهيم، وصفه الله بصدق الوعد، وشارك أباه في رفع قواعد الكعبة.','البقرة ومريم والصافات.'],
- ['إسحاق عليه السلام','ابن إبراهيم، بشر الله به أباه وأمه.','هود والحجر والصافات.'],
- ['يعقوب عليه السلام','ابن إسحاق، وهو إسرائيل، وأبو يوسف وإخوته.','البقرة ويوسف ومريم والأنبياء.'],
- ['يوسف عليه السلام','ابتلي بفراق أبيه والجب، ثم صار عزيزًا في مصر.','سورة يوسف.'],
- ['أيوب عليه السلام','أثنى الله عليه بالصبر، ودعاه ربه فكشف ما به من ضر.','الأنبياء وص.'],
- ['شعيب عليه السلام','دعا قوم مدين إلى التوحيد والعدل في الكيل والميزان.','الأعراف وهود والشعراء.'],
- ['موسى عليه السلام','كليم الله، أرسله إلى فرعون، وأيده الله بآيات كثيرة.','ذكر في سور كثيرة منها القصص وطه والأعراف.'],
- ['هارون عليه السلام','أخو موسى، جعله الله نبيًا ووزيرًا لأخيه.','طه ومريم والأعراف.'],
- ['ذو الكفل عليه السلام','ذكره الله في جملة الصابرين والأخيار.','الأنبياء وص.'],
- ['داود عليه السلام','آتاه الله الملك والحكمة والزبور.','البقرة والنساء والإسراء وص.'],
- ['سليمان عليه السلام','ابن داود، آتاه الله ملكًا عظيمًا وفهمًا.','النمل وسبأ وص.'],
- ['إلياس عليه السلام','من أنبياء الله، دعا قومه إلى عبادة الله.','الأنعام والصافات.'],
- ['اليسع عليه السلام','ذكره الله في جملة الأخيار.','الأنعام وص.'],
- ['يونس عليه السلام','ذهب مغاضبًا فالتقمه الحوت ثم نادى ربه فنجاه الله.','يونس والأنبياء والصافات.'],
- ['زكريا عليه السلام','دعا ربه أن يرزقه ذرية طيبة فبشره بيحيى.','آل عمران ومريم والأنبياء.'],
- ['يحيى عليه السلام','آتاه الله الحكم صبيًا، وكان تقيًا بارًا.','آل عمران ومريم والأنبياء.'],
- ['عيسى عليه السلام','ابن مريم، خلقه الله بكلمة منه وأيده بالبينات.','آل عمران ومريم والمائدة.'],
- ['محمد ﷺ','خاتم النبيين، أرسله الله رحمة للعالمين.','ذكر في سور كثيرة، منها الأحزاب ومحمد والفتح.']
-];
+     if(id==="seerah"){
+      b.innerHTML=card("السيرة النبوية","<p>13 فصلًا في حياة رسول الله ﷺ، من مولده إلى وفاته، مع مراجعة الأحداث بالقرآن والسنة الصحيحة وكتب السيرة الموثوقة.</p>")+list(seerahFull.map(x=>[x[0],x[1]]),"openSeerahFull");return;
+     }
+     if(id==="quran"){
+      b.innerHTML=card("القرآن الكريم ومعانيه",`<p>فهرس السور الـ114 مرتبًا. لا نعرض نص المصحف أو تسجيلات التلاوة إلا من مصدر مضبوط وموثوق؛ لذلك هذه النسخة تعرض الفهرس ولا تدّعي أنها مصحف كامل.</p><div class="notice">الرواية الأساسية المتفق عليها للمشروع: حفص عن عاصم. يلزم ربط نص المصحف كاملًا ومشغل التلاوة بقاعدة مرخصة ومراجعة قبل النشر.</div><input class="field" id="surahSearchFull" placeholder="ابحث عن سورة..." oninput="filterSurahFull(this.value)"><div id="surahFullList" class="card-grid"></div>`);
+      renderSurahFull();return;
+     }
+     if(id==="journeys"){
+      b.innerHTML=card("رحلات الأنبياء","<p>رحلات وأماكن وردت في القرآن أو السنة، مع بيان ما ثبت وما لم يحدد. لا نرسم مسافات أو مددًا أو مواقع تخمينية.</p><div class='notice'>الموقع الدقيق لبعض الأحداث التاريخية غير محسوم؛ عند عدم ثبوته نكتب «غير محدد».</div>")+
+      itemCard("إبراهيم وإسماعيل إلى مكة","أسكن إبراهيم بعض ذريته عند البيت المحرم، ورفع قواعد البيت مع إسماعيل.","إبراهيم: 37؛ البقرة: 125–127؛ صحيح البخاري، حديث ابن عباس.","رحلة ثابتة")+
+      itemCard("موسى وبنو إسرائيل","خرج موسى ببني إسرائيل من مصر بأمر الله، ونجّاهم الله من فرعون.","الشعراء: 52–68؛ طه: 77–79.","رحلة ثابتة")+
+      itemCard("هجرة النبي ﷺ","هاجر النبي ﷺ من مكة إلى المدينة ومعه أبو بكر رضي الله عنه.","التوبة: 40؛ صحيح البخاري.","رحلة ثابتة")+
+      itemCard("يونس عليه السلام","ذكر القرآن التقام الحوت ليونس ثم نجاته، ولم يحدد المكان الجغرافي للحادثة.","الأنبياء: 87–88؛ الصافات: 139–148.","المكان غير محدد");return;
+     }
+     if(id==="familytree"){
+      b.innerHTML=card("شجرة الأنبياء","<p>نعرض روابط النسب التي ثبتت فقط، ولا نرسم شجرة متصلة تخمينية لجميع الأنبياء.</p>")+
+      itemCard("إبراهيم عليه السلام","أبو إسماعيل وإسحاق عليهما السلام.","هود: 69–73؛ إبراهيم: 39.","أبناء")+
+      itemCard("إسحاق ويعقوب ويوسف","يعقوب ابن إسحاق، ويوسف ابن يعقوب.","البقرة: 132–133؛ يوسف: 4–6.","نسب ثابت")+
+      itemCard("موسى وهارون","أخوان، ودعا موسى ربه أن يشد أزره بأخيه هارون.","طه: 29–32.","أخوان")+
+      itemCard("داود وسليمان","سليمان ابن داود عليهما السلام.","النمل: 16.","أب وابن")+
+      itemCard("زكريا ويحيى","زكريا والد يحيى عليهما السلام.","آل عمران: 38–39؛ مريم: 7.","أب وابن")+
+      itemCard("عمران ومريم وعيسى","مريم ابنة عمران، وعيسى ابن مريم بلا أب.","آل عمران: 35–36؛ مريم: 16–21.","أسرة");return;
+     }
 
-const stories={
-'آدم عليه السلام':[
- ['بداية خلق الإنسان','أخبر الله الملائكة أنه سيجعل في الأرض خليفة. وخلق آدم من طين، ثم سوّاه ونفخ فيه من روحه، وعلّمه الأسماء. فسجد الملائكة امتثالًا لأمر الله، أما إبليس فامتنع تكبرًا.','البقرة: 30-34، الحجر: 28-31.'],
- ['الجنة والابتلاء','أسكن الله آدم وزوجه الجنة، وأباح لهما نعيمها، ونهاهما عن شجرة معينة. فوسوس لهما الشيطان، فأكلا منها، فظهرت لهما سوآتهما.','البقرة: 35-36، الأعراف: 19-22.'],
- ['التوبة والعودة إلى الله','تلقى آدم من ربه كلمات فتاب الله عليه. وتعلمنا قصته أن الإنسان قد يخطئ، لكن عليه أن يرجع إلى الله ويتوب إليه.','البقرة: 37، طه: 121-122.']
-],
-'نوح عليه السلام':[
- ['بداية الدعوة','أرسل الله نوحًا إلى قومه يدعوهم إلى عبادة الله وحده، وحذرهم من الشرك، ودعاهم ليلًا ونهارًا، سرًا وجهرًا.','نوح: 1-9.'],
- ['صبر طويل','استمر نوح في دعوة قومه، لكن كثيرًا منهم أصروا على التكذيب والاستكبار. ولم يترك نوح الدعوة رغم صعوبة الطريق.','نوح: 5-10، هود: 25-27.'],
- ['السفينة والطوفان','أوحى الله إلى نوح أن يصنع السفينة، وكان قومه يسخرون منه. ثم جاء أمر الله، ونجّى الله نوحًا ومن آمن معه في السفينة.','هود: 36-44، المؤمنون: 27.'],
- ['نجاة المؤمنين','انتهى الطوفان واستوت السفينة على الجودي، وكانت قصة نوح درسًا في الصبر والثقة بوعد الله.','هود: 44-49.']
-],
-'إبراهيم عليه السلام':[
- ['البحث عن الحق','تحدث القرآن عن نظر إبراهيم في الكوكب والقمر والشمس، وإعلانه أنه لا يحب الآفلين، وأنه يتوجه إلى خالق السماوات والأرض.','الأنعام: 75-79.'],
- ['دعوة أبيه وقومه','دعا إبراهيم أباه وقومه إلى عبادة الله وحده، وبيّن لهم أن الأصنام لا تسمع ولا تنفع ولا تضر.','مريم: 41-48، الأنبياء: 52-67.'],
- ['النار لا تحرقه','أراد قومه أن يعاقبوه فألقوه في النار، فأمر الله النار أن تكون بردًا وسلامًا على إبراهيم.','الأنبياء: 68-70.'],
- ['بناء البيت','رفع إبراهيم وإسماعيل قواعد البيت الحرام، ودعوا الله أن يتقبل منهما.','البقرة: 127-129.']
-],
-'موسى عليه السلام':[
- ['الطفل الذي حفظه الله','وُلد موسى في زمن كان فرعون يقتل أبناء بني إسرائيل. فأوحى الله إلى أمه أن تضعه في التابوت وتلقيه في اليم، ووعدها أن يرده إليها.','القصص: 7-13.'],
- ['في بيت فرعون','التقط آل فرعون موسى، وألقى الله محبته في قلب امرأة فرعون. ورفض موسى المراضع حتى دلتهم أخته على أمه، فعاد إليها كي تقر عينها.','القصص: 8-13.'],
- ['الرسالة والتكليف','لما بلغ موسى الأجل وسار بأهله، آنس نارًا، فناداه الله في الوادي المقدس، وأرسله إلى فرعون، وأيده بآيات منها العصا واليد.','طه: 9-36، القصص: 29-35.'],
- ['مواجهة فرعون','ذهب موسى وهارون إلى فرعون ودعواه إلى عبادة الله وإرسال بني إسرائيل. وجرت المواجهة مع السحرة، فآمن السحرة حين تبين لهم الحق.','طه: 42-73، الأعراف: 103-126.'],
- ['نجاة بني إسرائيل','أوحى الله إلى موسى أن يسري بعباده، فلحقهم فرعون وجنوده، فضرب موسى البحر بعصاه فانفلق، ونجّى الله موسى ومن معه.','الشعراء: 52-68.']
-],
-'يوسف عليه السلام':[
- ['الرؤيا الجميلة','رأى يوسف في صغره أحد عشر كوكبًا والشمس والقمر له ساجدين، وقص رؤياه على أبيه يعقوب فنصحه ألا يقصها على إخوته.','يوسف: 4-6.'],
- ['في الجب','حسد إخوة يوسف أخاهم، وألقوه في غيابة الجب، ثم جاءوا أباهم بقميصه وعليه دم كذب. وصبر يعقوب وقال: فصبر جميل.','يوسف: 8-18.'],
- ['في بيت العزيز','اشتراه عزيز مصر، ونشأ يوسف في بيته. ثم تعرض لابتلاء عظيم فاختار طاعة الله، ودخل السجن ظلمًا.','يوسف: 21-35.'],
- ['تفسير الرؤيا','فسر يوسف رؤيا صاحبي السجن، ثم فسر رؤيا الملك، وبيّن خطة التعامل مع سنوات الخصب والجدب.','يوسف: 36-49.'],
- ['الفرج واللقاء','ظهرت براءة يوسف، وأكرمه الله في الأرض. وجاء إخوته إليه، ثم اجتمع بأبيه وأهله وتحققت رؤياه.','يوسف: 50-101.']
-],
-'يونس عليه السلام':[
- ['دعوة قومه','أرسل الله يونس إلى قومه، فدعاهم إلى الله. وتذكر الآيات أنه ذهب مغاضبًا فكان من المدحضين.','الأنبياء: 87، الصافات: 139-140.'],
- ['في بطن الحوت','التقمه الحوت وهو مليم، فنادى في الظلمات: لا إله إلا أنت سبحانك إني كنت من الظالمين.','الأنبياء: 87-88.'],
- ['النجاة والرحمة','استجاب الله له ونجاه من الغم، وأنبته بالعراء، وذكر القرآن أن قومه آمنوا فمتعهم الله إلى حين.','الصافات: 145-148، يونس: 98.']
-],
-'عيسى عليه السلام':[
- ['البشارة بميلاده','بشر الله مريم بعيسى عليه السلام، وخلق الله عيسى من غير أب آية للناس.','آل عمران: 45-47، مريم: 16-22.'],
- ['كلامه في المهد','حملت مريم عيسى وجاءت به قومها، فأنطقه الله في المهد، فعرّف بنفسه عبدًا لله ونبيًا.','مريم: 27-33.'],
- ['الرسالة والآيات','أرسل الله عيسى إلى بني إسرائيل، وأيده بالبينات، وكان يبرئ الأكمه والأبرص ويحيي الموتى بإذن الله.','آل عمران: 49-51، المائدة: 110.'],
- ['رفع عيسى','يقرر القرآن أن أعداءه لم يقتلوه ولم يصلبوه، ولكن رفعه الله إليه.','النساء: 157-158.']
-],
-'محمد ﷺ':[
- ['المولد والنشأة','ولد النبي محمد ﷺ في مكة، ونشأ يتيم الأب ثم الأم، ورعاه جده ثم عمه. وتذكر كتب السيرة تفاصيل نشأته وأمانته قبل البعثة.'],
- ['نزول الوحي','نزل الوحي عليه في غار حراء، وكانت أول آيات القرآن: اقرأ باسم ربك الذي خلق.','العلق: 1-5، صحيح البخاري، بدء الوحي.'],
- ['الدعوة في مكة','دعا النبي ﷺ إلى توحيد الله، وصبر هو وأصحابه على الأذى، ثم أذن الله للمؤمنين بالهجرة.','المدثر: 1-7، الحجر: 94-95.'],
- ['الهجرة إلى المدينة','هاجر النبي ﷺ إلى المدينة، وأقام مجتمعًا للمسلمين، وبنى المسجد، وآخى بين المهاجرين والأنصار.','التوبة: 40، السيرة النبوية الصحيحة.'],
- ['الرحمة والفتح','قاد النبي ﷺ الأمة في مراحل الدعوة، وفتح الله له مكة، ثم توفي بعد أن أدى الرسالة وبلغ الأمانة.','النصر: 1-3، المائدة: 3.']
-]
-};
+     if(id==="reports"){
+      b.innerHTML=renderReports();return;
+     }
+     if(id==="quiz"){
+      b.innerHTML=card("اسأل عن الأنبياء",'<p>اكتب سؤالًا عن نبي أو قصة. نجيب فقط من المعلومات الموثقة الموجودة داخل التطبيق.</p><input id="askInput" class="field" placeholder="مثال: من النبي الذي ابتلعه الحوت؟"><div class="actions"><button class="primary" onclick="askQuestion()">اعرض الإجابة</button></div><div id="askAnswer"></div><h3>أسئلة مقترحة</h3><div id="suggestions"></div>');
+      renderSuggestions();return;
+     }
+     if(id==="competitions"){
+      b.innerHTML=card("المسابقات والتحديات",'<p>أسئلة تعليمية قصيرة. يحصل الطفل على نقاط عند الإجابة الصحيحة، ولا تُخصم نقاط عند الخطأ.</p><div id="quizArea"></div>');
+      showQuiz();return;
+     }
+     if(id==="achievements"){b.innerHTML=renderAchievements();return;}
+     if(id==="about"){
+      b.innerHTML=card("عن أثر الأنبياء",'<p><b>أثر الأنبياء</b> موسوعة إسلامية تعليمية للأطفال، هدفها تقريب معاني الإيمان والقرآن والسيرة والأخلاق إلى الطفل بلغة واضحة ومحببة.</p><h3>صاحب الفكرة والمؤسس</h3><p><b>إبراهيم محمود</b></p><p>نسعى لأن تكون المعرفة نورًا في قلوب أطفالنا، وأن تكون قصص الأنبياء طريقًا للتعلم والاقتداء بالأخلاق والقيم الجميلة.</p><h3>منهجنا</h3><ul><li>القرآن الكريم المصدر الأول.</li><li>السنة الصحيحة والحسنة بعد التحقق من درجتها.</li><li>التفاسير وكتب السيرة والتاريخ الموثوقة.</li><li>المراجع العلمية المعتبرة للمعلومات العامة.</li></ul><h3>الخصوصية</h3><p>تُحفظ بيانات الأطفال محليًا على الجهاز، ولكل طفل ملف تقدم مستقل.</p><p class="muted">الإصدار 1.0 · اللغة العربية</p>');return;
+     }
+     if(id==="quranstories"){
+      b.innerHTML=card("قصص من القرآن الكريم",'<p>قصص قرآنية للأطفال، مع مواضع الآيات ومشاهد متتابعة وعبر تربوية. لا نضيف أحداثًا أو حوارات غير ثابتة.</p><div class="notice">الرسومات تكون للبيئات والأماكن والأشياء، دون تجسيد الأنبياء.</div>')+list(quranStories.map(x=>[x[0],x[1]+" — "+x[2]]),"openQuranStory");return;
+     }
+     originalRenderSection(id);
+    };
 
-const names99=[
-'الله','الرحمن','الرحيم','الملك','القدوس','السلام','المؤمن','المهيمن','العزيز','الجبار',
-'المتكبر','الخالق','البارئ','المصور','الغفار','القهار','الوهاب','الرزاق','الفتاح','العليم',
-'القابض','الباسط','الخافض','الرافع','المعز','المذل','السميع','البصير','الحكم','العدل',
-'اللطيف','الخبير','الحليم','العظيم','الغفور','الشكور','العلي','الكبير','الحفيظ','المقيت',
-'الحسيب','الجليل','الكريم','الرقيب','المجيب','الواسع','الحكيم','الودود','المجيد','الباعث',
-'الشهيد','الحق','الوكيل','القوي','المتين','الولي','الحميد','المحصي','المبدئ','المعيد',
-'المحيي','المميت','الحي','القيوم','الواجد','الماجد','الواحد','الصمد','القادر','المقتدر',
-'المقدم','المؤخر','الأول','الآخر','الظاهر','الباطن','الوالي','المتعالي','البر','التواب',
-'المنتقم','العفو','الرؤوف','مالك الملك','ذو الجلال والإكرام','المقسط','الجامع','الغني','المغني','المانع',
-'الضار','النافع','النور','الهادي','البديع','الباقي','الوارث','الرشيد','الصبور'
-];
+    function openSeerahFull(i){
+     const x=seerahFull[i],b=document.getElementById("sectionBody");
+     b.innerHTML=`<button class="back" onclick="openSection('seerah')">← فصول السيرة</button>${card(x[0],`<p>${x[1]}</p><p><b>المصادر:</b> ${x[2]}</p><button class="primary" onclick="completeLesson('${x[0]}')">إتمام الفصل</button>`)}`;
+    }
+    function renderSurahFull(){
+     const box=document.getElementById("surahFullList");if(!box)return;
+     box.innerHTML=quranSurahsFull.map((x,i)=>`<div class="tile"><b>${i+1}. ${x}</b><small>سورة من القرآن الكريم</small></div>`).join("");
+    }
+    function filterSurahFull(q){
+     document.querySelectorAll("#surahFullList .tile").forEach(x=>x.style.display=x.textContent.includes(q)?"block":"none");
+    }
 
-const descriptions={
-'الرحمن':'واسع الرحمة، ورحمته عظيمة تشمل خلقه.',
-'الرحيم':'يرحم عباده رحمة خاصة، وهو كثير الرحمة.',
-'الخالق':'الذي خلق جميع الأشياء وأوجدها.',
-'الرزاق':'الذي يرزق عباده ويتفضل عليهم.',
-'السميع':'الذي يسمع كل الأصوات ولا يخفى عليه شيء.',
-'البصير':'الذي يرى كل شيء.',
-'الغفور':'الذي يغفر الذنوب لمن تاب ورجع إليه.',
-'العليم':'الذي أحاط علمه بكل شيء.',
-'الحكيم':'الذي يضع الأمور في مواضعها بحكمة.',
-'التواب':'الذي يقبل توبة عباده ويعينهم عليها.',
-'اللطيف':'الرفيق بعباده، العالم بدقائق الأمور.'
-};
+    function addFavorite(title,desc,source,type){
+     const d=getData(),id=title+"|"+(type||"محتوى");
+     if(!d.favorites.some(x=>typeof x==="object"?x.id===id:x===title))d.favorites.push({id,title,desc,source,type:type||"محتوى",added:new Date().toISOString()});
+     saveData(d);alert("تم الحفظ في مفضلة "+({eyad:"إياد",mayan:"مايان",layan:"ليان"}[currentKid]));
+    }
+    function favoriteCurrent(){
+     if(currentPage&&currentPage.title)addFavorite(currentPage.title,"محتوى محفوظ من الدرس","","درس");
+     else alert("افتح درسًا أولًا لإضافته إلى المفضلة.");
+    }
 
-const menuGrid=document.getElementById('menuGrid');
-menuGrid.innerHTML=sections.map(s=>`<button class="menu-card" onclick="showSection('${s[0]}')"><span class="menu-icon">${s[2]}</span><strong>${s[1]}</strong></button>`).join('');
+    function renderSavedFavorites(){
+     const box=document.getElementById("favItems");if(!box)return;
+     const d=getData();
+     if(!d.favorites.length){box.innerHTML="<div class='empty'>❤️<br>لم تحفظ أي عناصر بعد.<br>أضف قصة أو درسًا إلى المفضلة ليظهر هنا.</div>";return;}
+     box.innerHTML=d.favorites.map((x,i)=>{const a=typeof x==="string"?{title:x,desc:"عنصر محفوظ من إصدار سابق"}:x;return `<div class="tile"><b>${a.title}</b><small>${a.type||"محتوى"}</small><p>${a.desc||""}</p><small>${a.source||""}</small><button class="danger" onclick="removeSavedFavorite(${i})">إزالة</button></div>`}).join("");
+    }
+    function filterSaved(q){document.querySelectorAll("#favItems .tile").forEach(x=>x.style.display=x.textContent.includes(q)?"block":"none");}
+    function removeSavedFavorite(i){const d=getData();d.favorites.splice(i,1);saveData(d);renderSavedFavorites();}
 
-let current='eyad',state={},last='';
+    function completeLesson(title){
+     const d=getData();if(!d.completed.includes(title)){d.completed.push(title);d.stars+=5;}
+     d.last=title;d.history.unshift({title,at:new Date().toISOString()});d.history=d.history.slice(0,100);
+     const stages=[[30,"مستكشف صغير"],[90,"محب المعرفة"],[180,"الباحث الذكي"],[300,"عالم صغير"],[500,"بطل المعرفة"]];
+     stages.forEach(([min,label])=>{if(d.stars>=min&&!d.certificates.some(c=>c.title==="شهادة تقدير – "+label))d.certificates.push({title:"شهادة تقدير – "+label,date:new Date().toISOString()});});
+     const checks=[["البداية الجميلة",d.completed.length>=1],["قارئ نشيط",d.completed.length>=5],["محب المعرفة",d.completed.length>=10],["صديق الأنبياء",d.completed.some(x=>String(x).includes("عليه السلام"))],["بطل التحدي",d.quizScore>=5]];
+     checks.forEach(x=>{if(x[1]&&!d.badges.includes(x[0]))d.badges.push(x[0]);});
+     saveData(d);alert("أحسنت! تم تسجيل إنجازك ⭐");
+    }
+    function openQuranStory(i){
+     const x=quranStories[i],scenes=quranStoryScenes[x[0]]||[];
+     const b=document.getElementById("sectionBody");
+     b.innerHTML=`<button class="back" onclick="openSection('quranstories')">← قصص القرآن</button>`+
+     card(x[0],`<p>${x[1]}</p><p><b>موضع القصة:</b> ${x[2]}</p>`)+
+     (scenes.length?scenes.map((s,j)=>`<div class="content-card"><span class="badge">المشهد ${j+1}</span><h3>${s[0]}</h3><p>${s[1]}</p><small class="muted">الدليل: ${s[2]}</small></div>`).join(""):`<div class="notice">المشاهد التفصيلية لهذه القصة ستُستكمل بعد المراجعة العلمية.</div>`)+
+     `<div class="content-card"><h3>ماذا نتعلم؟</h3><p>نستخرج العبر من الآيات نفسها، ونتجنب إضافة تفاصيل لم تثبت.</p><div class="actions"><button class="primary" onclick="completeLesson('${x[0]}')">أنهيت القصة</button><button class="secondary" onclick="addFavorite('${x[0]}','${x[1]}','${x[2]}','قصة قرآنية')">♡ أضف للمفضلة</button></div></div>`;
+    }
+    function renderSuggestions(){
+     const el=document.getElementById("suggestions");if(!el)return;
+     const qs=["من أول الأنبياء؟","من النبي الذي ابتلعه الحوت؟","من بنى الكعبة مع إبراهيم؟","من والد يحيى؟","من خاتم الأنبياء؟"];
+     el.innerHTML=qs.map(q=>`<button class="choice" onclick="document.getElementById('askInput').value='${q}';askQuestion()">${q}</button>`).join("");
+    }
+    function askQuestion(){
+     const input=document.getElementById("askInput"),out=document.getElementById("askAnswer");if(!input||!out)return;
+     const q=input.value.trim().replace(/[؟?]/g,"").replace(/[أإآ]/g,"ا");
+     if(!q){out.innerHTML="<div class='notice'>اكتب سؤالك أولًا.</div>";return;}
+     const answers=[
+     [/اول الانبياء/,"آدم عليه السلام هو أول الأنبياء. (البقرة: 30–39)"],
+     [/اول الرسل/,"نوح عليه السلام أول رسول إلى أهل الأرض بعد وقوع الشرك، كما ورد في حديث الشفاعة الصحيح."],
+     [/الحوت|يونس/,"يونس عليه السلام التقمه الحوت، فنادى ربه في الظلمات فاستجاب الله له ونجّاه. (الأنبياء: 87–88)"],
+     [/السفين|نوح/,"نوح عليه السلام صنع السفينة بأمر الله. (هود: 37–44)"],
+     [/النار|ابراهيم/,"أمر الله النار أن تكون بردًا وسلامًا على إبراهيم. (الأنبياء: 68–70)"],
+     [/الكعبه|الكعبة/,"رفع إبراهيم وإسماعيل عليهما السلام قواعد البيت الحرام. (البقرة: 125–127)"],
+     [/يوسف|ابن يعقوب/,"يوسف عليه السلام ابن يعقوب عليه السلام، وقصته مفصلة في سورة يوسف."],
+     [/هارون|اخو موسى|موسى.*اخو/,"هارون عليه السلام أخو موسى ووزيره في الدعوة. (طه: 29–32)"],
+     [/خاتم|محمد/,"محمد ﷺ خاتم النبيين. (الأحزاب: 40)"],
+     [/مريم|ام عيسى/,"مريم عليها السلام أم عيسى عليه السلام. (آل عمران: 45–47؛ مريم: 16–36)"],
+     [/الزبور|داود/,"آتَى الله داود عليه السلام الزبور. (النساء: 163؛ الإسراء: 55)"]
+     ];
+     const found=answers.find(x=>x[0].test(q));
+     out.innerHTML=found?`<div class="content-card"><h3>الإجابة</h3><p>${found[1]}</p><small class="muted">إجابة من المحتوى المراجع داخل التطبيق.</small></div>`:"<div class='notice'>لم نجد إجابة موثقة لهذا السؤال في النسخة الحالية. لن نخمن في المسائل الدينية؛ جرّب سؤالًا آخر أو راجع ولي أمرك.</div>";
+    }
+    const competitionQuestions=[
+     ["من أول الأنبياء؟",["آدم عليه السلام","نوح عليه السلام","إبراهيم عليه السلام"],0,"آدم عليه السلام أول الأنبياء."],
+     ["من النبي الذي صنع السفينة بأمر الله؟",["موسى عليه السلام","نوح عليه السلام","يوسف عليه السلام"],1,"أمر الله نوحًا بصنع السفينة."],
+     ["من النبي الذي كانت الناقة آية لقومه؟",["هود عليه السلام","صالح عليه السلام","شعيب عليه السلام"],1,"ناقة صالح كانت آية لقوم ثمود."],
+     ["من النبي الذي جعل الله النار بردًا وسلامًا عليه؟",["إبراهيم عليه السلام","لوط عليه السلام","داود عليه السلام"],0,"نجّى الله إبراهيم من النار."],
+     ["من شارك إبراهيم في رفع قواعد الكعبة؟",["إسحاق عليه السلام","إسماعيل عليه السلام","يعقوب عليه السلام"],1,"إسماعيل شارك إبراهيم في رفع قواعد البيت."],
+     ["من أخو موسى الذي أرسله الله معه؟",["هارون عليه السلام","داود عليه السلام","زكريا عليه السلام"],0,"هارون أخو موسى."],
+     ["من النبي الذي ابتلعه الحوت؟",["يونس عليه السلام","نوح عليه السلام","صالح عليه السلام"],0,"يونس عليه السلام دعا ربه في الظلمات."],
+     ["من والد يحيى عليه السلام؟",["إبراهيم عليه السلام","زكريا عليه السلام","يعقوب عليه السلام"],1,"زكريا أبو يحيى."],
+     ["من أم عيسى عليه السلام؟",["آسية","مريم","هاجر"],1,"مريم عليها السلام أم عيسى."],
+     ["من خاتم الأنبياء؟",["إبراهيم عليه السلام","عيسى عليه السلام","محمد ﷺ"],2,"محمد ﷺ خاتم النبيين."]
+    ];
+    let competitionIndex=0,competitionLocked=false;
+    function showQuiz(){
+     const area=document.getElementById("quizArea");if(!area)return;
+     const q=competitionQuestions[competitionIndex%competitionQuestions.length];competitionLocked=false;
+     area.innerHTML=`<span class="badge">السؤال ${competitionIndex+1}</span><h3>${q[0]}</h3>${q[1].map((a,i)=>`<button class="choice" onclick="answerQuiz(${i})">${a}</button>`).join("")}<div id="quizFeedback" aria-live="polite"></div><button class="secondary" onclick="nextQuiz()">السؤال التالي</button>`;
+    }
+    function answerQuiz(i){
+     if(competitionLocked)return;competitionLocked=true;
+     const q=competitionQuestions[competitionIndex%competitionQuestions.length],f=document.getElementById("quizFeedback"),d=getData();
+     if(i===q[2]){f.className="good";f.textContent="إجابة صحيحة! "+q[3]+" ⭐";d.stars+=2;d.quizScore=(d.quizScore||0)+1;d.last="المسابقات والتحديات";saveData(d);}
+     else{f.className="bad";f.textContent="ليست الإجابة الصحيحة. "+q[3];}
+    }
+    function nextQuiz(){competitionIndex=(competitionIndex+1)%competitionQuestions.length;showQuiz();}
+    function renderAchievements(){
+     const d=getData(),n={eyad:"إياد",mayan:"مايان",layan:"ليان"}[currentKid];
+     return card("إنجازات "+n,`<div class="card-grid"><div class="tile"><b>⭐ ${d.stars}</b><small>النجوم</small></div><div class="tile"><b>📚 ${d.completed.length}</b><small>الدروس المكتملة</small></div><div class="tile"><b>🏅 ${d.badges.length}</b><small>الأوسمة</small></div><div class="tile"><b>🎯 ${d.quizScore||0}</b><small>الإجابات الصحيحة</small></div></div><h3>المستوى الحالي: ${levelFor(d.stars)}</h3><h3>الأوسمة</h3>${d.badges.length?d.badges.map(x=>`<span class="pill">🏅 ${x}</span>`).join(""):"<p class='muted'>ستظهر الأوسمة هنا بعد إنجاز الدروس والتحديات.</p>"}<h3>شهاداتي</h3>${d.certificates.length?d.certificates.map((c,i)=>`<div class="tile"><b>${c.title}</b><small>${new Date(c.date).toLocaleDateString("ar-EG")}</small><button class="secondary" onclick="showCertificate(${i})">عرض وحفظ الشهادة</button></div>`).join(""):"<p class='muted'>ستُحفظ هنا شهادات المراحل التي أنجزتها.</p>"}<div class="actions"><button class="primary" onclick="awardStageCertificate()">إصدار شهادة المرحلة الحالية</button><button class="secondary" onclick="printCertificate()">طباعة شهادة تقدير</button><button class="secondary" onclick="openSection('reports')">تقرير ولي الأمر</button></div><h3>آخر الإنجازات</h3>${d.history.slice(0,10).map(x=>`<p>• ${typeof x==="string"?x:x.title}</p>`).join("")||"<p class='muted'>لا توجد إنجازات بعد.</p>"}`);
+    }
+    function awardStageCertificate(){
+     const d=getData();if(d.stars<30){alert("أكمل بعض الدروس واجمع 30 نجمة للحصول على شهادة المرحلة الأولى.");return;}
+     const title="شهادة تقدير – "+levelFor(d.stars);
+     if(!d.certificates.some(x=>x.title===title))d.certificates.push({title,date:new Date().toISOString()});
+     saveData(d);showCertificate(d.certificates.findIndex(x=>x.title===title));
+    }
+    function showCertificate(i){
+     const d=getData(),c=d.certificates[i];if(!c)return;
+     const name={eyad:"إياد",mayan:"مايان",layan:"ليان"}[currentKid];
+     const w=window.open("","_blank");if(!w){alert("اسمح بفتح نافذة الشهادة من المتصفح.");return;}
+     w.document.write(`<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><title>شهادة تقدير</title><body style="font-family:Tahoma;text-align:center;padding:35px;background:#fffaf0;color:#44356e"><div style="border:9px double #b78d39;border-radius:25px;padding:35px;max-width:850px;margin:auto"><div style="font-size:45px">🏅🌙🏅</div><h1 style="color:#7755aa">شهادة تقدير</h1><h2>أثر الأنبياء</h2><p>تُمنح بكل فخر واعتزاز إلى</p><h1 style="color:#bd8c2f">${name}</h1><p>تقديرًا لإتمامه المرحلة التعليمية:</p><h2>${c.title}</h2><p>تاريخ الحصول عليها: ${new Date(c.date).toLocaleDateString("ar-EG")}</p><h3>أحسنت! استمر في رحلتك الجميلة</h3><p>إبراهيم محمود – صاحب الفكرة والمؤسس</p><button onclick="window.print()" style="padding:12px 22px;background:#6650a4;color:white;border:0;border-radius:10px">طباعة / حفظ PDF</button></div></body></html>`);
+     w.document.close();
+    }
+    function printCertificate(){awardStageCertificate();}
+    function renderReports(){
+     const d=getData(),n={eyad:"إياد",mayan:"مايان",layan:"ليان"}[currentKid],last=d.history[0];
+     return card("تقرير ولي الأمر – "+n,`<div class="card-grid"><div class="tile"><b>${d.completed.length}</b><small>درس مكتمل</small></div><div class="tile"><b>${d.stars}</b><small>نجمة</small></div><div class="tile"><b>${d.quizScore||0}</b><small>إجابة صحيحة</small></div><div class="tile"><b>${d.badges.length}</b><small>وسام</small></div></div><p><b>آخر نشاط:</b> ${last?(typeof last==="string"?last:last.title):"لا يوجد نشاط بعد."}</p><p><b>المفضلة:</b> ${d.favorites.length} عنصرًا · <b>الشهادات:</b> ${d.certificates.length}</p><div class="actions"><button class="secondary" onclick="exportChildData()">تصدير نسخة احتياطية</button><button class="danger" onclick="clearChildData()">مسح بيانات هذا الطفل</button></div><p class="muted">هذا التقرير لمتابعة تقدم الطفل وتشجيعه، وليس للمقارنة بين الأطفال.</p>`);
+    }
+    function exportChildData(){
+     const d=getData(),blob=new Blob([JSON.stringify({child:currentKid,data:d},null,2)],{type:"application/json"});
+     const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="athar-"+currentKid+"-backup.json";a.click();URL.revokeObjectURL(url);
+    }
+    function clearChildData(){
+     if(!confirm("هل تريد مسح جميع بيانات هذا الطفل من هذا الجهاز؟ لا يمكن التراجع عن ذلك."))return;
+     localStorage.removeItem(storeKey());updateProfile();openSection("reports");
+    }
+    function doSearch(q){
+     const r=document.getElementById("searchResults");if(!r)return;if(!q.trim()){r.innerHTML="";return;}
+     const t=q.trim().toLowerCase(),out=[];
+     prophets.forEach((p,i)=>{if((p[0]+p[1]+p[2]).toLowerCase().includes(t))out.push(`<button class="list-btn" onclick="openProphet(${i})">${p[0]}<small>${p[1]}</small></button>`);});
+     quranStories.forEach((x,i)=>{if((x[0]+x[1]+x[2]).toLowerCase().includes(t))out.push(`<button class="list-btn" onclick="openQuranStory(${i})">${x[0]}<small>${x[1]}</small></button>`);});
+     [...seerah,...values,...adhkar,...facts,...pillars,...occasions].forEach(x=>{if((x[0]+x[1]+(x[2]||"")).toLowerCase().includes(t))out.push(`<div class="tile"><b>${x[0]}</b><p>${x[1]}</p></div>`);});
+     r.innerHTML=out.length?out.join(""):"<p class='empty'>لا توجد نتائج مطابقة في المحتوى الحالي.</p>";
+    }
+    function openLastLesson(){
+     const d=getData();if(!d.last){openSection("prophets");return;}
+     const i=prophets.findIndex(p=>d.last.includes(p[0]));
+     if(i>=0){openSection("prophets");openProphet(i);}else if(d.last.includes("قصة"))openSection("quranstories");else openSection("achievements");
+    }
+    function updateProfileAndDaily(){updateProfile();daily();}
 
-function loadState(){
- const key='athar_'+current;
- try{state=JSON.parse(localStorage.getItem(key))||{};}catch(e){state={};}
- state.stars=state.stars||0;state.done=state.done||[];state.favorites=state.favorites||[];
-}
-function saveState(){localStorage.setItem('athar_'+current,JSON.stringify(state));updateProfile();}
-function changeChild(){current=document.getElementById('childSelect').value;loadState();updateProfile();goHome();}
-function updateProfile(){
- const names={eyad:'إياد',mayan:'مايان',layan:'ليان'};
- const avatars={eyad:'🧒',mayan:'👧',layan:'👧'};
- document.getElementById('childName').textContent=names[current];
- document.getElementById('avatar').textContent=avatars[current];
- document.getElementById('starCount').textContent=state.stars;
- document.getElementById('level').textContent=state.stars>=50?'البطل المتميز':state.stars>=20?'المتعلم النشيط':'المتعلم الصغير';
- document.getElementById('progressBar').style.width=Math.min(100,state.stars)+'%';
- document.getElementById('lastLesson').textContent=state.last||'لم تبدأ التعلم بعد.';
-}
-function completeLesson(title){
- if(!state.done.includes(title)){state.done.push(title);state.stars+=2;}
- state.last=title;saveState();alert('أحسنت! حصلت على نجمتين ⭐');
-}
-function goHome(){document.getElementById('home').classList.remove('hidden');document.getElementById('view').classList.add('hidden');}
-function continueLesson(){if(state.last)showSection('prophets');else showSection('prophets');}
-function showSection(id){
- document.getElementById('home').classList.add('hidden');
- const v=document.getElementById('view');v.classList.remove('hidden');
- const titles=Object.fromEntries(sections.map(s=>[s[0],s[1]]));
- let html=`<div class="content-page"><button class="back" onclick="goHome()">← الرئيسية</button><h2>${titles[id]||'أثر الأنبياء'}</h2>`;
- if(id==='prophets')html+=prophetsView();
- else if(id==='names')html+=namesView();
- else if(id==='favorites')html+=favoritesView();
- else if(id==='search')html+=searchView();
- else if(id==='daily')html+=dailyView();
- else if(id==='quiz')html+=quizView();
- else if(id==='achievements')html+=achievementsView();
- else if(id==='certificates')html+=certificatesView();
- else if(id==='reports')html+=reportsView();
- else if(id==='seerah')html+=seerahView();
- else if(id==='pillars')html+=pillarsView();
- else if(id==='duas')html+=duasView();
- else if(id==='values')html+=valuesView();
- else if(id==='quran')html+=quranView();
- else if(id==='occasions')html+=occasionsView();
- else if(id==='familytree')html+=treeView();
- else if(id==='journeys')html+=journeysView();
- else if(id==='qstories')html+=qstoriesView();
- else if(id==='ask')html+=askView();
- else if(id==='library')html+=libraryView();
- else if(id==='facts')html+=factsView();
- else if(id==='about')html+=aboutView();
- else html+='<p>هذا القسم قيد الإعداد العلمي التفصيلي.</p>';
- html+='</div>';v.innerHTML=html;window.scrollTo(0,0);
-}
-function prophetsView(){
- return `<p>اختر نبيًا لفتح ملفه التعريفي وقراءة القصة صفحةً بعد صفحة.</p><div class="tiles">${prophets.map((p,i)=>`<div class="tile"><strong>${i+1}. ${p[0]}</strong><br><span class="small">${p[1]}</span><br><button onclick="prophetDetail(${i})">افتح القصة ←</button></div>`).join('')}</div>`;
-}
-function prophetDetail(i){
- const p=prophets[i],story=stories[p[0]];
- let html=`<div class="content-page"><button class="back" onclick="showSection('prophets')">← قائمة الأنبياء</button><h2>${p[0]}</h2><div class="story-page"><h3>📜 بطاقة تعريف النبي</h3><p>${p[1]}</p><p><b>السور التي ورد ذكره فيها:</b> ${p[2]}</p></div>`;
- if(story){
- story.forEach((s,j)=>{html+=`<div class="story-page"><h3>الصفحة ${j+1}: ${s[0]}</h3><p>${s[1]}</p>${s[2]?`<p><b>المصدر:</b> ${s[2]}</p>`:''}</div>`;});
- html+=`<div class="notice">🌟 نتعلم من قصة ${p[0]} أن نثق بالله، ونتبع الحق، ونتعلم من هدي أنبيائه.</div>`;
- }else{
- html+=`<div class="notice">هذا الملف التعريفي يذكر المعلومات العامة الثابتة هنا، أما صفحات الحكاية التفصيلية لهذا النبي فلم تُدرج بعد. لن نضيف أحداثًا غير موثقة لمجرد إكمال القصة.</div>`;
- }
- html+=`<button class="action" onclick="favorite('${p[0]}')">💜 أضف للمفضلة</button><button class="action yellow" onclick="completeLesson('${p[0]}')">أنهيت القراءة ⭐</button></div>`;
- document.getElementById('view').innerHTML=html;window.scrollTo(0,0);
-}
-function favorite(name){
- if(!state.favorites.includes(name))state.favorites.push(name);
- saveState();alert('تمت الإضافة إلى المفضلة 💜');
-}
-function favoritesView(){
- return state.favorites.length?state.favorites.map(n=>`<div class="list-row">${n}<button class="action secondary" onclick="openByName('${n}')">افتح</button></div>`).join(''):'<p>لم تضف أي قصة إلى المفضلة بعد.</p>';
-}
-function openByName(n){let i=prophets.findIndex(p=>p[0]===n);if(i>=0)prophetDetail(i);}
-function namesView(){
- return `<p class="notice">ورد في الحديث أن لله تسعة وتسعين اسمًا من أحصاها دخل الجنة. تعيين القائمة المشهورة للأسماء فيه خلاف بين أهل العلم؛ لذلك نعرض هنا القائمة المشهورة للتعلم، ولا نجزم أن ترتيبها أو كل مفرداتها هي القائمة الوحيدة المتفق عليها.</p><div class="tiles">${names99.map((n,i)=>`<div class="tile"><b>${i+1}. ${n}</b><p>${descriptions[n]||'من أسماء الله الحسنى، نتعلم معناه وندعو الله به مع فهم معناه.'}</p></div>`).join('')}</div>`;
-}
-function searchView(){return `<input id="searchInput" type="text" placeholder="ابحث عن نبي أو قسم..." oninput="doSearch()"><div id="searchResults"></div>`;}
-function doSearch(){
- const q=document.getElementById('searchInput').value.trim();
- const out=document.getElementById('searchResults');
- if(!q){out.innerHTML='';return;}
- const results=prophets.filter(p=>p[0].includes(q));
- out.innerHTML=results.length?results.map(p=>`<div class="list-row">${p[0]}<button class="action secondary" onclick="openByName('${p[0]}')">افتح</button></div>`).join(''):'لا توجد نتائج في أسماء الأنبياء. جرّب كلمة أخرى.';
-}
-function dailyView(){
- const questions=[['من النبي الذي صنع السفينة بأمر الله؟',['نوح عليه السلام','موسى عليه السلام','يوسف عليه السلام'],0],['من النبي الذي أُلقي في النار فجعلها الله بردًا وسلامًا؟',['إبراهيم عليه السلام','يونس عليه السلام','داود عليه السلام'],0],['ما أول كلمة نزلت من القرآن؟',['اقرأ','اكتب','اسمع'],0]];
- let q=questions[new Date().getDate()%questions.length];
- return `<p>أجب عن سؤال اليوم لتحصل على نجوم جديدة.</p><div class="story-page"><h3>${q[0]}</h3>${q[1].map((a,i)=>`<button class="quiz-option" onclick="dailyAnswer(${i},${q[2]})">${a}</button>`).join('')}</div><div id="dailyAnswer"></div>`;
-}
-function dailyAnswer(a,c){
- const d=document.getElementById('dailyAnswer');
- if(a===c){d.innerHTML='<p class="badge">إجابة صحيحة! أحسنت ⭐</p>';if(!state.dailyDone){state.dailyDone=true;state.stars+=3;saveState();}}
- else d.innerHTML='<p>حاول مرة أخرى، اقرأ السؤال جيدًا.</p>';
-}
-function quizView(){
- return `<h3>مسابقة المعرفة</h3><p>اختبر معلوماتك في قصص الأنبياء.</p>${dailyView()}`;
-}
-function achievementsView(){
- return `<h3>🏆 إنجازات ${document.getElementById('childName').textContent}</h3><p>النجوم: <b>${state.stars}</b></p><p>الدروس المكتملة: <b>${state.done.length}</b></p><p>القصص المفضلة: <b>${state.favorites.length}</b></p><p>${state.stars>=20?'أنت بطل مجتهد!':'واصل التعلم لتجمع المزيد من النجوم.'}</p>`;
-}
-function certificatesView(){
- return `<h3>🎖️ شهادات التقدير</h3><p>تُفتح الشهادة عند جمع 20 نجمة.</p>${state.stars>=20?`<div class="story-page" style="text-align:center"><h2>شهادة تقدير</h2><p>تُمنح إلى</p><h2>${document.getElementById('childName').textContent}</h2><p>لتميزه في التعلم بموسوعة أثر الأنبياء</p><button class="action" onclick="window.print()">اطبع الشهادة</button></div>`:'اجمع 20 نجمة لتحصل على شهادتك الأولى.'}`;
-}
-function reportsView(){return `<h3>📊 تقرير التعلم</h3><p>عدد النجوم: ${state.stars}</p><p>عدد الدروس المنجزة: ${state.done.length}</p><p>آخر درس: ${state.last||'لا يوجد'}</p><h3>الدروس المكتملة</h3>${state.done.map(x=>`<div class="list-row">${x}<span class="badge">مكتمل</span></div>`).join('')||'لم تكمل دروسًا بعد.'}`;}
-function seerahView(){
- return `<div class="story-page"><h3>مولد النبي ﷺ ونشأته</h3><p>ولد النبي محمد ﷺ في مكة، ونشأ يتيمًا، وعُرف بين قومه بالصدق والأمانة. وتفاصيل السيرة تُروى بالرجوع إلى كتب السيرة المعتمدة.</p></div>
- <div class="story-page"><h3>نزول الوحي وبداية الدعوة</h3><p>نزل الوحي على النبي ﷺ في غار حراء، وبدأت رسالة الإسلام. دعا إلى عبادة الله وحده، وصبر على الأذى.</p><p>المصدر: صحيح البخاري، كتاب بدء الوحي؛ وسورة العلق.</p></div>
- <div class="story-page"><h3>الهجرة إلى المدينة</h3><p>هاجر النبي ﷺ من مكة إلى المدينة، وهناك بُني المسجد وأُقيم مجتمع المسلمين.</p><p>المصدر: القرآن الكريم، سورة التوبة: 40.</p></div>
- <div class="story-page"><h3>الغزوات</h3><p>من الغزوات المشهورة: بدر، أحد، الخندق، بني قريظة، خيبر، فتح مكة، حنين، وتبوك. لكل غزوة أحداثها وأسبابها ونتائجها التي تحتاج إلى دراسة مستقلة موثقة.</p></div>`;
-}
-function pillarsView(){
- return `<div class="story-page"><h3>أركان الإسلام الخمسة</h3><ol><li>الشهادتان: شهادة أن لا إله إلا الله وأن محمدًا رسول الله.</li><li>إقام الصلاة.</li><li>إيتاء الزكاة.</li><li>صوم رمضان.</li><li>حج البيت لمن استطاع إليه سبيلًا.</li></ol><p>المصدر: حديث ابن عمر رضي الله عنهما، صحيح البخاري وصحيح مسلم.</p></div>
- <div class="story-page"><h3>الصلوات الخمس</h3><p>الفجر: ركعتان فرضًا.</p><p>الظهر: أربع ركعات فرضًا.</p><p>العصر: أربع ركعات فرضًا.</p><p>المغرب: ثلاث ركعات فرضًا.</p><p>العشاء: أربع ركعات فرضًا.</p><p>هذه أعداد ركعات الفريضة، ولا تشمل السنن والنوافل.</p></div>
- <div class="story-page"><h3>الوضوء باختصار</h3><ol><li>النية ومحلها القلب.</li><li>غسل الكفين.</li><li>المضمضة والاستنشاق.</li><li>غسل الوجه.</li><li>غسل اليدين إلى المرفقين.</li><li>مسح الرأس والأذنين.</li><li>غسل الرجلين إلى الكعبين.</li></ol><p>توجد تفاصيل فقهية في صفة الوضوء، ويُستحسن تعلمها عمليًا مع ولي الأمر.</p></div>`;
-}
-function duasView(){
- return `<div class="story-page"><h3>ذكر الاستيقاظ</h3><p>الحمد لله الذي أحيانا بعدما أماتنا وإليه النشور.</p><p>المصدر: صحيح البخاري.</p></div>
- <div class="story-page"><h3>ذكر قبل الطعام</h3><p>بسم الله.</p><p>المصدر: صحيح البخاري وصحيح مسلم في التسمية عند الطعام.</p></div>
- <div class="story-page"><h3>دعاء دخول الخلاء</h3><p>اللهم إني أعوذ بك من الخبث والخبائث.</p><p>المصدر: صحيح البخاري وصحيح مسلم.</p></div>
- <div class="story-page"><h3>دعاء الخروج من المنزل</h3><p>بسم الله، توكلت على الله، ولا حول ولا قوة إلا بالله.</p><p>المصدر: سنن أبي داود والترمذي.</p></div>
- <div class="notice">هذه مجموعة بداية، ويجب استكمال أذكار الصباح والمساء وأذكار الصلاة والنوم مع تخريج كل نص قبل اعتماد النسخة للنشر.</div>`;
-}
-function valuesView(){
- const vals=[['الصدق','أن نقول الحقيقة ولا نكذب.','قال النبي ﷺ: «عليكم بالصدق، فإن الصدق يهدي إلى البر». متفق عليه.'],['الرحمة','أن نرفق بالناس والحيوان ونحسن إليهم.','قال النبي ﷺ: «من لا يَرحم لا يُرحم». متفق عليه.'],['الأمانة','أن نحافظ على ما اؤتُمنا عليه.','قال النبي ﷺ: «آية المنافق ثلاث...» وذكر منها إذا اؤتمن خان. متفق عليه.'],['بر الوالدين','أن نحسن إلى أبينا وأمنا ونطيعهما في المعروف.','قال الله تعالى: وقضى ربك ألا تعبدوا إلا إياه وبالوالدين إحسانًا. الإسراء: 23.'],['التعاون','أن نساعد بعضنا على الخير.','قال الله تعالى: وتعاونوا على البر والتقوى. المائدة: 2.']];
- return vals.map(v=>`<div class="story-page"><h3>${v[0]}</h3><p>${v[1]}</p><p>${v[2]}</p></div>`).join('');
-}
-function quranView(){
- return `<div class="notice">القرآن الكريم ثلاثون جزءًا. هذا القسم يعرّف بالتقسيم، ولا يدّعي عرض نص المصحف كاملًا. يجب اعتماد نص قرآني مضبوط من مصدر موثوق قبل إضافة المصحف كاملًا.</div><div class="tiles">${Array.from({length:30},(_,i)=>`<div class="tile">الجزء ${i+1}<p class="small">أضف هنا فهرس السور ومعاني الكلمات بعد مراجعتها.</p></div>`).join('')}</div>`;
-}
-function occasionsView(){
- const a=[['رمضان','شهر الصيام، أنزل فيه القرآن.'],['عيد الفطر','يأتي بعد انتهاء شهر رمضان.'],['عيد الأضحى','يأتي في أيام الحج، وفيه الأضحية.'],['يوم عرفة','اليوم التاسع من ذي الحجة.'],['الهجرة النبوية','انتقال النبي ﷺ وأصحابه من مكة إلى المدينة.']];
- return a.map(x=>`<div class="story-page"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('');
-}
-function treeView(){
- return `<div class="story-page"><h3>روابط ثابتة وردت في القرآن</h3><p>إبراهيم عليه السلام ← إسماعيل عليه السلام وإسحاق عليه السلام.</p><p>إسحاق عليه السلام ← يعقوب عليه السلام.</p><p>يعقوب عليه السلام ← يوسف عليه السلام وإخوته.</p><p>داود عليه السلام ← سليمان عليه السلام.</p><p>موسى عليه السلام ↔ هارون عليه السلام (أخوان).</p><p>زكريا عليه السلام ← يحيى عليه السلام.</p><p>مريم عليها السلام ← عيسى عليه السلام.</p></div><div class="notice">لا نضيف علاقات نسب غير ثابتة، ولا نرسم سلسلة نسب كاملة اعتمادًا على التخمين.</div>`;
-}
-function journeysView(){
- return `<div class="story-page"><h3>رحلة موسى عليه السلام</h3><p>من مصر إلى مدين، ثم عودته إلى مصر، ثم خروجه ببني إسرائيل ونجاتهم عند البحر. تراجع تفاصيل هذه المراحل في سورة القصص وطه والشعراء.</p></div>
- <div class="story-page"><h3>رحلة إبراهيم عليه السلام</h3><p>تذكر الآيات دعوته لقومه، وابتلاءه، ورفع قواعد البيت مع إسماعيل. سورة الأنبياء والبقرة والصافات.</p></div>
- <div class="story-page"><h3>رحلة يوسف عليه السلام</h3><p>من الجب إلى بيت العزيز ثم السجن، وبعد ذلك التمكين في الأرض واجتماع الأسرة. سورة يوسف.</p></div>
- <div class="notice">سيتم توسيع رحلات بقية الأنبياء عند إعداد صفحات موثقة لكل نبي، دون اختراع أماكن أو مسارات غير ثابتة.</div>`;
-}
-function qstoriesView(){
- return `<div class="story-page"><h3>أصحاب الكهف</h3><p>فتية آمنوا بربهم، فآواهم الله إلى الكهف وضرب على آذانهم سنين، ثم بعثهم. قصتهم في سورة الكهف: 9-26.</p></div>
- <div class="story-page"><h3>ذي القرنين</h3><p>ذكر القرآن ملكًا مكن الله له في الأرض، فسار في أسبابها، وأقام سدًا يحول بين قوم ويأجوج ومأجوج. سورة الكهف: 83-98.</p></div>
- <div class="story-page"><h3>صاحب الجنتين</h3><p>قصة رجل اغتر بماله وجنته، فذكّره صاحبه بأن النعمة من الله. سورة الكهف: 32-44.</p></div>
- <div class="story-page"><h3>قارون</h3><p>آتاه الله كنوزًا كثيرة فبغى على قومه، فخسف الله به وبداره الأرض. سورة القصص: 76-82.</p></div>
- <div class="story-page"><h3>أصحاب الفيل</h3><p>حفظ الله بيته الحرام من أصحاب الفيل. سورة الفيل.</p></div>`;
-}
-function askView(){
- return `<p>اكتب سؤالك، وسنبحث في المعلومات الموجودة داخل التطبيق.</p><input id="askInput" type="text" placeholder="مثال: من النبي الذي صنع السفينة؟"><button class="action" onclick="answerAsk()">ابحث عن الإجابة</button><div id="askResult"></div>`;
-}
-function answerAsk(){
- const q=document.getElementById('askInput').value;
- let p=prophets.find(x=>x[1].includes(q)||x[0].includes(q));
- document.getElementById('askResult').innerHTML=p?`<div class="story-page">${p[0]}<p>${p[1]}</p></div>`:'لم أجد إجابة مؤكدة في قاعدة المعلومات الحالية. جرّب اسم نبي أو كلمة مختلفة.';
-}
-function libraryView(){
- return `<div class="story-page"><h3>مكتبة التعلم</h3><p>مكتبة أثر الأنبياء مخصصة للقراءة والتعلم، وتشمل:</p><ul><li>قصص الأنبياء.</li><li>السيرة النبوية.</li><li>الأذكار والأدعية.</li><li>الأخلاق والآداب.</li><li>القرآن الكريم ومعاني الكلمات.</li></ul><p>تُضاف الكتب والمواد بعد مراجعة حقوق النشر وصحة المحتوى.</p></div>`;
-}
-function factsView(){
- return `<div class="story-page"><h3>معلومات إسلامية مفيدة</h3><p>عدد الصلوات المفروضة في اليوم والليلة خمس صلوات.</p><p>عدد أجزاء القرآن الكريم ثلاثون جزءًا.</p><p>شهر رمضان هو الشهر الذي أنزل فيه القرآن.</p><p>الكعبة المشرفة قبلة المسلمين في الصلاة.</p><p>النبي محمد ﷺ خاتم النبيين.</p></div>`;
-}
-function aboutView(){
- return `<div class="story-page"><h3>عن أثر الأنبياء</h3><p>أثر الأنبياء موسوعة تعليمية للأطفال تهدف إلى تعريفهم بالأنبياء والسيرة النبوية والقرآن الكريم والأخلاق الإسلامية، بأسلوب مبسط وممتع.</p><p>نحرص على عرض المعلومات الدينية بمصادرها، وعدم اختلاق أحداث أو نسب أو روايات غير ثابتة.</p></div><p class="small">الإصدار التجريبي للمراجعة.</p>`;
-}
-loadState();updateProfile();
-</script>
-</body>
-</html>
+    function daily(){
+     const day=Math.floor(Date.now()/86400000),q=competitionQuestions[day%competitionQuestions.length],d=getData();
+     document.getElementById("dailyQuestion").textContent=q[0];
+     document.getElementById("dailyAnswers").innerHTML=q[1].map((a,i)=>`<button class="choice" onclick="dailyAnswer(${i})">${a}</button>`).join("");
+     
