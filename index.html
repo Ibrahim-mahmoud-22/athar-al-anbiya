@@ -1,233 +1,120 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#087bd5">
-<title>أثر الأنبياء | موسوعة الطفل المسلم</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#087fd0">
+<title>أثر الأنبياء | موسوعة إسلامية تعليمية للأطفال</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
-:root{--blue:#087bd5;--navy:#0754a2;--gold:#ffc928;--green:#26b85e;--paper:#fff9e9}
-*{box-sizing:border-box}
-body{margin:0;font-family:Cairo,Tahoma,sans-serif;background:linear-gradient(180deg,#74d8ff,#d8f7ff 42%,#b8ed9b);color:#17324e;min-height:100vh}
-button,input{font:inherit}
-button{cursor:pointer}
-.app{max-width:1500px;margin:auto;padding:12px}
-.hero{position:relative;overflow:hidden;border:5px solid #fff;border-radius:28px;background:linear-gradient(115deg,#087bd5,#26b8df 48%,#58c66d);box-shadow:0 7px 0 #1474aa;padding:18px;color:white;display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;gap:12px;min-height:190px}
-.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:#ffffff20;width:180px;height:180px}
-.hero:before{top:-90px;right:20%}.hero:after{bottom:-120px;left:10%}
-.profile,.brand,.mascot{position:relative;z-index:1}
-.profile{background:#0756a9;border:3px solid #ffe18a;border-radius:24px;padding:12px;display:flex;align-items:center;gap:10px;box-shadow:0 4px 0 #063c7b}
-.avatar{width:76px;height:76px;border-radius:50%;background:linear-gradient(#ffe5a7,#ffad56);border:4px solid white;display:grid;place-items:center;font-size:45px;flex-shrink:0}
-.profile h3{margin:0;font-size:20px}.profile p{margin:3px 0;font-size:13px}
-.brand{text-align:center;background:linear-gradient(#b97827,#713b10);border:5px solid #f5cf72;border-radius:30px;padding:10px;box-shadow:inset 0 0 0 3px #ffe9a7,0 6px 0 #744117}
-.brand h1{font-size:clamp(28px,5vw,54px);margin:0;color:#fff3c6;text-shadow:2px 4px 2px #48220b}
-.brand p{background:#fff4d5;color:#422a13;border-radius:30px;margin:8px auto 0;padding:5px 12px;font-weight:900;width:max-content;max-width:100%}
-.mascot{text-align:center;font-size:90px}
-.speech{font-size:15px;font-weight:900;background:white;color:#17324e;padding:9px;border-radius:22px}
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:14px;margin-top:16px}
-.main-panel{background:#fff8df;border:5px solid white;border-radius:28px;padding:12px;box-shadow:0 6px 0 #91bd68}
-.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
-.tile{border:3px solid #ffffff;border-radius:23px;min-height:145px;padding:10px 5px;color:white;font-weight:900;text-align:center;box-shadow:0 5px 0 #17324e55,inset 0 0 0 2px #ffffff40;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;transition:.15s}
-.tile:active{transform:translateY(4px);box-shadow:0 1px 0 #17324e55}
-.tile .emoji{font-size:48px;filter:drop-shadow(1px 3px 1px #3335)}
-.tile span:last-child{font-size:16px;line-height:1.5}
-.c1{background:linear-gradient(145deg,#62caff,#0867c8)}.c2{background:linear-gradient(145deg,#d98cff,#7427c9)}.c3{background:linear-gradient(145deg,#8fe76d,#159647)}.c4{background:linear-gradient(145deg,#ffd36c,#e87913)}.c5{background:linear-gradient(145deg,#65c5ff,#1643b4)}.c6{background:linear-gradient(145deg,#8be08b,#168d58)}
-.side{display:flex;flex-direction:column;gap:12px}
-.panel{background:var(--paper);border:4px solid white;border-radius:25px;padding:13px;box-shadow:0 5px 0 #d2a95d}
-.panel h3{text-align:center;margin:0 0 10px;font-size:19px;color:#74400d}
-.stat{display:flex;align-items:center;gap:10px;border-bottom:1px solid #e4cda3;padding:8px 2px}
-.stat b{font-size:25px}.stat span{font-size:27px}
-.progress{height:15px;background:#e5d2a8;border-radius:20px;overflow:hidden;margin-top:10px}
-.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#40d45e,#a5ed42);border-radius:20px}
-.lesson{background:linear-gradient(#ffe879,#ffb928)}
-.lesson .picture{font-size:55px;text-align:center}
-.lesson button,.action{border:0;border-radius:25px;background:linear-gradient(#ffb32d,#e76a08);color:white;font-weight:900;padding:10px 18px;box-shadow:0 4px 0 #a94c05}
-.bottom{display:flex;justify-content:space-around;gap:5px;background:linear-gradient(#1599ef,#0755ac);border:4px solid white;border-radius:25px;margin-top:15px;padding:8px;color:white;box-shadow:0 5px 0 #06417c}
-.bottom button{background:transparent;border:0;color:white;font-weight:900;display:flex;flex-direction:column;align-items:center;min-width:65px}
-.bottom span{font-size:26px}
-.challenge{margin-top:14px;background:linear-gradient(100deg,#e8baff,#fff1ff,#c8a0ff);border:4px solid white;border-radius:25px;padding:12px;text-align:center;font-weight:900}
-.page{display:none;background:#fffaf0;border:5px solid white;border-radius:25px;padding:18px;margin-top:15px;min-height:350px;box-shadow:0 5px 0 #91bd68}
-.page.active{display:block}
-.page h2{color:#075da9;margin-top:0}
-.back{background:#087bd5;color:white;border:0;border-radius:18px;padding:8px 18px;font-weight:900}
-.items{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-top:15px}
-.item{background:white;border:2px solid #d9e8ff;border-radius:16px;padding:13px;text-align:center;font-weight:800}
-.item button{margin-top:8px;border:0;border-radius:12px;background:#e5f4ff;padding:7px;color:#075da9;font-weight:800}
-.search{width:100%;padding:13px;border:2px solid #9acdf4;border-radius:15px;margin:10px 0}
-.child-choice{display:flex;gap:8px;flex-wrap:wrap}
-.child-choice button{border:2px solid white;border-radius:20px;background:#087bd5;color:white;padding:8px 18px;font-weight:900}
-.notice{background:#e7f8e9;border-radius:14px;padding:12px;margin:10px 0}
-footer{text-align:center;padding:18px;font-weight:800;color:#27613c}
-@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr 2fr}.mascot{display:none}}
-@media(max-width:520px){.app{padding:6px}.hero{grid-template-columns:1fr 1fr;padding:9px;min-height:145px}.brand{grid-column:1/-1;grid-row:1}.brand h1{font-size:30px}.profile{grid-column:1/-1;grid-row:2}.mascot{display:none}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.tile{min-height:112px;border-radius:17px}.tile .emoji{font-size:35px}.tile span:last-child{font-size:12px}.side{grid-template-columns:1fr 1fr}.panel{padding:9px}.panel h3{font-size:15px}.bottom{padding:6px 2px}.bottom button{font-size:11px;min-width:0}.bottom span{font-size:21px}}
-</style>
-</head>
-<body>
-<div class="app">
-<header class="hero">
-  <div class="profile">
-    <div class="avatar" id="avatar">👦</div>
-    <div><h3 id="childName">إياد</h3><p>⭐ <b id="stars">0</b></p><p id="level">المستوى البرونزي</p></div>
-  </div>
-  <div class="brand"><h1>أثر الأنبياء</h1><p>موسوعة إسلامية تعليمية للأطفال</p>📖</div>
-  <div class="mascot">👧<div class="speech">معًا نكتشف قصص الأنبياء ونتعلم القيم الجميلة 💗</div></div>
-</header>
-
-<div class="child-choice" style="margin-top:12px">
-  <button onclick="chooseChild('eyad')">👦 إياد</button>
-  <button onclick="chooseChild('mayan')">👧 مايان</button>
-  <button onclick="chooseChild('layan')">👶 ليان</button>
-</div>
-
-<div class="layout" id="homeLayout">
- <main class="main-panel">
-  <div class="grid" id="mainGrid"></div>
- </main>
- <aside class="side">
-  <section class="panel">
-   <h3>👑 إحصائيات الطفل</h3>
-   <div class="stat"><span>⭐</span><div><b id="statStars">0</b><br>نجمة</div></div>
-   <div class="stat"><span>🏆</span><div><b id="achievements">0</b><br>إنجاز</div></div>
-   <div class="stat"><span>🌟</span><div><b id="percent">0%</b><br>مستوى التقدم</div></div>
-   <div class="progress"><i id="progressBar"></i></div>
-  </section>
-  <section class="panel lesson">
-   <h3>📚 آخر درس</h3><div class="picture">🕌</div>
-   <p id="lastLesson">لم تبدأ التعلم بعد</p>
-   <button onclick="openLastLesson()">متابعة الدرس ▶</button>
-  </section>
- </aside>
-</div>
-
-<section class="challenge">
- ⭐ تحدي اليوم ⭐
- <p id="dailyQuestion">ما أول أركان الإسلام؟</p>
- <button class="action" onclick="openSection('quiz')">ابدأ التحدي ▶</button>
-</section>
-
-<section class="page" id="contentPage">
- <button class="back" onclick="goHome()">↩ الرئيسية</button>
- <div id="pageContent"></div>
-</section>
-
-<nav class="bottom">
- <button onclick="goHome()"><span>🏠</span>الرئيسية</button>
- <button onclick="openSection('library')"><span>❔</span>المساعدة</button>
- <button onclick="openSection('reports')"><span>📊</span>التقارير</button>
- <button onclick="openSection('certificates')"><span>🏆</span>الشهادات</button>
- <button onclick="openSection('about')"><span>ℹ️</span>عن التطبيق</button>
-</nav>
-<footer>🌷 أثر الأنبياء – نتعلم ونرتقي 🌷</footer>
-</div>
-
+:root{--blue:#087fd0;--navy:#07539e;--cream:#fff8df;--gold:#ffd36b;--ink:#18344d}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Tahoma,Arial;color:var(--ink);background:linear-gradient(145deg,#79dcff,#e1faff 48%,#a1edc9);min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.wrap{max-width:1050px;margin:auto;padding:12px}
+.hero{padding:14px;background:linear-gradient(135deg,#087bd0,#35bfa2);border:7px solid white;border-radius:30px;box-shadow:0 8px 18px #153c5830}
+.brand{background:linear-gradient(#bd8338,#744015);border:6px double #ffe18a;border-radius:26px;text-align:center;color:#fff5d5;padding:14px;box-shadow:inset 0 0 0 3px #fff5c5}
+.brand h1{font-size:clamp(32px,7vw,52px);margin:4px;text-shadow:0 3px 4px #4b270d}.brand p{display:inline-block;background:#fff4d4;color:#543018;border-radius:40px;padding:7px 18px;font-weight:900;margin:8px}
+.profile{margin-top:12px;background:#075aa8;border:4px solid #ffe28d;border-radius:24px;color:white;padding:12px;display:flex;align-items:center;justify-content:space-between;gap:10px}.avatar{font-size:48px;background:#fff4d8;border:4px solid white;border-radius:50%;width:76px;height:76px;display:grid;place-items:center}
+.children{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px}.children button{background:#087fd0;color:white;border:3px solid white;border-radius:22px;padding:10px 18px;font-weight:900}
+.panel{background:var(--cream);border:6px solid white;border-radius:26px;padding:12px;box-shadow:0 7px 0 #0002}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tile{border:3px solid white;border-radius:22px;min-height:128px;padding:10px 5px;color:white;font-weight:900;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 6px 0 #0003;text-shadow:0 2px 3px #0004}.ico{font-size:38px;margin-bottom:6px}
+.c1{background:linear-gradient(140deg,#55c8f4,#1478d2)}.c2{background:linear-gradient(140deg,#c66af1,#8136c8)}.c3{background:linear-gradient(140deg,#83d968,#20a64f)}.c4{background:linear-gradient(140deg,#ffcf69,#f08b20)}.c5{background:linear-gradient(140deg,#62d5bd,#179d9b)}
+.section{margin:14px 0}.section h2{background:#075aa8;color:white;padding:11px 15px;border-radius:16px;margin:0 0 10px}
+.card{background:white;border:2px solid #e8f4ff;border-radius:18px;padding:13px;margin:9px 0;box-shadow:0 4px 10px #17476b12}.card h3{margin:0 0 8px;color:#075aa8}
+.btn{border:0;border-radius:13px;background:#087fd0;color:white;padding:9px 13px;font-weight:850;margin:3px}.btn.alt{background:#1ca66b}.btn.gold{background:#ed9a23}.btn.light{background:#e7f5ff;color:#075aa8}
+.search{width:100%;padding:12px 15px;border:2px solid #b9e4ff;border-radius:15px;background:white;margin:6px 0 12px}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}.pill{display:inline-block;background:#e8f6ff;color:#075aa8;border-radius:25px;padding:5px 10px;font-weight:800}
+.scene{background:#f4fbff;border-right:5px solid #16a1d2;border-radius:13px;padding:11px;margin:8px 0}.progress{height:11px;background:#e5eef5;border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;background:#39bd74;width:0}
+footer{text-align:center;padding:18px;color:#31536c;font-size:13px}.modal{position:fixed;inset:0;background:#102c45aa;display:none;align-items:flex-end;justify-content:center;z-index:5;padding:8px}.modal.show{display:flex}.sheet{background:#fffaf0;border-radius:24px 24px 14px 14px;max-width:740px;width:100%;max-height:90vh;overflow:auto;padding:16px}.close{float:left;border:0;background:#ffe0a0;border-radius:10px;padding:7px 11px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.tile{min-height:150px}}@media(max-width:370px){.grid{gap:7px}.tile{font-size:13px;min-height:116px}.ico{font-size:32px}}
+</style></head>
+<body><div class="wrap">
+<header class="hero"><div class="brand"><h1>أثر الأنبياء</h1><p>موسوعة إسلامية تعليمية للأطفال</p><div>📖 ✨ 🕌</div></div>
+<div class="profile"><div><h2 id="childName">إياد</h2>⭐ <b id="stars">0</b>　🏅 <b id="badges">0</b><div id="level">المستوى البرونزي</div></div><div class="avatar" id="avatar">👦</div></div></header>
+<nav class="children"><button onclick="switchChild('eyad')">إياد 👦</button><button onclick="switchChild('mayan')">مايان 👧</button><button onclick="switchChild('layan')">ليان 👶</button></nav>
+<main id="home" class="panel"><div class="row"><h2 style="color:#075aa8">هيا نتعلم ونكتشف! 🌟</h2><span class="pill" id="doneCount">0 درس مكتمل</span></div>
+<input class="search" id="globalSearch" placeholder="ابحث عن نبي أو درس أو ذكر..." oninput="searchAll(this.value)">
+<div class="grid" id="mainGrid"></div>
+<div class="section"><h2>🌞 تحدي اليوم</h2><div class="card"><b id="dailyText"></b><p><button class="btn gold" onclick="dailyDone()">أنجزت التحدي ⭐</button></p></div></div>
+<div class="section"><h2>📚 آخر درس</h2><div class="card" id="lastLesson">ابدأ رحلتك التعليمية باختيار قسم.</div></div>
+<div class="section"><h2>🏆 إنجازاتي</h2><div class="card"><div class="row"><b>التقدم</b><b id="pct">0%</b></div><div class="progress"><span id="bar"></span></div><button class="btn light" onclick="openSection('achievements')">عرض الإنجازات</button></div></div></main>
+<section id="view" class="panel" style="display:none"></section><footer>أثر الأنبياء • نتعلم ونكتشف ونرتقي<br>اللهم علمنا ما ينفعنا وانفعنا بما علمتنا</footer></div>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="sheet"><button class="close" onclick="closeModal()">إغلاق ✕</button><div id="modalBody"></div></div></div>
 <script>
 const sections=[
-['quran','📖','القرآن الكريم مع المعاني','c1'],
-['prophets','🕌','موسوعة الأنبياء (25 نبيًا)','c2'],
-['tree','🌳','شجرة الأنبياء','c3'],
-['journeys','🐪','رحلات الأنبياء','c4'],
-['names','✨','أسماء الله الحسنى','c5'],
-['seerah','🕌','السيرة النبوية','c6'],
-['prayer','🧎','الوضوء والصلاة','c1'],
-['pillars','🕋','أركان الإسلام','c3'],
-['duas','🤲','الأذكار والأدعية','c6'],
-['ethics','💗','الأخلاق والقيم','c4'],
-['occasions','🌙','المناسبات الإسلامية','c2'],
-['competitions','🏆','المسابقات والتحديات','c2'],
-['library','📚','المكتبة الإسلامية','c4'],
-['ask','❓','اسأل عن الأنبياء','c1'],
-['achievements','🏅','إنجازات الطفل','c2'],
-['search','🔎','البحث','c5'],
-['favorites','❤️','المفضلة','c4'],
-['info','📜','معلومات مفيدة','c3'],
-['stories','📖','قصص وعبر من القرآن','c6'],
-['reports','📊','التقارير','c1'],
-['certificates','🎖️','الشهادات','c3'],
-['about','ℹ️','عن التطبيق','c5']
+['prophets','موسوعة الأنبياء','🕌','c2'],['seerah','السيرة النبوية','🕋','c3'],['names','أسماء الله الحسنى','✨','c1'],['journeys','رحلات الأنبياء','🐪','c4'],['family','شجرة الأنبياء','🌳','c3'],['quran','القرآن الكريم مع المعاني','📖','c1'],['occasions','المناسبات الإسلامية','🌙','c4'],['values','الأخلاق والقيم','💛','c3'],['adhkar','الأذكار والأدعية','🤲','c2'],['pillars','أركان الإسلام','🕋','c3'],['info','معلومات مفيدة','💡','c1'],['favorites','المفضلة','❤️','c2'],['search','البحث الشامل','🔎','c4'],['achievements','إنجازات الطفل','🏆','c3'],['ask','اسأل عن الأنبياء','❓','c1'],['library','المكتبة الإسلامية','📚','c2'],['qstories','قصص وعبر من القرآن','🌟','c4'],['about','عن التطبيق','ℹ️','c5'],['quiz','المسابقات والتحديات','🎯','c4'],['certificates','الشهادات','🎖️','c2'],['reports','التقارير','📊','c1'],['daily','التحدي اليومي','🌞','c3'],['continue','استكمال التعلم','▶️','c5']];
+const prophets=[
+['آدم','أبو البشر، خلقه الله من تراب وعلّمه الأسماء.',['خلق الله آدم من تراب','علّم الله آدم الأسماء','أمر الله الملائكة بالسجود تكريمًا','أسكن الله آدم وزوجه الجنة','تاب آدم إلى الله فتاب عليه']],
+['إدريس','وصفه الله بالصديقية والنبوة ورفعة المكان.',['ذكره الله في القرآن','وصفه الله بالصديق والنبي','رفعه الله مكانًا عليًا']],
+['نوح','دعا قومه إلى عبادة الله وصبر على أذاهم.',['دعا نوح قومه ليلًا ونهارًا','ذكّرهم بنعم الله','صبر على أذى قومه','صنع الفلك بأمر الله','جاء الطوفان ونجّى الله المؤمنين']],
+['هود','أرسل إلى عاد فدعاهم إلى التوحيد وترك الكبر.',['دعا عادًا لعبادة الله','أنكروا دعوته واستكبروا','حذّرهم من عاقبة التكذيب','نجّى الله هودًا والمؤمنين']],
+['صالح','أرسل إلى ثمود وكانت الناقة آية لهم.',['دعا ثمود إلى التوحيد','جاءتهم الناقة آية','نهاهم عن إيذائها','عقروا الناقة','نجّى الله صالحًا والمؤمنين']],
+['إبراهيم','خليل الله، دعا إلى التوحيد وابتلاه الله فصبر.',['تأمل في خلق الله','أنكر عبادة الأصنام','حاجّ قومه بالحجة','جعل الله النار عليه بردًا وسلامًا','هاجر في سبيل الله','رفع قواعد الكعبة مع إسماعيل']],
+['لوط','دعا قومه إلى الطهارة وترك الفاحشة.',['دعا قومه إلى التقوى','أصروا على المنكر','جاءت رسل الله بالبشرى والإنذار','نجّى الله لوطًا وأهله المؤمنين']],
+['إسماعيل','ابن إبراهيم، وصفه الله بصادق الوعد.',['بشر الله إبراهيم بإسماعيل','تفجّر زمزم برحمة الله','ابتلى الله إبراهيم ففدى إسماعيل','عاون أباه في بناء الكعبة']],
+['إسحاق','بشر الله به إبراهيم وزوجه، وهو نبي من الصالحين.',['بشرت الملائكة إبراهيم بإسحاق','جعله الله نبيًا من الصالحين','من ذريته يعقوب']],
+['يعقوب','إسرائيل، أبو يوسف وإخوته، وصبر على فقد يوسف.',['ربّى أبناءه على الإيمان','فقد يوسف فصبر صبرًا جميلًا','أوصى أبناءه بعبادة الله','اجتمع بأبنائه']],
+['يوسف','نبي كريم ابتلي فصبر وعفا، وقصته في سورة يوسف.',['رأى رؤيا عظيمة','ألقاه إخوته في الجب','التقطته السيارة وبيع في مصر','دخل السجن ظلمًا وفسّر الرؤيا','جعله الملك على خزائن الأرض','عفا عن إخوته واجتمع بأهله']],
+['أيوب','نبي صابر أثنى الله عليه فكشف عنه الضر.',['ابتلي أيوب فصبر','دعا ربه أني مسني الضر','استجاب الله له وكشف عنه الضر']],
+['شعيب','دعا أهل مدين إلى التوحيد والعدل في الكيل والميزان.',['دعاهم لعبادة الله','نهاهم عن بخس الناس','أمرهم بالعدل في الميزان','نجّى الله شعيبًا والمؤمنين']],
+['موسى','كليم الله، أرسله إلى فرعون وأيده بالآيات.',['ولد في زمن فرعون','أوحى الله لأمه أن تلقيه في اليم','ربّاه الله في بيت فرعون','كلمه الله وأرسله إلى فرعون','أيده بالعصا واليد','انفلق البحر ونجّى الله بني إسرائيل']],
+['هارون','أخو موسى ووزيره، أرسله الله معه إلى فرعون.',['دعا موسى ربه أن يشد أزره بهارون','جعله الله نبيًا','ساند أخاه في الدعوة','ذكّر بني إسرائيل بالتوحيد']],
+['ذو الكفل','ذكره القرآن في عداد الصابرين والأخيار.',['ذكره الله مع الأنبياء الأخيار','وصفه الله بالصبر','تفاصيل قصته لا ترد في القرآن']],
+['داود','نبي وملك، آتاه الله الزبور وعلّمه صناعة الدروع.',['آتاه الله الملك والحكمة','أنزل عليه الزبور','سخّر الجبال والطير يسبحن معه','علّمه صنعة الدروع']],
+['سليمان','نبي وملك، سخّر الله له الريح والجن وعلّمه منطق الطير.',['ورث سليمان داود','علّمه الله منطق الطير','تفقد الهدهد وجاءه بخبر سبأ','دعا ملكة سبأ إلى الإسلام','شكر الله على فضله']],
+['إلياس','دعا قومه إلى عبادة الله وترك عبادة بعل.',['دعا قومه لعبادة الله','أنكر عبادة بعل','أثنى الله عليه بالسلام']],
+['اليسع','ذكره الله في عداد الأخيار والأنبياء.',['ذكره الله في القرآن','أثنى الله عليه بأنه من الأخيار']],
+['يونس','صاحب الحوت، دعا ربه في الظلمات فاستجاب له.',['أرسل إلى قومه','التقمه الحوت','دعا في الظلمات','استجاب الله له ونجّاه','آمن قومه']],
+['زكريا','نبي دعا ربه أن يرزقه ولدًا فوهبه يحيى.',['دعا ربه سرًا','بشرته الملائكة بيحيى','جعل الله يحيى نبيًا صالحًا']],
+['يحيى','نبي آتاه الله الحكم صبيًا وكان تقيًا بارًا.',['آتاه الله الحكم صبيًا','كان حنانًا وزكاة','كان بارًا بوالديه']],
+['عيسى','المسيح ابن مريم، رسول الله أيده بالمعجزات.',['بشرت الملائكة مريم بعيسى','ولد من غير أب بقدرة الله','تكلم في المهد بإذن الله','أيده الله بالمعجزات بإذنه','رفع الله عيسى إليه']],
+['محمد','خاتم الأنبياء والمرسلين، أرسله الله رحمة للعالمين.',['ولد بمكة عام الفيل','نشأ يتيمًا وعرف بالصادق الأمين','نزل عليه الوحي في غار حراء','دعا إلى التوحيد وصبر','هاجر إلى المدينة','فتح الله مكة','أكمل الله به الدين']]
 ];
-const prophets=['آدم','إدريس','نوح','هود','صالح','إبراهيم','لوط','إسماعيل','إسحاق','يعقوب','يوسف','أيوب','شعيب','موسى','هارون','ذو الكفل','داود','سليمان','إلياس','اليسع','يونس','زكريا','يحيى','عيسى','محمد ﷺ'];
-const stories=[
-['أصحاب الكهف','قصة الفتية الذين آمنوا بالله وثبتوا على إيمانهم.'],
-['موسى والخضر','رحلة موسى عليه السلام في طلب العلم والتعلم من الحكمة.'],
-['ذو القرنين','رحلات ذي القرنين ومواقفه في العدل ومساعدة الناس.'],
-['أصحاب الفيل','كيف حفظ الله بيته الحرام من جيش الفيل.'],
-['قارون','قصة الغرور بالمال وعاقبة الكبر.']
-];
-let child='eyad';
-const keys={eyad:'athar_eyad',mayan:'athar_mayan',layan:'athar_layan'};
-const names={eyad:'إياد',mayan:'مايان',layan:'ليان'};
-const faces={eyad:'👦',mayan:'👧',layan:'👶'};
-function getData(){try{return JSON.parse(localStorage.getItem(keys[child]))||{stars:0,done:[],favorites:[],last:''}}catch(e){return {stars:0,done:[],favorites:[],last:''}}}
-function saveData(d){localStorage.setItem(keys[child],JSON.stringify(d));updateStats()}
-function chooseChild(id){child=id;updateStats();goHome()}
-function updateStats(){
- let d=getData(),s=d.stars||0,n=d.done.length;
- document.getElementById('childName').textContent=names[child];
- document.getElementById('avatar').textContent=faces[child];
- document.getElementById('stars').textContent=s.toLocaleString('ar-EG');
- document.getElementById('statStars').textContent=s.toLocaleString('ar-EG');
- document.getElementById('achievements').textContent=n;
- document.getElementById('percent').textContent=Math.min(100,n*5)+'%';
- document.getElementById('progressBar').style.width=Math.min(100,n*5)+'%';
- document.getElementById('level').textContent=s>=500?'المستوى الذهبي':s>=100?'المستوى الفضي':'المستوى البرونزي';
- document.getElementById('lastLesson').textContent=d.last||'لم تبدأ التعلم بعد';
-}
-function renderGrid(){
- document.getElementById('mainGrid').innerHTML=sections.map(x=>`<button class="tile ${x[3]}" onclick="openSection('${x[0]}')"><span class="emoji">${x[1]}</span><span>${x[2]}</span></button>`).join('');
-}
-function goHome(){document.getElementById('homeLayout').style.display='grid';document.querySelector('.challenge').style.display='block';document.getElementById('contentPage').classList.remove('active')}
-function openLastLesson(){let d=getData();openSection(d.lastId||'prophets')}
-function openSection(id){
- document.getElementById('homeLayout').style.display='none';
- document.querySelector('.challenge').style.display='none';
- let p=document.getElementById('contentPage');p.classList.add('active');
- let title=sections.find(x=>x[0]===id)?.[2]||'القسم';
- let html=`<h2>${title}</h2>`;
- if(id==='prophets'){
- html+=`<div class="notice">تضم الموسوعة الأنبياء الخمسة والعشرين. اختر نبيًا لفتح ملفه التعليمي. المعلومات التفصيلية والآيات والمراجع والمشاهد تُستكمل وتُراجع قبل اعتمادها.</div><div class="items">`;
- prophets.forEach((n,i)=>html+=`<div class="item">🌟<br>${n}<br><button onclick="prophet('${n}',${i})">فتح الملف</button></div>`);
- html+='</div>';
- }else if(id==='stories'){
- html+='<div class="items">'+stories.map((s,i)=>`<div class="item">📖<br>${s[0]}<br><button onclick="story(${i})">اقرأ القصة</button></div>`).join('')+'</div>';
- }else if(id==='search'){
- html+=`<input class="search" id="searchInput" placeholder="ابحث في أقسام التطبيق..." oninput="doSearch(this.value)"><div id="searchResults"></div>`;
- }else if(id==='favorites'){
- let fav=getData().favorites;html+=fav.length?'<div class="items">'+fav.map(x=>`<div class="item">${x}</div>`).join('')+'</div>':'<p>لم تضف عناصر للمفضلة بعد.</p>';
- }else if(id==='prayer'){
- html+=`<h3>الصلوات الخمس</h3><div class="items">${[['الفجر','ركعتان'],['الظهر','أربع ركعات'],['العصر','أربع ركعات'],['المغرب','ثلاث ركعات'],['العشاء','أربع ركعات']].map(x=>`<div class="item">🕌<b>${x[0]}</b><br>${x[1]}</div>`).join('')}</div><h3>تعلم الوضوء</h3><p>النية، التسمية، غسل الكفين، المضمضة والاستنشاق، غسل الوجه، غسل اليدين إلى المرفقين، مسح الرأس والأذنين، غسل القدمين إلى الكعبين، مع مراعاة الترتيب والموالاة.</p><p>سنعرض لاحقًا كل خطوة بصورة تعليمية وتفاصيلها.</p>`;
- }else if(id==='pillars'){
- let a=['الشهادتان','إقامة الصلاة','إيتاء الزكاة','صوم رمضان','حج البيت لمن استطاع إليه سبيلًا'];
- html+='<div class="items">'+a.map((x,i)=>`<div class="item">${['☝️','🕌','🤲','🌙','🕋'][i]}<br>${i+1}. ${x}</div>`).join('')+'</div>';
- }else if(id==='names'){
- html+='<p>أسماء الله الحسنى، نتعلمها ونفهم معانيها بما يناسب أعمار الأطفال.</p><div class="notice">سيتم إدراج الأسماء التسعة والتسعين وشرح كل اسم مع مراجعة ثبوت الأسماء ومصادرها.</div>';
- }else if(id==='quran'){
- html+='<p>المصحف مقسم إلى ثلاثين جزءًا، مع معاني الكلمات الصعبة وتفسير مبسط موثق.</p><div class="items">'+Array.from({length:30},(_,i)=>`<div class="item">📖 الجزء ${i+1}</div>`).join('')+'</div>';
- }else if(id==='ask'||id==='competitions'){
- html+=`<div class="notice">اختبر معلوماتك!</div><h3>من النبي الذي ابتلعه الحوت؟</h3><div class="items">${['موسى عليه السلام','يونس عليه السلام','يوسف عليه السلام'].map(x=>`<button class="item" onclick="answer('${x}')">${x}</button>`).join('')}</div>`;
- }else if(id==='achievements'||id==='reports'||id==='certificates'){
- let d=getData();html+=`<div class="notice">إنجازات ${names[child]}</div><h3>⭐ النجوم: ${d.stars}</h3><h3>📚 الدروس المكتملة: ${d.done.length}</h3><p>كلما أكملت درسًا تحصل على نجوم وتقترب من إنجاز جديد.</p>`;
- }else if(id==='about'){
- html+='<p><b>أثر الأنبياء – موسوعة إسلامية تعليمية للأطفال.</b></p><p>تطبيق تعليمي يهدف إلى تقريب القصص والمعارف الإسلامية للأطفال بأسلوب مبسط وممتع، وغرس الإيمان والأخلاق والقيم.</p><p>إعداد وتصميم: صاحب فكرة التطبيق.</p>';
- }else{
- html+=`<div class="notice">هذا القسم جزء من موسوعة أثر الأنبياء. سيُجهز بمحتواه التفصيلي وأنشطته ومراجعه، وفق خريطة المشروع المتفق عليها.</div>`;
- }
- document.getElementById('pageContent').innerHTML=html;
- let d=getData();d.last=title;d.lastId=id;saveData(d);
-}
-function prophet(n,i){
- let d=getData();d.last='ملف النبي '+n;d.lastId='prophets';saveData(d);
- document.getElementById('pageContent').innerHTML=`<button class="back" onclick="openSection('prophets')">↩ قائمة الأنبياء</button><h2>النبي ${n} عليه السلام</h2><div class="notice">ملف تعريفي: السيرة الذاتية، مواضع ذكره في القرآن، الأسرة حيث ثبتت، المعجزات والآيات، والمراجع.</div><h3>قصة النبي ${n}</h3><p>سيتم إعداد القصة في مشاهد متتابعة غير مختصرة، من 6 إلى 15 مشهدًا أو أكثر حسب طول السيرة، بلغة تناسب الطفل.</p><h3>المشاهد التعليمية</h3><div class="items">${Array.from({length:6},(_,j)=>`<div class="item">🎬 المشهد ${j+1}<p>تفاصيل القصة والآيات والدروس المستفادة.</p></div>`).join('')}</div><h3>الحكمة المستفادة</h3><p>نتعلم من قصص الأنبياء الإيمان بالله والصبر والصدق والثبات على الحق.</p><button class="action" onclick="complete('قصة النبي ${n}')">أنهيت الدرس ⭐</button><button class="action" onclick="favorite('النبي ${n}')">أضف للمفضلة ❤️</button>`;
-}
-function story(i){
- let s=stories[i];document.getElementById('pageContent').innerHTML=`<button class="back" onclick="openSection('stories')">↩ القصص</button><h2>${s[0]}</h2><p>${s[1]}</p><div class="notice">تُجهز القصة كاملة بالمشاهد والآيات والدروس والمصادر قبل اعتمادها.</div><button class="action" onclick="complete('${s[0]}')">أنهيت القصة ⭐</button>`;
-}
-function complete(name){let d=getData();if(!d.done.includes(name)){d.done.push(name);d.stars+=10}saveData(d);alert('أحسنت! حصلت على 10 نجوم ⭐');}
-function favorite(name){let d=getData();if(!d.favorites.includes(name))d.favorites.push(name);saveData(d);alert('تمت الإضافة للمفضلة ❤️')}
-function answer(x){if(x==='يونس عليه السلام'){complete('تحدي الأنبياء');alert('إجابة صحيحة! أحسنت ⭐')}else alert('حاول مرة أخرى، بالتوفيق!')}
-function doSearch(q){let r=document.getElementById('searchResults');if(!q.trim()){r.innerHTML='';return}let found=sections.filter(x=>x[2].includes(q));let ps=prophets.filter(x=>x.includes(q));r.innerHTML='<div class="items">'+found.map(x=>`<button class="item" onclick="openSection('${x[0]}')">${x[2]}</button>`).join('')+ps.map(x=>`<button class="item" onclick="openSection('prophets');setTimeout(()=>prophet('${x}',0),50)">النبي ${x}</button>`).join('')+'</div>'}
-renderGrid();updateStats();
-</script>
-</body>
-</html>
+const names=[['الرحمن','واسع الرحمة لجميع خلقه'],['الرحيم','كثير الرحمة بالمؤمنين'],['الملك','المالك المتصرف في كل شيء'],['القدوس','المنزه عن كل نقص'],['السلام','السالم من كل عيب'],['المؤمن','الذي يؤمّن عباده'],['المهيمن','الرقيب الحافظ'],['العزيز','الغالب الذي لا يغلب'],['الجبار','العالي القاهر وجابر الكسير'],['المتكبر','المتعالي عن صفات الخلق'],['الخالق','الذي أوجد الخلق'],['البارئ','الذي خلق الخلق بقدرته'],['المصور','الذي أعطى كل مخلوق صورته'],['الغفار','كثير المغفرة'],['القهار','الغالب لكل شيء'],['الوهاب','كثير العطاء'],['الرزاق','الذي يرزق خلقه'],['الفتاح','يفتح أبواب الخير ويحكم بالحق'],['العليم','الذي يعلم كل شيء'],['القابض','يقبض بحكمته'],['الباسط','يبسط فضله ورزقه'],['الخافض','يخفض من شاء بحكمته'],['الرافع','يرفع من شاء بفضله'],['المعز','يعز من شاء'],['المذل','يذل من شاء بعدله'],['السميع','يسمع كل الأصوات'],['البصير','يرى كل شيء'],['الحكم','الحاكم بالحق'],['العدل','المنزه عن الظلم'],['اللطيف','الرفيق بعباده'],['الخبير','العالم ببواطن الأمور'],['الحليم','لا يعجل بالعقوبة'],['العظيم','له العظمة الكاملة'],['الغفور','واسع المغفرة'],['الشكور','يجزي على العمل القليل كثيرًا'],['العلي','المتعالي'],['الكبير','الأعظم من كل شيء'],['الحفيظ','يحفظ كل شيء'],['المقيت','يوصل الأقوات ويقدرها'],['الحسيب','الكافي والمحاسب'],['الجليل','العظيم ذو الجلال'],['الكريم','كثير الخير والعطاء'],['الرقيب','المطلع على عباده'],['المجيب','يجيب دعاء من دعاه'],['الواسع','وسع علمه ورحمته كل شيء'],['الحكيم','يضع الأمور مواضعها'],['الودود','المحب لعباده المؤمنين'],['المجيد','العظيم واسع الكرم'],['الباعث','يبعث الخلق يوم القيامة'],['الشهيد','لا يغيب عنه شيء'],['الحق','الثابت الذي لا شك فيه'],['الوكيل','الكفيل بأرزاق عباده'],['القوي','كامل القوة'],['المتين','شديد القوة'],['الولي','ناصر المؤمنين'],['الحميد','المستحق للحمد'],['المحصي','أحاط بكل شيء عددًا'],['المبدئ','يبدأ الخلق'],['المعيد','يعيد الخلق بعد الموت'],['المحيي','يحيي من يشاء'],['المميت','يقدر الموت على الخلق'],['الحي','له الحياة الكاملة'],['القيوم','القائم بنفسه المقيم لغيره'],['الواجد','لا يعجزه شيء'],['الماجد','الكامل في المجد'],['الواحد','المنفرد بالألوهية'],['الصمد','السيد المقصود في الحوائج'],['القادر','يقدر على كل شيء'],['المقتدر','تام القدرة'],['المقدم','يقدم من يشاء'],['المؤخر','يؤخر من يشاء'],['الأول','ليس قبله شيء'],['الآخر','ليس بعده شيء'],['الظاهر','فوق كل شيء'],['الباطن','ليس دونه شيء'],['الوالي','المالك المدبر'],['المتعالي','المنزه عن النقص'],['البر','كثير الإحسان'],['التواب','يقبل توبة عباده'],['المنتقم','يعاقب من يستحق بعدله'],['العفو','يمحو الذنوب ويتجاوز'],['الرؤوف','شديد الرحمة'],['مالك الملك','مالك كل ملك'],['ذو الجلال والإكرام','صاحب العظمة والفضل'],['المقسط','العادل'],['الجامع','يجمع الخلق ليوم الحساب'],['الغني','المستغني عن خلقه'],['المغني','يغني من يشاء'],['المانع','يمنع بحكمته'],['الضار','لا يقع ضر إلا بإذنه'],['النافع','يوصل النفع بفضله'],['النور','هادي أهل السماوات والأرض'],['الهادي','يهدي إلى الصراط المستقيم'],['البديع','منشئ الخلق بلا مثال سابق'],['الباقي','الدائم الذي لا يفنى'],['الوارث','الباقي بعد فناء الخلق'],['الرشيد','يهدي إلى الصواب'],['الصبور','لا يعجل بالعقوبة']];
+const adhkar=[['عند الاستيقاظ','الحمد لله الذي أحيانا بعدما أماتنا وإليه النشور.'],['قبل الطعام','بسم الله.'],['بعد الطعام','الحمد لله الذي أطعمني هذا ورزقنيه من غير حول مني ولا قوة.'],['دخول الخلاء','اللهم إني أعوذ بك من الخبث والخبائث.'],['الخروج من الخلاء','غفرانك.'],['دخول المسجد','اللهم افتح لي أبواب رحمتك.'],['الخروج من المسجد','اللهم إني أسألك من فضلك.'],['قبل النوم','باسمك اللهم أموت وأحيا.']];
+const values=[['الصدق','أن نقول الحقيقة ولا نكذب.'],['الأمانة','نحافظ على ما اؤتمنا عليه.'],['الرحمة','نرفق بالصغير ونساعد المحتاج.'],['بر الوالدين','نحسن إلى والدينا ونطيعهما في المعروف.'],['التعاون','نتشارك العمل ونساعد بعضنا.'],['الصبر','نثبت على الخير ولا نيأس.'],['التواضع','لا نتكبر على أحد.'],['النظافة','نحافظ على أجسامنا ومكاننا.']];
+const childNames={eyad:['إياد','👦'],mayan:['مايان','👧'],layan:['ليان','👶']};let current='eyad',state={},currentSection='';
+function load(){try{state=JSON.parse(localStorage.getItem('athar_'+current))||{}}catch(e){state={}}state.stars=state.stars||0;state.done=state.done||[];state.favorites=state.favorites||[];state.badges=state.badges||[];state.last=state.last||'';save(false)}
+function save(p=true){localStorage.setItem('athar_'+current,JSON.stringify(state));if(p)paint()}
+function paint(){let p=childNames[current];childName.textContent=p[0];avatar.textContent=p[1];stars.textContent=state.stars;badges.textContent=state.badges.length;level.textContent=state.stars>=50?'المستوى الذهبي':state.stars>=20?'المستوى الفضي':'المستوى البرونزي';doneCount.textContent=state.done.length+' درس مكتمل';lastLesson.textContent=state.last||'ابدأ رحلتك التعليمية باختيار قسم.';let n=Math.min(100,Math.round(state.done.length/30*100));pct.textContent=n+'%';bar.style.width=n+'%'}
+function switchChild(id){current=id;load();paint();currentSection?openSection(currentSection):homeShow()}
+function homeShow(){currentSection='';home.style.display='block';view.style.display='none';scrollTo(0,0)}
+function grid(){mainGrid.innerHTML=sections.map(s=>`<button class="tile ${s[3]}" onclick="openSection('${s[0]}')"><span class="ico">${s[2]}</span>${s[1]}</button>`).join('')}
+function openSection(id){currentSection=id;home.style.display='none';view.style.display='block';let s=sections.find(x=>x[0]===id);view.innerHTML=`<button class="btn" onclick="homeShow()">⬅ الرئيسية</button><div class="section"><h2>${s[2]} ${s[1]}</h2><div id="content"></div></div>`;render(id);scrollTo(0,0)}
+function box(t,b,buttons=''){return `<article class="card"><h3>${t}</h3>${b}<div>${buttons}</div></article>`}
+function doneBtn(k,t){return `<button class="btn alt" onclick="complete('${k}','${t}')">أنهيت الدرس ⭐</button>`}
+function favBtn(k){return `<button class="btn light" onclick="favorite('${k}')">${state.favorites.includes(k)?'❤️ محفوظ':'♡ أضف للمفضلة'}</button>`}
+function render(id){let c=document.getElementById('content'),o='';
+if(id==='prophets')o=box('الأنبياء الخمسة والعشرون','<p>افتح اسم النبي لعرض نبذة ومشاهد تعليمية. لا تُذكر تفاصيل الأسرة إلا بدليل ثابت.</p>')+prophets.map((p,i)=>`<button class="btn light" onclick="prophet(${i})">${i+1}. ${p[0]}</button>`).join('');
+else if(id==='names')o=box('أسماء الله الحسنى','<p>هذه قائمة مشهورة متداولة، وقد اختلف أهل العلم في تعيين سرد الأسماء التسعة والتسعين؛ فلا نجزم أن هذا الترتيب هو السرد الوحيد الثابت.</p>')+names.map((x,i)=>box((i+1)+'. '+x[0],x[1],favBtn('name'+i))).join('');
+else if(id==='adhkar')o=adhkar.map((x,i)=>box(x[0],`<p style="font-size:19px">${x[1]}</p>`,favBtn('dh'+i)+doneBtn('dh'+i,x[0]))).join('')+box('أذكار الصباح والمساء','<p>تُستكمل هنا الأذكار بألفاظها وأعدادها وتخريجها بعد مراجعة علمية.</p>');
+else if(id==='values')o=values.map((x,i)=>box(x[0],x[1],doneBtn('v'+i,x[0])+favBtn('v'+i))).join('');
+else if(id==='pillars')o=box('أركان الإسلام الخمسة','<ol><li>الشهادتان</li><li>إقام الصلاة</li><li>إيتاء الزكاة</li><li>صوم رمضان</li><li>حج البيت لمن استطاع إليه سبيلًا</li></ol>')+box('عدد ركعات الفرائض','<p>الفجر: 2 — الظهر: 4 — العصر: 4 — المغرب: 3 — العشاء: 4.</p><p>هذه ركعات الفرض دون السنن.</p>')+box('صفة الوضوء باختصار','<ol><li>النية محلها القلب والتسمية.</li><li>غسل الكفين.</li><li>المضمضة والاستنشاق.</li><li>غسل الوجه.</li><li>غسل اليدين إلى المرفقين.</li><li>مسح الرأس والأذنين.</li><li>غسل الرجلين إلى الكعبين.</li></ol>')+box('صفة الصلاة باختصار','<ol><li>استقبال القبلة والقيام مع القدرة.</li><li>تكبيرة الإحرام وقراءة الفاتحة.</li><li>الركوع والاعتدال.</li><li>السجود والجلوس بين السجدتين.</li><li>إتمام الركعات والتشهد والتسليم.</li></ol>');
+else if(id==='quran')o=box('القرآن الكريم','<p>المصحف ثلاثون جزءًا. هذا سجل متابعة وليس نصًا كاملًا للمصحف.</p>')+Array.from({length:30},(_,i)=>box('الجزء '+(i+1),'سجل إتمام قراءة الجزء.',doneBtn('juz'+i,'الجزء '+(i+1)))).join('')+box('معاني كلمات','<p>الفلق: الصبح. الكوثر: الخير الكثير. الصمد: السيد المقصود في الحوائج.</p>');
+else if(id==='seerah')o=['المولد والنشأة في مكة','الشباب والصدق والأمانة','نزول الوحي في غار حراء','الدعوة السرية والجهرية','الهجرة إلى المدينة','بناء المسجد والمؤاخاة','غزوة بدر','غزوة أحد','غزوة الخندق','صلح الحديبية','فتح مكة','حجة الوداع والوفاة'].map((x,i)=>box((i+1)+'. '+x,'محطة من السيرة النبوية، تُستكمل تفاصيلها مع توثيق الروايات من مصادر السيرة المعتمدة.',doneBtn('s'+i,x))).join('');
+else if(id==='journeys')o=['هجرة إبراهيم عليه السلام','رحلة موسى إلى مدين','خروج موسى ببني إسرائيل','هجرة النبي ﷺ إلى المدينة','الإسراء والمعراج'].map((x,i)=>box(x,'نتعرف على الرحلة وما ثبت من أحداثها والدروس المستفادة.',doneBtn('r'+i,x))).join('');
+else if(id==='family')o=box('روابط النسب الثابتة','<ul><li>إبراهيم: من ذريته إسماعيل وإسحاق.</li><li>إسحاق: من ذريته يعقوب.</li><li>يعقوب: هو إسرائيل، ومن أبنائه يوسف وإخوته.</li><li>داود: ابنه سليمان.</li><li>موسى وهارون أخوان.</li><li>زكريا: ابنه يحيى.</li><li>عيسى ابن مريم وليس له أب.</li></ul>');
+else if(id==='occasions')o=['رمضان','عيد الفطر','عيد الأضحى','الحج ويوم عرفة','الهجرة النبوية','يوم الجمعة'].map((x,i)=>box(x,'تعرف على المناسبة ومعناها وأعمال المسلم فيها.',doneBtn('o'+i,x))).join('');
+else if(id==='info')o=['الصلوات المفروضة خمس.','قبلة المسلمين الكعبة المشرفة.','كتاب المسلمين القرآن الكريم.','يصوم المسلمون شهر رمضان.','من أسماء المدينة: المدينة المنورة.'].map((x,i)=>box('معلومة '+(i+1),x)).join('');
+else if(id==='qstories')o=['أصحاب الكهف','ذو القرنين','موسى والخضر','أصحاب الجنة','قارون','أصحاب الفيل','مؤمن آل فرعون'].map((x,i)=>box(x,'قصة قرآنية نتدبر آياتها ونفصل بين نص القرآن وما قد يرد من أخبار لا تثبت.',doneBtn('q'+i,x))).join('');
+else if(id==='quiz')o=box('سؤال: من النبي الذي التقمه الحوت؟','<button class="btn light" onclick="quiz(this,false)">موسى</button><button class="btn light" onclick="quiz(this,true)">يونس</button><button class="btn light" onclick="quiz(this,false)">يوسف</button><p class="feedback"></p>')+box('سؤال: كم عدد أركان الإسلام؟','<button class="btn light" onclick="quiz(this,false)">ثلاثة</button><button class="btn light" onclick="quiz(this,true)">خمسة</button><button class="btn light" onclick="quiz(this,false)">سبعة</button><p class="feedback"></p>');
+else if(id==='achievements'||id==='certificates')o=box('إنجازات '+childNames[current][0],`<p>النجوم: ${state.stars}</p><p>الدروس المكتملة: ${state.done.length}</p><p>الشارات: ${state.badges.join('، ')||'لا توجد بعد'}</p><button class="btn gold" onclick="window.print()">طباعة شهادة الإنجاز</button>`);
+else if(id==='reports')o=box('تقرير التقدم',`<p>الطفل: ${childNames[current][0]}</p><p>النجوم: ${state.stars}</p><p>الدروس المكتملة: ${state.done.length}</p><p>آخر درس: ${state.last||'لم يبدأ بعد'}</p><p>البيانات محفوظة على هذا الجهاز.</p>`);
+else if(id==='favorites')o=box('المفضلة',state.favorites.length?state.favorites.map(x=>'<p>'+x+'</p>').join(''):'لم تضف عناصر بعد.');
+else if(id==='ask')o=box('اسأل عن الأنبياء','<input class="search" id="askInput" placeholder="مثال: من صنع السفينة؟"><button class="btn" onclick="ask()">اعرض الإجابة</button><div id="answer"></div>');
+else if(id==='search')o=box('البحث في الموسوعة','<input class="search" oninput="searchContent(this.value)" placeholder="اكتب كلمة للبحث"><div id="results"></div>');
+else if(id==='library')o=box('المكتبة الإسلامية','<ul><li>قصص قرآنية للأطفال.</li><li>بطاقات حفظ الأذكار.</li><li>أنشطة وأسئلة بعد القراءة.</li><li>مفردات قرآنية مبسطة.</li><li>سجل متابعة القراءة.</li></ul><p>تضاف المواد المرخصة أو المعدة خصيصًا للتطبيق.</p>');
+else if(id==='daily')o=box('تحدي اليوم',dailyText.textContent,'<button class="btn gold" onclick="dailyDone()">أنجزت التحدي ⭐</button>');
+else if(id==='continue')o=box('استكمال التعلم',state.last?'آخر درس: '+state.last:'لم تبدأ درسًا بعد.');
+else if(id==='about')o=box('عن التطبيق','<p>أثر الأنبياء موسوعة تعليمية للأطفال لتقريب قصص الأنبياء والمعاني الإيمانية والأخلاق بأسلوب مبسط.</p><p>يلزم تدقيق النصوص الشرعية والأحاديث والتفاصيل التاريخية ومراجعتها من مختصين قبل اعتماد النشر النهائي.</p>');
+c.innerHTML=o}
+function prophet(i){let p=prophets[i];let body=`<h2>النبي ${p[0]} عليه السلام</h2><p>${p[1]}</p><h3>الملف التعريفي</h3><p>تُذكر معلومات الأسرة والنسب والمعجزات فقط عند ثبوتها بدليل معتبر.</p><h3>مشاهد من القصة</h3>${p[2].map((x,j)=>`<div class="scene"><b>المشهد ${j+1}:</b> ${x}<p>العبرة: نتعلم الإيمان والصبر وطاعة الله.</p></div>`).join('')}<h3>الحكمة المستفادة</h3><p>الثبات على التوحيد والصدق والصبر والتوكل على الله.</p><p class="muted">يلزم إلحاق أرقام الآيات والسور والتخريج التفصيلي والمراجعة العلمية قبل النشر.</p>${doneBtn('p'+i,'قصة '+p[0])}${favBtn('p'+i)}`;modalBody.innerHTML=body;modal.classList.add('show');state.last='قصة '+p[0];save()}
+function closeModal(){modal.classList.remove('show')}
+function complete(k,t){if(!state.done.includes(k)){state.done.push(k);state.stars+=2;if(state.done.length===1)state.badges.push('البداية');if(state.done.length===10)state.badges.push('محب العلم')}state.last=t;save();if(currentSection)render(currentSection)}
+function favorite(k){let i=state.favorites.indexOf(k);i<0?state.favorites.push(k):state.favorites.splice(i,1);save();if(currentSection)render(currentSection)}
+function dailyDone(){complete('daily-'+new Date().toDateString(),'تحدي اليوم');alert('أحسنت! ⭐')}
+function quiz(btn,ok){let f=btn.parentElement.querySelector('.feedback');f.textContent=ok?'إجابة صحيحة، أحسنت! ⭐':'حاول مرة أخرى.';if(ok)complete('quiz-'+btn.parentElement.textContent.slice(0,20),'المسابقة')}
+function ask(){let q=askInput.value,a='لم أجد إجابة واضحة في المحتوى الحالي.';if(/سفين|فلك/.test(q))a='النبي نوح عليه السلام صنع الفلك بأمر الله.';else if(/حوت/.test(q))a='النبي يونس عليه السلام.';else if(/نار/.test(q))a='النبي إبراهيم عليه السلام، وجعل الله النار عليه بردًا وسلامًا.';else if(/فرعون|كليم/.test(q))a='النبي موسى عليه السلام.';else if(/خاتم/.test(q))a='محمد ﷺ خاتم الأنبياء والمرسلين.';answer.textContent=a}
+function searchAll(q){let old=document.getElementById('quick');if(old)old.remove();if(!q.trim())return;let hits=prophets.map((p,i)=>p.join(' ').includes(q)?`<button class="btn light" onclick="openSection('prophets');setTimeout(()=>prophet(${i}),50)">${p[0]}</button>`:'').join('');let d=document.createElement('div');d.id='quick';d.className='card';d.innerHTML=hits||'لا توجد نتائج في أسماء الأنبياء.';globalSearch.after(d)}
+function searchContent(q){results.innerHTML=prophets.filter(p=>p.join(' ').includes(q)).map(p=>'<p><b>'+p[0]+'</b>: '+p[1]+'</p>').join('')||'لا توجد نتائج.'}
+const tasks=['قل بسم الله قبل الطعام.','ساعد أحد أفراد أسرتك.','اقرأ آية من القرآن.','قل الحمد لله ثلاث مرات.','احكِ خلقًا جميلًا تعلمته.','حافظ على صلاتك في وقتها.'];
+dailyText.textContent=tasks[new Date().getDate()%tasks.length];grid();load();paint();
+</script></body></html>
