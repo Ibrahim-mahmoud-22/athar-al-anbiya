@@ -465,4 +465,15 @@
      const day=Math.floor(Date.now()/86400000),q=competitionQuestions[day%competitionQuestions.length],d=getData();
      document.getElementById("dailyQuestion").textContent=q[0];
      document.getElementById("dailyAnswers").innerHTML=q[1].map((a,i)=>`<button class="choice" onclick="dailyAnswer(${i})">${a}</button>`).join("");
-     
+     document.getElementById("dailyFeedback").textContent=d.dailyDone[day]?"أكملت تحدي اليوم بالفعل. أحسنت!":"";
+    }
+    function dailyAnswer(i){
+     const day=Math.floor(Date.now()/86400000),d=getData(),q=competitionQuestions[day%competitionQuestions.length],f=document.getElementById("dailyFeedback");
+     if(d.dailyDone[day]){f.textContent="لقد أكملت تحدي اليوم بالفعل.";return;}
+     if(i===q[2]){d.dailyDone[day]=true;d.stars++;d.quizScore=(d.quizScore||0)+1;d.last="التحدي اليومي";saveData(d);f.textContent="أحسنت! إجابة صحيحة، حصلت على نجمة ⭐";}
+     else f.textContent="حاول مرة أخرى. "+q[3];
+    }
+    initMenu();updateProfile();daily();
+    </script>
+    </body>
+    </html>
